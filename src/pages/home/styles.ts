@@ -181,11 +181,11 @@ p{
 export const Item = styled.div`
   padding: 16px;
   display: flex;
+  align-items: center;
   border-bottom: 1px solid #ccc;
 
   div {
     width: 100%;
-   
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -193,8 +193,8 @@ export const Item = styled.div`
   }
 
   img {
-    width: 70px;
-    height: 60px;
+    width: 90px;
+    height: 70px;
     border-radius: 4px;
     background-color: #ccc;
   }
