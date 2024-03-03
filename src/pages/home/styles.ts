@@ -1,17 +1,81 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``
-
+export const Wrapper = styled.div`
+  padding-bottom: 100px;
+`
 
 export const WrapperHeader = styled.div`
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+`
+
+export const WrapperItens = styled.div``
+
+export const WrapperDestaques= styled.div`
+  margin-top: 140px;
   
+  margin-bottom: 16px;
+
+  h4 {
+    margin-left: 16px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 25px;
+    color: ${({theme})=> theme.secondary[700]};
+    margin-bottom: 6px;
+  }
+
+  .content_itens {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: scroll;
+    padding: 0 16px;
+
+    .destaque_item {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 4px;
+      }
+
+      img, svg {
+        height: 130px;
+        width: 130px;
+        border-radius: 5px;
+      }
+
+      .price_destaque {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        span:nth-child(1){
+          color: #5a5a5a;
+          font-size: 12px;
+          font-weight: 500;
+          text-decoration: line-through;
+        }
+
+        span:nth-child(2){
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
 `
 
 export const Header = styled.div`
   width: 100%;
   background-color: ${({theme})=> theme.secondary[200]};
   padding: 8px 16px;
-  
 `
 
 export const ContentLogo = styled.div`
@@ -31,7 +95,6 @@ export const Logo = styled.div`
   background-color: #fff;
   border-radius: 50%;
 `
-
 
 export const ContentInfo = styled.div`
   display: flex;
@@ -57,7 +120,7 @@ export const ContentInfo = styled.div`
 `
 
 export const MenuTab = styled.div`
-overflow-x: scroll;
+overflow-x: auto;
 white-space: nowrap;
 border-bottom: .5px solid #ccc;
 
@@ -89,31 +152,52 @@ export const Link = styled.a<ILinkProps>`
   font-weight: 600;
   padding-bottom: 10px;
   border-bottom:  ${(props) => props.isActive ? `1px solid ${props.theme.Tertiary[700]}` : '' };
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+
+  }
 
 `
 
 export const BodyItens = styled.div`
-  margin-top: 20px;
+  
 `
 
 export const CategoryName = styled.div`
+
 width: 100%;
 padding: 0 16px;
 border-bottom: 1px solid #ccc;
-  p{
-    font-size: 18px;
+
+p{
+  margin-top: 16px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 6px;
-  }
+}
 `
 
 export const Item = styled.div`
-  width: 100%;
   padding: 16px;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
   border-bottom: 1px solid #ccc;
+
+  div {
+    width: 100%;
+   
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  
+  }
+
+  img {
+    width: 70px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: #ccc;
+  }
 
 `
 

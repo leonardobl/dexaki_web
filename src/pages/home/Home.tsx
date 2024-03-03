@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import * as S from './styles'
+import { Nav } from '../../components/Nav/Nav';
 
 export const Home = () => {
-  const [activeNow, setActiveNow] = useState("#");
+  const [activeNow, setActiveNow] = useState("pizza");
 
 
   return (
@@ -67,135 +68,185 @@ export const Home = () => {
         </S.MenuTab>
       </S.WrapperHeader>
 
-      <S.BodyItens id='pizza'>
-        <S.CategoryName>
-          <p>Pizzas</p>
-        </S.CategoryName>
+      <S.WrapperDestaques>
+        <h4>Destaques</h4>
+        <div className='content_itens'>
+          <div className="destaque_item">
+            <img src="" alt="" />
+            <p>Titulo do item</p>
+            <div className='price_destaque'>
+              <span>R$ 36,00</span>
+              <span>R$ 26,00</span>
+            </div>
+          </div>
 
-        <S.Item>
-          <S.TitleItem>X-Tudo</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
+          <div className="destaque_item">
+            <img src="" alt="" />
+            <p>Titulo do item</p>
+            <div className='price_destaque'>
+              <span>R$ 36,00</span>
+              <span>R$ 26,00</span>
+            </div>
+          </div>
 
-        <S.Item>
-          <S.TitleItem>X-Calabresa</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
+          <div className="destaque_item">
+            <img src="" alt="" />
+            <p>Titulo do item</p>
+            <div className='price_destaque'>
+              <span>R$ 36,00</span>
+              <span>R$ 26,00</span>
+            </div>
+          </div>
 
-        <S.Item>
-          <S.TitleItem>X-Calabresa</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
+          <div className="destaque_item">
+            <img src="" alt="" />
+            <p>Titulo do item</p>
+            <div className='price_destaque'>
+              <span>R$ 36,00</span>
+              <span>R$ 26,00</span>
+            </div>
+          </div>
+
+          <div className="destaque_item">
+            <img src="" alt="" />
+            <p>Titulo do item</p>
+            <div className='price_destaque'>
+              <span>R$ 36,00</span>
+              <span>R$ 26,00</span>
+            </div>
+          </div>
+        </div>
+      </S.WrapperDestaques>
+
+      <S.WrapperItens>
+
+        <S.BodyItens id='pizza'>
+          <S.CategoryName>
+            <p>Pizzas</p>
+          </S.CategoryName>
+
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
+
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
+
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
+
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
+
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
 
 
-        <S.Item>
-          <S.TitleItem>X-Calabresa</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
+        </S.BodyItens>
 
+        <S.BodyItens id='hamburgueres'>
+          <S.CategoryName >
+            <p>Hamburgueres</p>
+          </S.CategoryName>
 
-        <S.Item>
-          <S.TitleItem>X-Calabresa</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
 
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
 
-        <S.Item>
-          <S.TitleItem>X-Calabresa</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
 
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
 
-        <S.Item>
-          <S.TitleItem>X-Calabresa</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
+          <S.Item>
+            <div>
+              <S.TitleItem>X-Tudo</S.TitleItem>
+              <S.Description>
+                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
+              </S.Description>
+              <S.Price>R$ 29,00</S.Price>
+            </div>
+            <img src="" alt="" />
+          </S.Item>
+        </S.BodyItens>
 
+      </S.WrapperItens>
 
-        <S.Item>
-          <S.TitleItem>X-Nada</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
-      </S.BodyItens>
-
-
-      <S.BodyItens id='hamburgueres'>
-        <S.CategoryName >
-          <p>Hamburgueres</p>
-        </S.CategoryName>
-
-        <S.Item>
-          <S.TitleItem>X-Tudo</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
-
-        <S.Item>
-          <S.TitleItem>X-Calabresa</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
-
-        <S.Item>
-          <S.TitleItem>X-Nada</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
-
-        <S.Item>
-          <S.TitleItem>X-Nada</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
-
-        <S.Item>
-          <S.TitleItem>X-Nada</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
-
-        <S.Item>
-          <S.TitleItem>X-Nada</S.TitleItem>
-          <S.Description>
-            Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-          </S.Description>
-          <S.Price>R$ 29,00</S.Price>
-        </S.Item>
-      </S.BodyItens>
+      <Nav />
     </S.Wrapper>
   )
 }
