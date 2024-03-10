@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import * as S from './styles'
 import { Nav } from '../../components/Nav/Nav';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
   const [activeNow, setActiveNow] = useState("pizza");
+  const navigate = useNavigate()
 
+
+  function addProduct(item: number) {
+    navigate(`/product/${item}`)
+  }
 
   return (
     <S.Wrapper>
@@ -125,7 +131,7 @@ export const Home = () => {
             <p>Pizzas</p>
           </S.CategoryName>
 
-          <S.Item>
+          <S.Item onClick={() => addProduct(1)}>
             <div>
               <S.TitleItem>X-Tudo</S.TitleItem>
               <S.Description>
