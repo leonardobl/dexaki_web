@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import * as S from './styles'
-import { AiOutlineHome } from "react-icons/ai";
-import { GrCart } from "react-icons/gr";
-import { LuUser2 } from "react-icons/lu";
-import { FaFire } from "react-icons/fa";
+import { IconDestaque, IconHome, IconPedidos, IconPerfil } from './Icons';
 
 export const Nav = () => {
   const [activeNow, setActiveNow] = useState("home");
+
+  function isActive(name: string) {
+    return activeNow === name ? '#FF6B00' : '#666666'
+  }
 
 
   return (
@@ -17,7 +18,7 @@ export const Nav = () => {
           onClick={() => setActiveNow("home")}
         // href="#"
         >
-          <AiOutlineHome size={15} color={activeNow == "home" ? '#fff' : '#333'} />
+          <IconHome color={isActive('home')} />
         </S.Link>
         <span>Home</span>
       </S.ContentLink>
@@ -28,7 +29,7 @@ export const Nav = () => {
           onClick={() => setActiveNow("promocoes")}
         // href="#"
         >
-          <FaFire size={15} color={activeNow == "promocoes" ? '#fff' : '#333'} />
+          <IconDestaque color={isActive('promocoes')} />
         </S.Link>
         <span>Promoções</span>
       </S.ContentLink>
@@ -39,7 +40,7 @@ export const Nav = () => {
           onClick={() => setActiveNow("pedidos")}
         // href="#"
         >
-          <GrCart size={15} color={activeNow == "pedidos" ? '#fff' : '#333'} />
+          <IconPedidos color={isActive('pedidos')} />
 
         </S.Link>
         <span>Pedidos</span>
@@ -51,7 +52,7 @@ export const Nav = () => {
           onClick={() => setActiveNow("usuario")}
         // href="#"
         >
-          <LuUser2 size={15} color={activeNow == "usuario" ? '#fff' : '#333'} />
+          <IconPerfil color={isActive('usuario')} />
         </S.Link>
         <span>Perfil</span>
       </S.ContentLink>

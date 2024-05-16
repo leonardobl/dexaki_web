@@ -2,6 +2,11 @@ import { useState } from 'react';
 import * as S from './styles'
 import { Nav } from '../../components/Nav/Nav';
 import { useNavigate } from 'react-router-dom';
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { IconPlus } from '../../assets/icons/IconPlus';
+
+import Pizza from '../../assets/image/pizza02.png'
+import { IconPizza } from '../../assets/icons/IconPizza';
 
 export const Home = () => {
   const [activeNow, setActiveNow] = useState("pizza");
@@ -19,8 +24,14 @@ export const Home = () => {
           <S.ContentLogo>
             <S.Logo>
             </S.Logo>
-            <h4>NOME - delivery</h4>
+            <h4>Chicago Burguers</h4>
           </S.ContentLogo>
+
+          <S.Notification>
+            <IoMdNotificationsOutline color='#333333' size={23} />
+            <div className="notification">
+            </div>
+          </S.Notification>
         </S.Header>
 
         <S.ContentInfo>
@@ -32,20 +43,16 @@ export const Home = () => {
         <S.MenuTab>
           <ul>
             <li>
-              <S.Link
-                isActive={activeNow == "pizza" ? true : false}
-                onClick={() => setActiveNow("pizza")}
-                href="#pizza"
-              >
-                Pizzas
-              </S.Link>
+              <div>
+                <IconPizza />
+              </div>
+              <span>Pizzas</span>
             </li>
             <li>
-              <S.Link
-                isActive={activeNow == "hamburgueres" ? true : false}
-                onClick={() => setActiveNow("hamburgueres")}
-                href="#hamburgueres">Hamburguers
-              </S.Link>
+              <div>
+                <IconPizza />
+              </div>
+              <span>Hamburguer</span>
             </li>
             <li>
 
@@ -75,10 +82,37 @@ export const Home = () => {
       </S.WrapperHeader>
 
       <S.WrapperDestaques>
-        <h4>Destaques</h4>
+        <h4>Os mais pedidos</h4>
         <div className='content_itens'>
           <div className="destaque_item">
-            <img src="" alt="" />
+            <img src={Pizza} alt="" />
+            <p>Porção de fritas P</p>
+            <div className='price_destaque'>
+              <span>R$ 36,00</span>
+              <span>R$ 26,00</span>
+            </div>
+          </div>
+
+          <div className="destaque_item">
+            <img src={Pizza} alt="" />
+            <p>Porção de fritas M</p>
+            <div className='price_destaque'>
+              <span>R$ 36,00</span>
+              <span>R$ 26,00</span>
+            </div>
+          </div>
+
+          <div className="destaque_item">
+            <img src={Pizza} alt="" />
+            <p>Porção de fritas M</p>
+            <div className='price_destaque'>
+              <span>R$ 36,00</span>
+              <span>R$ 26,00</span>
+            </div>
+          </div>
+
+          <div className="destaque_item">
+            <img src={Pizza} alt="" />
             <p>Titulo do item</p>
             <div className='price_destaque'>
               <span>R$ 36,00</span>
@@ -87,34 +121,7 @@ export const Home = () => {
           </div>
 
           <div className="destaque_item">
-            <img src="" alt="" />
-            <p>Titulo do item</p>
-            <div className='price_destaque'>
-              <span>R$ 36,00</span>
-              <span>R$ 26,00</span>
-            </div>
-          </div>
-
-          <div className="destaque_item">
-            <img src="" alt="" />
-            <p>Titulo do item</p>
-            <div className='price_destaque'>
-              <span>R$ 36,00</span>
-              <span>R$ 26,00</span>
-            </div>
-          </div>
-
-          <div className="destaque_item">
-            <img src="" alt="" />
-            <p>Titulo do item</p>
-            <div className='price_destaque'>
-              <span>R$ 36,00</span>
-              <span>R$ 26,00</span>
-            </div>
-          </div>
-
-          <div className="destaque_item">
-            <img src="" alt="" />
+            <img src={Pizza} alt="" />
             <p>Titulo do item</p>
             <div className='price_destaque'>
               <span>R$ 36,00</span>
@@ -127,69 +134,102 @@ export const Home = () => {
       <S.WrapperItens>
 
         <S.BodyItens id='pizza'>
-          <S.CategoryName>
-            <p>Pizzas</p>
-          </S.CategoryName>
-
-          <S.Item onClick={() => addProduct(1)}>
-            <div>
-              <S.TitleItem>X-Tudo</S.TitleItem>
-              <S.Description>
-                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-              </S.Description>
-              <S.Price>R$ 29,00</S.Price>
-            </div>
-            <img src="" alt="" />
-          </S.Item>
-
-          <S.Item>
-            <div>
-              <S.TitleItem>X-Tudo</S.TitleItem>
-              <S.Description>
-                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-              </S.Description>
-              <S.Price>R$ 29,00</S.Price>
-            </div>
-            <img src="" alt="" />
-          </S.Item>
-
-          <S.Item>
-            <div>
-              <S.TitleItem>X-Tudo</S.TitleItem>
-              <S.Description>
-                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-              </S.Description>
-              <S.Price>R$ 29,00</S.Price>
-            </div>
-            <img src="" alt="" />
-          </S.Item>
-
-          <S.Item>
-            <div>
-              <S.TitleItem>X-Tudo</S.TitleItem>
-              <S.Description>
-                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-              </S.Description>
-              <S.Price>R$ 29,00</S.Price>
-            </div>
-            <img src="" alt="" />
-          </S.Item>
-
-          <S.Item>
-            <div>
-              <S.TitleItem>X-Tudo</S.TitleItem>
-              <S.Description>
-                Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar, molho bbq e muito bacon duas porções
-              </S.Description>
-              <S.Price>R$ 29,00</S.Price>
-            </div>
-            <img src="" alt="" />
-          </S.Item>
 
 
+          <S.ContentItens>
+            <S.Item onClick={() => addProduct(1)}>
+              <div className="content-image">
+                <img src="" alt="" />
+              </div>
+              <div className='description'>
+                <S.TitleItem>X-Tudo</S.TitleItem>
+                <S.Description>
+                  <p>Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar,</p>
+                </S.Description>
+
+                <div>
+                  <S.Price>R$ 29,00</S.Price>
+                  <IconPlus />
+                </div>
+              </div>
+
+              <div className='border-right'></div>
+            </S.Item>
+
+            <S.Item>
+              <div className="content-image">
+                <img src="" alt="" />
+              </div>
+              <div className='description'>
+                <S.TitleItem>X-Tudo</S.TitleItem>
+                <S.Description>
+                  <p>Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar,</p>
+                </S.Description>
+                <div>
+                  <S.Price>R$ 29,00</S.Price>
+                  <IconPlus />
+                </div>
+              </div>
+              <div className='border-right'></div>
+            </S.Item>
+
+            <S.Item>
+              <div className="content-image">
+                <img src="" alt="" />
+              </div>
+              <div className='description'>
+                <S.TitleItem>X-Tudo</S.TitleItem>
+                <S.Description>
+                  <p>Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar,</p>
+                </S.Description>
+                <div>
+                  <S.Price>R$ 29,00</S.Price>
+                  <IconPlus />
+                </div>
+              </div>
+              <div className='border-right'></div>
+            </S.Item>
+
+            <S.Item>
+              <div className="content-image">
+                <img src="" alt="" />
+              </div>
+              <div className='description'>
+                <S.TitleItem>X-Tudo</S.TitleItem>
+                <S.Description>
+                  <p>Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar,</p>
+                </S.Description>
+                <div>
+                  <S.Price>R$ 29,00</S.Price>
+                  <IconPlus />
+                </div>
+              </div>
+              <div className='border-right'></div>
+            </S.Item>
+
+            <S.Item>
+              <div className="content-image">
+                <img src="" alt="" />
+              </div>
+              <div className='description'>
+                <S.TitleItem>X-Tudo</S.TitleItem>
+                <S.Description>
+                  <p>Pão de batata com beterraba (vermelho), delicioso blend suíno 100g, queijo tipo cheddar,</p>
+                </S.Description>
+                <div>
+                  <S.Price>R$ 29,00</S.Price>
+                  <IconPlus />
+                </div>
+                <div>
+
+                </div>
+              </div>
+              <div className='border-right'></div>
+            </S.Item>
+          </S.ContentItens>
         </S.BodyItens>
 
-        <S.BodyItens id='hamburgueres'>
+        {/* <S.BodyItens id='hamburgueres'>
           <S.CategoryName >
             <p>Hamburgueres</p>
           </S.CategoryName>
@@ -248,7 +288,7 @@ export const Home = () => {
             </div>
             <img src="" alt="" />
           </S.Item>
-        </S.BodyItens>
+        </S.BodyItens> */}
 
       </S.WrapperItens>
 

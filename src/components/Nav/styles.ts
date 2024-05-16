@@ -5,7 +5,7 @@ export const WrapperNav = styled.div`
   background-color: #fff;
   width: max-content;
   display: block;
-  padding: 8px 45px;
+  padding: 8px 25px;
   z-index: 2;
   position: fixed;
   left: 50%;
@@ -16,6 +16,7 @@ export const WrapperNav = styled.div`
   gap: 26px;
   width: 100%;
   backdrop-filter: blur(15px);
+  border-radius: 8px 8px 0 0;
 `
 
 interface ILinkProps {
@@ -31,7 +32,7 @@ export const ContentLink = styled.div<ILinkProps>`
 
   span {
     font-size: 10px;
-    color: ${ (props) => props.isActive ? props.theme.secondary[700] : props.theme.secondary[400]};
+    color: ${ (props) => props.isActive ? props.theme.primary[800] : props.theme.secondary[400]};
     margin-top: 4px;
   }
 `;
@@ -41,9 +42,11 @@ export const Link = styled.a<ILinkProps>`
   border-radius: 50%;
   display: flex;
   flex-direction: column;
-  color: ${ (props) => props.isActive ? props.theme.color_white : props.theme.color_light };
-  background-color: ${ (props) => props.isActive ? props.theme.secondary[700] : 'transparent' };
   font-size: 1rem;
+
+  svg {
+    stroke: ${ (props) => props.isActive ? props.theme.primary[800] : props.theme.color_light };
+  }
 
   &:hover {
     /* background-color: rgba(0,0,0, 0.2); */
