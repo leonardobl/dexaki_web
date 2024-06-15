@@ -11,84 +11,22 @@ export const WrapperHeader = styled.div`
   width: 100%;
 `
 
-export const WrapperItens = styled.div``
-
-export const WrapperDestaques= styled.div`
-  margin-top: 140px;
-  margin-bottom: 16px;
-  background-color: #FFA500;
-  border-radius: 4px 0 0 4px;
-  padding: 12px 0;
-
-  h4 {
-    margin-left: 16px;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 25px;
-    color: #fff;
-    margin-bottom: 6px;
-  }
-
-  .content_itens {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    overflow-x: scroll;
-    padding: 0 16px;
-
-    .destaque_item {
-      display: flex;
-      flex-direction: column;
-
-      p {
-        font-size: 10px;
-        font-weight: 400;
-        color: #fff;
-        margin-top: 7px;
-      }
-
-      img, svg {
-        width: 120px;
-        height: 96px;
-        border-radius: 5px;
-        
-        background-position: center;
-        background-size: cover;
-      }
-
-      .price_destaque {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-
-        span:nth-child(1){
-          color: #fff;
-          font-size: 10px;
-          font-weight: 500;
-          text-decoration: line-through;
-          opacity: .7;
-        }
-
-        span:nth-child(2){
-          color: #fff;
-          font-size: 10px;
-          font-weight: 700;
-        }
-      }
-    }
-  }
-
+export const WrapperItens = styled.div`
+  margin-top: 220px;
 `
+
+
 
 export const Header = styled.div`
   width: 100%;
   background-color: #fff;
-  /* background-color: ${({theme})=> theme.secondary[200]}; */
+  /* background-color: ${({ theme }) => theme.secondary[200]}; */
   padding: 8px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `
+
 
 export const ContentLogo = styled.div`
   display: flex;
@@ -132,7 +70,7 @@ export const ContentInfo = styled.div`
     line-height: 8px;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
-    color: ${({theme})=> theme.secondary[700]};
+    color: ${({ theme }) => theme.secondary[700]};
   }
 `
 
@@ -140,6 +78,7 @@ export const MenuTab = styled.div`
 overflow-x: auto;
 white-space: nowrap;
 border-bottom: .5px solid #ccc;
+margin: 16px 0 0px 0px;
 
 
 ul {
@@ -148,10 +87,14 @@ ul {
   display: flex;
   align-items: center;
   gap: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
 
   li {
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
     
     > div {
@@ -164,12 +107,34 @@ ul {
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     }
 
-    span {
+    p {
       margin-top: 8px;
       font-size: 14px;
     }
   }
 }
+`
+
+export const Link = styled.a<ILinkProps>`
+  color: ${(props) => props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  /* border-bottom:  ${(props) => props.isActive ? `1px solid ${props.theme.primary[700]}` : ''}; */
+  transition: all 0.2s ease-in-out;
+
+  li {
+    p {
+      color: ${(props) => props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
+    }
+  }
+
+
+  &:hover {
+
+  }
+
 `
 interface ILinkProps {
   isActive: boolean
@@ -200,23 +165,10 @@ export const Notification = styled.div`
 
 `
 
-export const Link = styled.a<ILinkProps>`
-  color: ${(props) => props.isActive ? props.theme.Tertiary[700] : props.theme.secondary[700] };
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  padding-bottom: 10px;
-  border-bottom:  ${(props) => props.isActive ? `1px solid ${props.theme.Tertiary[700]}` : '' };
-  transition: all 0.2s ease-in-out;
 
-  &:hover {
-
-  }
-
-`
 
 export const BodyItens = styled.div`
-  
+  margin-bottom: 16px;
 `
 
 export const ContentItens = styled.div`
@@ -271,7 +223,7 @@ export const Item = styled.div`
   }
 
   .border-right {
-    background-color: ${ props => props.theme.primary[800]};
+    background-color: ${props => props.theme.primary[800]};
     /* background-color: red; */
     height: 100%;
     /* height: 100%; */
@@ -283,7 +235,7 @@ export const Item = styled.div`
 
 export const TitleItem = styled.p`
   font-size: 12.93px;
-  color: ${({theme})=> theme.secondary[700]};
+  color: ${({ theme }) => theme.secondary[700]};
   font-weight: 600;
   margin-bottom: 5px;
 `
