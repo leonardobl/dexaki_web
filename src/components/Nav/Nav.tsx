@@ -25,7 +25,7 @@ export const Nav = () => {
         <span>Home</span>
       </S.ContentLink>
 
-      {/* <S.ContentLink isActive={activeNow == "promocoes" ? true : false}>
+      <S.ContentLink isActive={activeNow == "promocoes" ? true : false}>
         <S.Link
           isActive={activeNow == "promocoes" ? true : false}
           onClick={() => setActiveNow("promocoes")}
@@ -34,7 +34,7 @@ export const Nav = () => {
           <IconDestaque color={isActive('promocoes')} />
         </S.Link>
         <span>Promoções</span>
-      </S.ContentLink> */}
+      </S.ContentLink>
 
       <S.ContentLink isActive={activeNow == "pedidos" ? true : false}>
         <S.Link

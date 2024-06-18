@@ -3,18 +3,19 @@ import styled from "styled-components";
 export const WrapperProduct = styled.div`
   .header-product-image {
     width: 100%;
-    height: 300px;
-    background-color: #ddd;
+    /* background-color: #ddd; */
     position: relative;
 
     img {
       object-fit: cover;
       width: 100%;
-      height: 300px;
+      height: 210px;
+      z-index: 1;
+    
     }
 
     button {
-      position: relative;
+      position: absolute;
       top: 16px;
       left: 16px;
       background-color: #fff ;
@@ -25,6 +26,7 @@ export const WrapperProduct = styled.div`
       align-items: center;
       border: none;
       cursor: pointer;
+      z-index: 20;
 
       svg, img {
         padding: 0;
@@ -57,6 +59,27 @@ export const WrapperProduct = styled.div`
     }
   }
 
+  .content-textarea {
+    padding: 0 20px;
+    margin-top: 20px;
+
+    p {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: 6px;
+      
+      min-height: 100px;
+      border-color: #ccc;
+      padding: 10px;
+      font-weight: 300;
+    }
+  }
+
   .footer-price {
     position: absolute;
     border-top: 1px solid #cccc;
@@ -68,32 +91,51 @@ export const WrapperProduct = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    .price {
+     
+      min-width: 50px;
+      p {
+        font-size: 13px;
+        color: #666;
+      }
+
+      span {
+        text-wrap: nowrap;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+
     .quantity {
       display: flex;
       align-items: center;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
+      border-radius: 6px;
       height: 47px;
 
-      gap: 6px;
+      gap: 10px;
 
       button {
         background-color: transparent;
         border: none;
-        font-size: 16px;
+        font-size: 30px;
         padding: 10px;
         height: fit-content;
-        color: #ea1d2c;
+        color: #FF6B00;
+      }
 
-        
+      span {
+        font-size: 22px;
       }
     }
 
     .button-add {
       width: 100%;
       height: fit-content;
-      background-color: #ea1d2c;
+      background-color: #FF6B00;
       color: #fff;
       font-size: 14px;
+      font-weight: 600;
       border: none;
       padding: 16px 0;
       border-radius: 6px;
