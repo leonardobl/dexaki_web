@@ -86,3 +86,22 @@ export const Status = styled.div<IStatus>`
   }
 
 `
+
+export const NoOrders = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-weight: 300;
+    margin-top: 24px;
+    max-width: 150px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 16px;
+    color: #666;
+  }
+`
