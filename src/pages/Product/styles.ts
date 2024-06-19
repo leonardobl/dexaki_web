@@ -81,7 +81,7 @@ export const WrapperProduct = styled.div`
   }
 
   .footer-price {
-    position: absolute;
+    position: fixed;
     border-top: 1px solid #cccc;
     width: 100%;
     bottom: 0;

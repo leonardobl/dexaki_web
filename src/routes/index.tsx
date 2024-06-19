@@ -5,6 +5,7 @@ import { Home } from '../pages/home/Home';
 import { Product } from '../pages/Product/Product';
 import { Notification } from '../pages/Notification/Notification'
 import { MyProfile } from '../pages/MyProfile/MyProfile';
+import { Orders } from '../pages/Orders/Orders';
 
 const Rotas = () => {
   return (
@@ -14,6 +15,7 @@ const Rotas = () => {
           <Route path="/" element={<Home />} />
           <Route path="/notification" element={<Notification />} />
           <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/orders" element={<Orders />} />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
       </AuthProvider>

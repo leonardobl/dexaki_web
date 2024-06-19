@@ -14,7 +14,9 @@ export const Nav = () => {
 
   return (
     <S.WrapperNav>
-      <S.ContentLink isActive={activeNow == "home" ? true : false}>
+      <S.ContentLink
+        onClick={() => navigate('/')}
+        isActive={activeNow == "home" ? true : false}>
         <S.Link
           isActive={activeNow == "home" ? true : false}
           onClick={() => setActiveNow("home")}
@@ -36,7 +38,10 @@ export const Nav = () => {
         <span>Promoções</span>
       </S.ContentLink>
 
-      <S.ContentLink isActive={activeNow == "pedidos" ? true : false}>
+      <S.ContentLink
+        onClick={() => navigate('/orders')}
+        isActive={activeNow == "pedidos" ? true : false}
+      >
         <S.Link
           isActive={activeNow == "pedidos" ? true : false}
           onClick={() => setActiveNow("pedidos")}
