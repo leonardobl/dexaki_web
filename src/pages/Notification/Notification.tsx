@@ -1,8 +1,8 @@
 
 import { useNavigate } from 'react-router-dom'
 import { IconArrowLeft } from '../../assets/icons/IconArrowLeft'
-import { IconNotification } from '../../assets/icons/IconNotification'
-import { FaMotorcycle } from "react-icons/fa6";
+// import { IconNotification } from '../../assets/icons/IconNotification'
+
 import { TbChefHat } from "react-icons/tb";
 import { FaRegClock } from "react-icons/fa";
 import { GiStorkDelivery } from "react-icons/gi";
@@ -13,16 +13,16 @@ export const Notification = () => {
   const navigate = useNavigate()
 
   // 'WAITING', 'IN_PRODUCTION', 'DONE'
-  function parsStatus(status: string) {
-    switch (status) {
-      case 'WAITING':
-        return '#D73035';
-      case 'IN_PRODUCTION':
-        return '#FFA500';
-      case 'DONE':
-        return '#30D787'
-    }
-  }
+  // function parsStatus(status: string) {
+  //   switch (status) {
+  //     case 'WAITING':
+  //       return '#D73035';
+  //     case 'IN_PRODUCTION':
+  //       return '#FFA500';
+  //     case 'DONE':
+  //       return '#30D787'
+  //   }
+  // }
 
 
 

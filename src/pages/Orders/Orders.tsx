@@ -1,5 +1,5 @@
 import { Nav } from '../../components/Nav/Nav'
-import { IconNotification } from '../../assets/icons/IconNotification'
+// import { IconNotification } from '../../assets/icons/IconNotification'
 import * as S from './styles'
 
 export const Orders = () => {
