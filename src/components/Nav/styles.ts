@@ -29,7 +29,7 @@ export const WrapperNav = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
-    font-size: 1rem;
+    font-size: 12px;
     color: #666666;
   
   }
