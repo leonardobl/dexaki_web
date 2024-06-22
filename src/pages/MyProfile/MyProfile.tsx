@@ -54,9 +54,9 @@ export const MyProfile = () => {
         </S.Card>
 
         <S.Card>
-          <div>
+          <div className='content-info'>
             <CiLocationOn size={24} />
-            <div className='content-info'>
+            <div >
               <p>Endereços</p>
               <span>Meus endereços de entrega</span>
             </div>
@@ -67,7 +67,7 @@ export const MyProfile = () => {
         <S.Card>
           <div className='content-info'>
             <CiUser size={24} />
-            <div className='content-info'>
+            <div >
               <p>Dados da Conta</p>
               <span>MinhaInformações da conta</span>
             </div>
