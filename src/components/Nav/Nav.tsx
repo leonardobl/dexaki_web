@@ -1,6 +1,6 @@
 
 import * as S from './styles'
-import { IconDestaque, IconHome, IconPedidos, IconPerfil } from './Icons';
+import { IconHome, IconPedidos, IconPerfil } from './Icons';
 import { NavLink } from 'react-router-dom';
 
 export const Nav = () => {
