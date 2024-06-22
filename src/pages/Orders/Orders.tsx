@@ -1,5 +1,6 @@
-import { Nav } from '../../components/Nav/Nav'
-// import { IconNotification } from '../../assets/icons/IconNotification'
+
+import { Template } from '../../template/Template'
+
 import * as S from './styles'
 
 export const Orders = () => {
@@ -18,65 +19,19 @@ export const Orders = () => {
   }
 
   return (
-    <S.Wrapper>
-      <h1>Pedidos</h1>
+    <Template>
+      <S.Wrapper>
+        <h1>Pedidos</h1>
 
-      <div>
-        <h3>Em Andamento</h3>
-
-        <S.CardOrders>
-          <div className=''>
-            <p>Pedido #45</p>
-            <S.Status status={parsStatus('DONE')}>
-              <span></span>
-              <p>Pronto!</p>
-            </S.Status>
-          </div>
-
-          <div className="bodyCard">
-            <p>
-              <span>1X</span>
-              Frango com Catupiry
-            </p>
-
-            <p>
-              <span>1X</span>
-              Quatro Queijos
-            </p>
-          </div>
-        </S.CardOrders>
-
-        <S.CardOrders>
-          <div className=''>
-            <p>Pedido #16</p>
-            <S.Status status={parsStatus('IN_PRODUCTION')}>
-              <span></span>
-              <p>Entrou em produção</p>
-            </S.Status>
-          </div>
-
-          <div className="bodyCard">
-            <p>
-              <span>1X</span>
-              Frango com Catupiry
-            </p>
-
-            <p>
-              <span>1X</span>
-              Quatro Queijos
-            </p>
-          </div>
-        </S.CardOrders>
-
-        <div style={{ marginTop: '40px' }}>
-          <h3>Anteriores</h3>
+        <div>
+          <h3>Em Andamento</h3>
 
           <S.CardOrders>
             <div className=''>
-              <p>Pedido #22</p>
-              <S.Status status={parsStatus('FINISHED')}>
+              <p>Pedido #45</p>
+              <S.Status status={parsStatus('DONE')}>
                 <span></span>
-                <p>Finalizado em 07/12/2022</p>
+                <p>Pronto!</p>
               </S.Status>
             </div>
 
@@ -92,15 +47,63 @@ export const Orders = () => {
               </p>
             </div>
           </S.CardOrders>
-        </div>
-      </div>
 
-      {/* <S.NoOrders>
+          <S.CardOrders>
+            <div className=''>
+              <p>Pedido #16</p>
+              <S.Status status={parsStatus('IN_PRODUCTION')}>
+                <span></span>
+                <p>Entrou em produção</p>
+              </S.Status>
+            </div>
+
+            <div className="bodyCard">
+              <p>
+                <span>1X</span>
+                Frango com Catupiry
+              </p>
+
+              <p>
+                <span>1X</span>
+                Quatro Queijos
+              </p>
+            </div>
+          </S.CardOrders>
+
+          <div style={{ marginTop: '40px' }}>
+            <h3>Anteriores</h3>
+
+            <S.CardOrders>
+              <div className=''>
+                <p>Pedido #22</p>
+                <S.Status status={parsStatus('FINISHED')}>
+                  <span></span>
+                  <p>Finalizado em 07/12/2022</p>
+                </S.Status>
+              </div>
+
+              <div className="bodyCard">
+                <p>
+                  <span>1X</span>
+                  Frango com Catupiry
+                </p>
+
+                <p>
+                  <span>1X</span>
+                  Quatro Queijos
+                </p>
+              </div>
+            </S.CardOrders>
+          </div>
+        </div>
+
+        {/* <S.NoOrders>
         <IconNotification />
         <p>Você não possui Pedidos</p>
       </S.NoOrders> */}
 
-      <Nav />
-    </S.Wrapper>
+
+      </S.Wrapper>
+    </Template>
   )
 }

@@ -17,6 +17,30 @@ export const WrapperNav = styled.div`
   width: 100%;
   backdrop-filter: blur(15px);
   border-radius: 8px 8px 0 0;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+
+    padding: 0.4rem;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1rem;
+    color: #666666;
+  
+  }
+
+  a.active {
+    color: ${(props) => props.theme.primary[800]};
+
+    svg {
+      filter: brightness(0) saturate(100%) invert(40%) sepia(76%) saturate(1379%) hue-rotate(1deg) brightness(103%) contrast(107%);
+    }
+  }
 `
 
 interface ILinkProps {
@@ -24,31 +48,9 @@ interface ILinkProps {
 }
 
 export const ContentLink = styled.div<ILinkProps>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   
-
-
-  span {
-    font-size: 10px;
-    color: ${ (props) => props.isActive ? props.theme.primary[800] : props.theme.secondary[400]};
-    margin-top: 4px;
-  }
 `;
 
 export const Link = styled.a<ILinkProps>`
-  padding: 0.6rem;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-
-  svg {
-    stroke: ${ (props) => props.isActive ? props.theme.primary[800] : props.theme.color_light };
-  }
-
-  &:hover {
-    /* background-color: rgba(0,0,0, 0.2); */
-  }
+  
 `
