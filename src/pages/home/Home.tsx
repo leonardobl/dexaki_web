@@ -38,11 +38,15 @@ export const Home = () => {
             </S.Notification>
           </S.Header>
 
-          <S.ContentInfo>
-            <p>Aberto hoje às 17h30</p>
-            <span></span>
-            <p>Pedido min R$ 7,00</p>
-          </S.ContentInfo>
+          <S.WrapperInfo>
+            <S.ContentInfo>
+              <p>Aberto hoje às 17h30</p>
+              <span></span>
+              <p>Pedido min R$ 7,00</p>
+            </S.ContentInfo>
+
+            <p onClick={() => navigate('/profileCompany')}>Perfil da Loja</p>
+          </S.WrapperInfo>
 
           <S.MenuTab>
             <ul>

@@ -52,7 +52,7 @@ export const ContentInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 16px;
+
   /* border-bottom: .5px solid #ccc; */
   
 
@@ -251,4 +251,20 @@ export const Price = styled.p`
   font-size: 14px;
   color: #333;
   font-weight: 700;
+`
+
+
+export const WrapperInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+
+
+  p {
+    font-size: 10px;
+    line-height: 8px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: ${({ theme }) => theme.secondary[700]};
+  }
 `

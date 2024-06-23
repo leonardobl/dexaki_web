@@ -9,6 +9,7 @@ import { Orders } from '../pages/Orders/Orders';
 import { Favorite } from '../pages/Favorite/Favorite';
 import { Cupons } from '../pages/Cupons/Cupons';
 import { Address } from '../pages/Address/Address';
+import { ProfileCompany } from '../pages/ProfileCompany/ProfileCompany';
 
 const Rotas = () => {
   return (
@@ -21,6 +22,7 @@ const Rotas = () => {
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/cupons" element={<Cupons />} />
           <Route path="/adress" element={<Address />} />
+          <Route path="/profileCompany" element={<ProfileCompany />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
