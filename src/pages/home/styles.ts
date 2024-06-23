@@ -12,7 +12,7 @@ export const WrapperHeader = styled.div`
 `
 
 export const WrapperItens = styled.div`
-  margin-top: 180px;
+  margin-top: 185px;
 `
 
 
@@ -107,12 +107,7 @@ ul {
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     }
 
-    p {
-      /*   */
-      margin-top: 8px;
-      font-size: 12px;
-      font-weight: 300;
-    }
+   
   }
 }
 `
@@ -128,7 +123,11 @@ export const Link = styled.a<ILinkProps>`
 
   li {
     p {
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: ${props => props.isActive ? 500 : 300};
       color: ${(props) => props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
+     
     }
   }
 

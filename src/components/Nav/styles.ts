@@ -24,12 +24,12 @@ export const WrapperNav = styled.div`
     align-items: center;
     text-decoration: none;
 
-    padding: 0.4rem;
+    /* padding: 0.4rem; */
     
     display: flex;
     flex-direction: column;
     gap: 5px;
-    font-size: 12px;
+    font-size: 10px;
     color: #666666;
   
   }

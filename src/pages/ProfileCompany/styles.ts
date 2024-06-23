@@ -32,11 +32,11 @@ export const Wrapper = styled.div`
     .hour {
       display: flex;
       flex-direction: column;
-      >div {
+
+      > div {
         display: flex;
         gap: 16px;
       }
-
 
       ul {
         padding-left: 30px;

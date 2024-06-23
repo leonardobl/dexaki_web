@@ -67,7 +67,7 @@ export const Product = () => {
           <span> {quantity} </span>
           <button type='button' onClick={add}>+</button>
         </div>
-        <button className='button-add'>
+        <button className='button-add' onClick={() => navigate('/bag')}>
           Adicionar R$ {total}
         </button>
       </div>

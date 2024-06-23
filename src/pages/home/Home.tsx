@@ -106,8 +106,6 @@ export const Home = () => {
           </S.MenuTab>
         </S.WrapperHeader>
 
-
-
         <S.WrapperItens>
           <S.BodyItens id='Pizzas'>
             <S.ContentItens>
@@ -287,8 +285,6 @@ export const Home = () => {
 
 
         </S.WrapperItens>
-
-
       </S.Wrapper>
     </Template>
   )
