@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
 
   header {
-    margin-top: 24px;
+    padding-top: 24px;
     width: 100%;
     display: flex;
     gap: 16px;
@@ -35,12 +35,14 @@ export const Body = styled.div`
 
 
 export const Card = styled.div`
+  background-color: #fff;
+  padding: 16px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
 
   .content-info {
     display: flex;

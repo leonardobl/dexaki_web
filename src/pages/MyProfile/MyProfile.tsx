@@ -7,8 +7,11 @@ import { CiUser } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
 import { CiCircleQuestion } from "react-icons/ci";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 export const MyProfile = () => {
+  const navigate = useNavigate()
+
   return (
     <S.Wrapper>
       <header>
@@ -19,7 +22,7 @@ export const MyProfile = () => {
       </header>
 
       <S.Body>
-        <S.Card>
+        <S.Card onClick={() => navigate('/cupons')}>
           <div className='content-info'>
             <IoTicketOutline size={24} />
             <div>
@@ -31,7 +34,7 @@ export const MyProfile = () => {
           <MdKeyboardArrowRight />
         </S.Card>
 
-        <S.Card>
+        <S.Card onClick={() => navigate('/favorite')}>
           <div className='content-info'>
             <CiHeart size={24} />
             <div>
@@ -42,7 +45,7 @@ export const MyProfile = () => {
           <MdKeyboardArrowRight />
         </S.Card>
 
-        <S.Card>
+        <S.Card onClick={() => navigate('/notification')}>
           <div className='content-info'>
             <IoIosNotificationsOutline size={24} />
             <div>
@@ -53,7 +56,7 @@ export const MyProfile = () => {
           <MdKeyboardArrowRight />
         </S.Card>
 
-        <S.Card>
+        <S.Card onClick={() => navigate('/adress')}>
           <div className='content-info'>
             <CiLocationOn size={24} />
             <div >
