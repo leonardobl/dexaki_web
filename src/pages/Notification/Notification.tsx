@@ -94,9 +94,6 @@ export const Notification = () => {
             </div>
           </S.NotificationItem>
 
-
-
-
         </S.Body>
 
 

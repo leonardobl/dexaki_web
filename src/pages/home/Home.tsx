@@ -57,7 +57,7 @@ export const Home = () => {
               >
                 <li>
                   <div>
-                    <CiPizza size={22} />
+                    <CiPizza size={18} />
                   </div>
                   <p>Pizzas</p>
                 </li>
@@ -70,7 +70,7 @@ export const Home = () => {
               >
                 <li>
                   <div>
-                    <LiaHamburgerSolid size={22} />
+                    <LiaHamburgerSolid size={18} />
                   </div>
                   <p>Hamburguer</p>
                 </li>
@@ -83,7 +83,7 @@ export const Home = () => {
               >
                 <li>
                   <div>
-                    <BiDrink size={22} />
+                    <BiDrink size={18} />
                   </div>
                   <p>Bebidas</p>
                 </li>
@@ -96,7 +96,7 @@ export const Home = () => {
               >
                 <li>
                   <div>
-                    <IoFastFoodOutline size={22} />
+                    <IoFastFoodOutline size={18} />
                   </div>
                   <p>Combos</p>
                 </li>

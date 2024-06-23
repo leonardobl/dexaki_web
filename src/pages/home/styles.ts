@@ -12,7 +12,7 @@ export const WrapperHeader = styled.div`
 `
 
 export const WrapperItens = styled.div`
-  margin-top: 220px;
+  margin-top: 180px;
 `
 
 
@@ -78,7 +78,7 @@ export const MenuTab = styled.div`
 overflow-x: auto;
 white-space: nowrap;
 /* border-bottom: .5px solid #ccc; */
-margin: 16px 0 0px 0px;
+margin: 5px 0 0px 0px;
 
 
 ul {
@@ -101,15 +101,17 @@ ul {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 52px;
-      width: 52px;
+      height: 42px;
+      width: 42px;
       border-radius: 50%;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     }
 
     p {
+      /*   */
       margin-top: 8px;
-      font-size: 14px;
+      font-size: 12px;
+      font-weight: 300;
     }
   }
 }

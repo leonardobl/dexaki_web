@@ -1,8 +1,8 @@
 import * as S from './styles'
 import { IconArrowLeft } from '../../assets/icons/IconArrowLeft'
 import { useNavigate } from 'react-router-dom'
-import { FiCreditCard } from "react-icons/fi";
-import { IoLocationOutline } from "react-icons/io5";
+import { FaRegCreditCard } from "react-icons/fa";
+import { MdLocationOn } from "react-icons/md";
 import { RiBuilding3Line } from "react-icons/ri";
 import { FaRegClock } from "react-icons/fa";
 
@@ -17,16 +17,16 @@ export const ProfileCompany = () => {
 
       <header>
         <div>
-          <RiBuilding3Line size={22} />
+          <RiBuilding3Line size={22} color='#333' />
           <p>Nome: <span>Chicago burguer</span> </p>
         </div>
         <div>
-          <IoLocationOutline size={32} />
+          <MdLocationOn size={32} color='#333' />
           <p>Endereço: <span>Rua Desembargador Filho, 2345; próximo ao atacadão</span> </p>
         </div>
 
         <div>
-          <FiCreditCard size={32} />
+          <FaRegCreditCard size={36} color='#333' />
           <p>
             Forma de Pagamentos:
             <span> Dinheiro, Pix, Cartões: visa, mastercard, elo, hipercard, AmericanExpress</span>
@@ -35,7 +35,7 @@ export const ProfileCompany = () => {
 
         <div className='hour'>
           <div>
-            <FaRegClock size={18} />
+            <FaRegClock size={18} color='#333' />
             <p> Horários de Atendimento:</p>
           </div>
           <ul>

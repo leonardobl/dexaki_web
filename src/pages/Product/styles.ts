@@ -85,7 +85,7 @@ export const WrapperProduct = styled.div`
     border-top: 1px solid #cccc;
     width: 100%;
     bottom: 0;
-    padding: 16px 20px;
+    padding: 10px 20px;
     display: flex;
     gap: 16px;
     justify-content: space-between;
@@ -119,7 +119,7 @@ export const WrapperProduct = styled.div`
         background-color: transparent;
         border: none;
         font-size: 30px;
-        padding: 10px;
+        padding: 6px;
         height: fit-content;
         color: #FF6B00;
       }

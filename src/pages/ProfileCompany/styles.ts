@@ -17,16 +17,14 @@ export const Wrapper = styled.div`
       gap: 16px;
       margin-bottom: 16px;
 
-
       p {
         color: #333;
         font-weight: 600;
         font-size: 14px;
       
-        
-
         span {
           color: #666;
+          font-size: 12px;
         }
       }
     }

@@ -44,7 +44,7 @@ export const ContentNotification = styled.div`
 `
 
 export const NotificationItem = styled.div`
-  margin-bottom: 16px;
+  margin-bottom: 6px;
   width: 100%;
   border-radius: 8px;
   background-color: #fff;
