@@ -43,7 +43,7 @@ export const SelectedItem = styled.div`
   
   .content-left {
     display: flex;
-    gap: 6px;
+    gap: 16px;
   }
 
   .img {
@@ -139,6 +139,38 @@ export const Resume = styled.div`
       strong {
         font-size: 14px;
         
+      }
+    }
+  }
+`
+
+
+export const ContentFooter = styled.div`
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 20px 24px;
+
+
+  >div {
+    width: 100%;
+    span {
+      font-size: 10px;
+      color: #666;
+    }
+
+    h3 {
+      font-size: 18px;
+
+      small {
+        color: #666;
+        font-size: 12px;
       }
     }
   }

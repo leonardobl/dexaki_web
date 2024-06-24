@@ -1,3 +1,4 @@
+import { Button } from '../../components/Button/Button';
 import * as S from './styles'
 import { FaTrash } from "react-icons/fa";
 
@@ -94,6 +95,15 @@ export const Bag = () => {
           </div>
         </S.Resume>
       </S.Body>
+
+      <S.ContentFooter>
+        <div>
+          <span>Total com a entrega</span>
+          <h3>R$ 42,88/ <small> 1 item</small></h3>
+        </div>
+
+        <Button>Continuar</Button>
+      </S.ContentFooter>
     </S.Wrapper>
   )
 }
