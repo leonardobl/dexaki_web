@@ -10,9 +10,9 @@ export const Nav = () => {
     <S.WrapperNav>
 
       {/* Quando tiver item na sacola exibir este component */}
-      <S.Bag>
+      <S.Bag onClick={() => navigate('/bag')}>
         <IoBagCheckOutline color='#fff' size={18} style={{ marginRight: '30px' }} />
-        <small onClick={() => navigate('/bag')}>Ver Sacola</small>
+        <small >Ver Sacola</small>
         <p>R$ 24,98</p>
       </S.Bag>
 
