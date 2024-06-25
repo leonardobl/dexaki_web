@@ -97,13 +97,13 @@ export const SelectedItem = styled.div`
   }
 
   .option {
-    background-color: #f1f1f1;
-    padding: 4px 10px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
     border-radius: 4px;
     height: fit-content;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
   }
 `;
 
@@ -189,6 +189,9 @@ export const AddItem = styled.div`
   display: flex;
   justify-content: center;
   gap: 16px;
+  border: 1px solid #ddd;
+  padding: 14px 0px;
+  border-radius: 4px;
 
   p {
     font-size: 14px;
