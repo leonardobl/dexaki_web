@@ -177,7 +177,7 @@ export const ContentFooter = styled.div`
 `
 
 export const AddItem = styled.div`
-width: 100%;
+  width: 100%;
   margin: 22px 0;
   display: flex;
   justify-content: center;
