@@ -9,13 +9,14 @@ export const Wrapper = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    
 
     
     h3 {
       color: #333;
       font-size: 16px;
       text-align: center;
+      margin-left: 110px;
       
       font-weight: 600;
     }
@@ -126,19 +127,25 @@ export const Resume = styled.div`
       align-items: center;
 
       p {
-        font-size: 14px;
+        font-size: 12px;
         color: #333;
         font-weight: 300;
       }
 
       span {
-        font-size: 14px;
+        font-size: 12px;
         color: #666;
+        font-weight: 300;
       }
 
       strong {
-        font-size: 14px;
-        
+        font-size: 13px;
+        color: #666;
+      }
+
+      .total {
+        font-weight: 600;
+        font-size: 13px;
       }
     }
   }

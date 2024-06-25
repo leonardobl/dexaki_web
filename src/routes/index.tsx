@@ -11,6 +11,7 @@ import { Cupons } from '../pages/Cupons/Cupons';
 import { Address } from '../pages/Address/Address';
 import { ProfileCompany } from '../pages/ProfileCompany/ProfileCompany';
 import { Bag } from '../pages/Bag/Bag';
+import { TypeDelivery } from '../pages/TypeDelivery/TypeDelivery';
 
 const Rotas = () => {
   return (
@@ -24,6 +25,7 @@ const Rotas = () => {
           <Route path="/cupons" element={<Cupons />} />
           <Route path="/adress" element={<Address />} />
           <Route path="/bag" element={<Bag />} />
+          <Route path="/typeDelivery" element={<TypeDelivery />} />
           <Route path="/profileCompany" element={<ProfileCompany />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/product/:id" element={<Product />} />

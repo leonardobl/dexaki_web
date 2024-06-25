@@ -3,6 +3,8 @@ import { Button } from '../../components/Button/Button';
 import * as S from './styles'
 import { FaTrash } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+
 
 export const Bag = () => {
   const navigate = useNavigate();
@@ -10,7 +12,9 @@ export const Bag = () => {
   return (
     <S.Wrapper>
       <header>
-
+        <div onClick={() => navigate('/')} >
+          <MdOutlineKeyboardArrowLeft size={22} />
+        </div>
         <h3>Sacola</h3>
 
       </header>
@@ -79,7 +83,7 @@ export const Bag = () => {
         </S.SelectedItem>
 
         <S.AddItem onClick={() => navigate('/')}>
-          <p>Adicionar masi pedidos</p>
+          <p>Adicionar mais pedidos</p>
           <FaCartPlus size={16} color='#FF6B00' />
         </S.AddItem>
 
@@ -104,7 +108,7 @@ export const Bag = () => {
 
             <div>
               <strong>Total</strong>
-              <span>R$ 65,80</span>
+              <span className='total'>R$ 65,80</span>
             </div>
           </div>
         </S.Resume>
@@ -116,7 +120,7 @@ export const Bag = () => {
           <h3>R$ 42,88/ <small> 1 item</small></h3>
         </div>
 
-        <Button>Continuar</Button>
+        <Button onClick={() => navigate('/typeDelivery')}>Continuar</Button>
       </S.ContentFooter>
     </S.Wrapper>
   )

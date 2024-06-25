@@ -30,7 +30,7 @@ export const Profile = styled.div`
 
 export const Body = styled.div`
   width: 100%;
-  margin-top: 44px;
+  margin-top: 24px;
 `
 
 
