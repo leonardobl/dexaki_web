@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button/Button';
 import * as S from './styles'
 import { FaTrash } from "react-icons/fa";
+import { FaCartPlus } from "react-icons/fa";
 
 export const Bag = () => {
+  const navigate = useNavigate();
+
   return (
     <S.Wrapper>
       <header>
@@ -74,6 +78,11 @@ export const Bag = () => {
           </div>
         </S.SelectedItem>
 
+        <S.AddItem onClick={() => navigate('/')}>
+          <p>Adicionar masi pedidos</p>
+          <FaCartPlus size={16} color='#FF6B00' />
+        </S.AddItem>
+
         <S.Resume>
           <h3>Resumo de valores</h3>
 
@@ -86,6 +95,11 @@ export const Bag = () => {
             <div>
               <p>Taxa de Entrega</p>
               <span>R$ 5,80</span>
+            </div>
+
+            <div>
+              <p>Cumpons</p>
+              <span>R$ 0,00</span>
             </div>
 
             <div>

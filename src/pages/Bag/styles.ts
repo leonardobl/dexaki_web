@@ -175,3 +175,17 @@ export const ContentFooter = styled.div`
     }
   }
 `
+
+export const AddItem = styled.div`
+width: 100%;
+  margin: 22px 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  p {
+    font-size: 14px;
+    color: ${props => props.theme.primary['800']};
+    font-weight: 500;
+  }
+`;

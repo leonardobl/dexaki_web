@@ -5,7 +5,7 @@ export const WrapperNav = styled.div`
   background-color: #fff;
   width: max-content;
   display: block;
-  padding: 8px 25px;
+  padding: 8px 24px 6px 24px;
   z-index: 2;
   position: fixed;
   left: 50%;
@@ -16,7 +16,7 @@ export const WrapperNav = styled.div`
   gap: 26px;
   width: 100%;
   backdrop-filter: blur(15px);
-  border-radius: 8px 8px 0 0;
+  
 
   a {
     display: flex;
@@ -29,8 +29,12 @@ export const WrapperNav = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
-    font-size: 10px;
+    
     color: #666666;
+    span {
+      font-size: .75rem;
+      font-weight: 300;
+    }
   
   }
 
@@ -53,4 +57,29 @@ export const ContentLink = styled.div<ILinkProps>`
 
 export const Link = styled.a<ILinkProps>`
   
+`
+
+export const Bag = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 52px;
+  left: 0px;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${props => props.theme.primary['800']};
+
+  p {
+    color: #fff;
+    font-size: 12px;
+  }
+
+  small {
+    color: #fff;
+    font-size: 12px;
+  }
 `
