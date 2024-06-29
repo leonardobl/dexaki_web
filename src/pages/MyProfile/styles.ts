@@ -30,13 +30,13 @@ export const Profile = styled.div`
 
 export const Body = styled.div`
   width: 100%;
-  margin-top: 24px;
+  margin-top: 16px;
 `
 
 
 export const Card = styled.div`
   background-color: #fff;
-  padding: 16px;
+  padding: 14px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -69,3 +69,27 @@ export const Card = styled.div`
     }
   }
 `
+
+export const ContentLogin = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  button {
+    background-color: transparent;
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+`;

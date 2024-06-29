@@ -17,3 +17,8 @@ export const Header = styled.div`
     font-weight: 600;
   }
 `;
+
+
+export const Body = styled.div`
+  
+`;

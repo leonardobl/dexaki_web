@@ -4,6 +4,7 @@ import * as S from './styles'
 import { FaTrash } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { TbTrashXFilled } from "react-icons/tb";
 
 
 export const Bag = () => {
@@ -14,8 +15,13 @@ export const Bag = () => {
       <header>
         <div onClick={() => navigate('/')} >
           <MdOutlineKeyboardArrowLeft size={22} />
+          <h3>Sacola</h3>
         </div>
-        <h3>Sacola</h3>
+
+        <h4>
+          <TbTrashXFilled color='#FF6B00' size={19} />
+          Limpar
+        </h4>
 
       </header>
 

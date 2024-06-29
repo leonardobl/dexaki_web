@@ -11,6 +11,10 @@ export const TypeDelivery = () => {
       <S.Header onClick={() => navigate('/')}>
         <MdOutlineKeyboardArrowLeft size={22} />
         <h1>Entregar no Endereço</h1>
+
+        <S.Body>
+
+        </S.Body>
       </S.Header>
     </S.Wrapper>
   )

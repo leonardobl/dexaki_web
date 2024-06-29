@@ -8,7 +8,15 @@ export const Wrapper = styled.div`
   header {
     width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
     
 
     
@@ -16,9 +24,16 @@ export const Wrapper = styled.div`
       color: #333;
       font-size: 16px;
       text-align: center;
-      margin-left: 110px;
-      
       font-weight: 600;
+    }
+
+    h4 {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      gap: 6px;
+      font-size: 14px;
+      color: ${props => props.theme.primary['800']};
     }
   }
 `;
@@ -162,7 +177,7 @@ export const ContentFooter = styled.div`
   bottom: 0px;
   left: 0px;
   right: 0px;
-  padding: 20px 24px;
+  padding: 12px 24px;
 
 
   >div {
