@@ -8,11 +8,16 @@ import { CiLocationOn } from "react-icons/ci";
 import { CiCircleQuestion } from "react-icons/ci";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const MyProfile = () => {
   const [isAutenticated, setIsAutenticated] = useState(false)
   const navigate = useNavigate()
+
+
+  useEffect(() => {
+    setIsAutenticated(false)
+  }, [])
 
   return (
     <S.Wrapper>
