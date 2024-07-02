@@ -3,8 +3,11 @@ import * as S from './styles'
 import { IoIosArrowBack } from "react-icons/io";
 import ImageMock from '../../assets/image/pizza02.png'
 import { useEffect, useState } from 'react';
+import { Modal } from '../../components/Modal/Modal';
+import { Button } from '../../components/Button/Button';
 
 export const Product = () => {
+  const [showModal, setShowModal] = useState(false);
   const [price] = useState(15.00)
   const [total, setTotal] = useState(price ?? 0)
   const [quantity, setQuantity] = useState<number>(1)
@@ -28,6 +31,10 @@ export const Product = () => {
 
   function goBack() {
     navigate('/')
+  }
+
+  function goToBag() {
+    navigate('/bag')
   }
 
   useEffect(() => {
@@ -67,10 +74,20 @@ export const Product = () => {
           <span> {quantity} </span>
           <button type='button' onClick={add}>+</button>
         </div>
-        <button className='button-add' onClick={() => navigate('/bag')}>
+        <button className='button-add' onClick={() => setShowModal(true)}>
           Adicionar R$ {total}
         </button>
       </div>
+
+
+      <Modal
+        title='Confirme Seus Dados'
+        isOpen={showModal}
+        onClose={() => setShowModal(!showModal)}
+      >
+        <p>Aquii</p>
+        <Button onClick={() => navigate('/')}>Continuar Comprando</Button>
+      </Modal>
 
     </S.WrapperProduct>
   )
