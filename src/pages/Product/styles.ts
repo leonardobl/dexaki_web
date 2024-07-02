@@ -14,7 +14,7 @@ export const WrapperProduct = styled.div`
     
     }
 
-    button {
+    > button {
       position: absolute;
       top: 16px;
       left: 16px;
@@ -144,3 +144,9 @@ export const WrapperProduct = styled.div`
     }
   }
 `
+
+export const ContentButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;

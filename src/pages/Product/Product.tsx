@@ -33,9 +33,6 @@ export const Product = () => {
     navigate('/')
   }
 
-  function goToBag() {
-    navigate('/bag')
-  }
 
   useEffect(() => {
     setTotal(quantity * price)
@@ -85,8 +82,13 @@ export const Product = () => {
         isOpen={showModal}
         onClose={() => setShowModal(!showModal)}
       >
-        <p>Aquii</p>
-        <Button onClick={() => navigate('/')}>Continuar Comprando</Button>
+        <div>
+
+        </div>
+        <S.ContentButton>
+          <Button variant='outlined' onClick={() => navigate('/bag')}>Ir Para carinho</Button>
+          <Button onClick={() => navigate('/')}>Continuar Comprando</Button>
+        </S.ContentButton>
       </Modal>
 
     </S.WrapperProduct>

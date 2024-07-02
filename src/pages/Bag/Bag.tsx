@@ -5,9 +5,35 @@ import { FaTrash } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
+import { useState } from 'react';
+
+const data = [
+  {
+    id: 1,
+    name: "Pizza 4 queijos",
+    ingredients: ["Borda cheddar", "Cebola pimentada"],
+    quantity: 2,
+    price: 22.5,
+  },
+  {
+    id: 2,
+    name: "Hamburuger",
+    ingredients: ["Ovo", "Cebola pimentada"],
+    quantity: 3,
+    price: 32.5,
+  }
+]
 
 
 export const Bag = () => {
+  const [itens, setItens] = useState();
+
+  function add(id: number) {
+    const selectedItem = data.find(i => i.id === id)
+
+
+  }
+
   const navigate = useNavigate();
 
   return (
@@ -32,7 +58,7 @@ export const Bag = () => {
           <div className='content-left'>
             <div className="img"></div>
             <div className="description">
-              <p>Quatro Queijos</p>
+              <p>Hamburguer</p>
               <span>Mussarela, Ovos, baicon...</span>
               <strong>R$: 40,00</strong>
 
@@ -54,7 +80,7 @@ export const Bag = () => {
 
             <span>1</span>
 
-            <span> + </span>
+            <span onClick={() => add(1)}> + </span>
           </div>
         </S.SelectedItem>
 
@@ -62,7 +88,7 @@ export const Bag = () => {
           <div className='content-left'>
             <div className="img"></div>
             <div className="description">
-              <p>Quatro Queijos</p>
+              <p>Pizza Quatro Queijos</p>
               <span>Mussarela, Ovos, baicon...</span>
               <strong>R$: 40,00</strong>
 
