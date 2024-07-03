@@ -9,6 +9,24 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: ${(props) => props.theme.body};
+
+    --sb-track-color: #232e33;
+    --sb-thumb-color: #ff6b00;
+    --sb-size: 4px;
+  }
+
+  body::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
   }
 
   body, input, button , textarea {
@@ -16,6 +34,15 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
   }
+
+
+  
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
 
   html{
     scroll-behavior: smooth;

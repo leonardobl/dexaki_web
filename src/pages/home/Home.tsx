@@ -10,6 +10,7 @@ import { BiDrink } from "react-icons/bi";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { Template } from "../../template/Template";
 import { useHome } from "./useHome";
+import { NavHashLink } from "react-router-hash-link";
 
 export const Home = () => {
   const { burgers, pizzas } = useHome();
@@ -48,31 +49,35 @@ export const Home = () => {
 
           <S.MenuTab>
             <ul>
-              <S.Link
+              {/* <S.Link
                 isActive={activeNow == "Pizzas" ? true : false}
                 onClick={() => setActiveNow("Pizzas")}
                 href="#Pizzas"
-              >
+              > */}
+              <NavHashLink smooth={true} to={"#Pizzas"}>
                 <li>
                   <div>
                     <CiPizza size={18} />
                   </div>
                   <p>Pizzas</p>
                 </li>
-              </S.Link>
+              </NavHashLink>
+              {/* </S.Link> */}
 
-              <S.Link
+              {/* <S.Link
                 isActive={activeNow == "Hamburguer" ? true : false}
-                onClick={() => setActiveNow("Hamburguer")}
-                href="#Hamburguer"
-              >
+                // onClick={() => setActiveNow("Hamburguer")}
+                // href="#Hamburguer"
+              > */}
+              <NavHashLink smooth={true} to={"#Hamburguer"}>
                 <li>
                   <div>
                     <LiaHamburgerSolid size={18} />
                   </div>
                   <p>Hamburguer</p>
                 </li>
-              </S.Link>
+              </NavHashLink>
+              {/* </S.Link> */}
 
               <S.Link
                 isActive={activeNow == "Bebidas" ? true : false}
