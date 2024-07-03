@@ -1,17 +1,15 @@
-import * as S from './styles'
+import * as S from "./styles";
 
-import { Nav } from '../components/Nav/Nav';
+import { Nav } from "../components/Nav/Nav";
 interface ITemplateProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export const Template = ({ children }: ITemplateProps) => {
-
   return (
     <S.Wrapper>
-      {children}
+      <S.Container>{children}</S.Container>
       <Nav />
     </S.Wrapper>
-  )
-}
-
+  );
+};

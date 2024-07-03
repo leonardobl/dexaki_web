@@ -10,10 +10,10 @@ import { BiDrink } from "react-icons/bi";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { Template } from "../../template/Template";
 import { useHome } from "./useHome";
-import { NavHashLink } from "react-router-hash-link";
+import { maskMoney } from "../../Util/masks";
 
 export const Home = () => {
-  const { burgers, pizzas } = useHome();
+  const { DataPizzas } = useHome();
   const [activeNow, setActiveNow] = useState("Pizzas");
   const navigate = useNavigate();
 
@@ -49,35 +49,31 @@ export const Home = () => {
 
           <S.MenuTab>
             <ul>
-              {/* <S.Link
+              <S.Link
                 isActive={activeNow == "Pizzas" ? true : false}
                 onClick={() => setActiveNow("Pizzas")}
                 href="#Pizzas"
-              > */}
-              <NavHashLink smooth={true} to={"#Pizzas"}>
+              >
                 <li>
                   <div>
                     <CiPizza size={18} />
                   </div>
                   <p>Pizzas</p>
                 </li>
-              </NavHashLink>
-              {/* </S.Link> */}
+              </S.Link>
 
-              {/* <S.Link
+              <S.Link
                 isActive={activeNow == "Hamburguer" ? true : false}
-                // onClick={() => setActiveNow("Hamburguer")}
-                // href="#Hamburguer"
-              > */}
-              <NavHashLink smooth={true} to={"#Hamburguer"}>
+                onClick={() => setActiveNow("Hamburguer")}
+                href="#Hamburguer"
+              >
                 <li>
                   <div>
                     <LiaHamburgerSolid size={18} />
                   </div>
                   <p>Hamburguer</p>
                 </li>
-              </NavHashLink>
-              {/* </S.Link> */}
+              </S.Link>
 
               <S.Link
                 isActive={activeNow == "Bebidas" ? true : false}
@@ -111,20 +107,20 @@ export const Home = () => {
         <S.WrapperItens>
           <S.BodyItens id="Pizzas">
             <S.ContentItens>
-              {pizzas?.length > 0 &&
-                pizzas.map((p) => (
+              {DataPizzas?.length > 0 &&
+                DataPizzas.map((p) => (
                   <S.Item key={p.id} onClick={() => addProduct(1)}>
                     <div className="content-image">
-                      <img src={p.image} alt="img produto" />
+                      <img src={p.img} alt="img produto" />
                     </div>
                     <div className="description">
-                      <S.TitleItem>{p.restaurantChain}</S.TitleItem>
+                      <S.TitleItem>{p.name}</S.TitleItem>
                       <S.Description>
-                        <p>{p.title}</p>
+                        <p>{p.description}</p>
                       </S.Description>
 
                       <div>
-                        <S.Price>R$ 29,00</S.Price>
+                        <S.Price>{maskMoney(p.price)}</S.Price>
                         <IconPlus />
                       </div>
                     </div>
@@ -136,11 +132,11 @@ export const Home = () => {
 
           <S.BodyItens id="Hamburguer">
             <S.ContentItens>
-              {burgers?.length > 0 &&
+              {/* {burgers?.length > 0 &&
                 burgers.map((b) => (
                   <S.Item key={b.id} onClick={() => addProduct(1)}>
                     <div className="content-image">
-                      <img src={b.image} alt="img produto" />
+                      <img src={getImgBurger()} alt="img produto" />
                     </div>
                     <div className="description">
                       <S.TitleItem>{b.restaurantChain}</S.TitleItem>
@@ -156,7 +152,7 @@ export const Home = () => {
 
                     <div className="border-right"></div>
                   </S.Item>
-                ))}
+                ))} */}
             </S.ContentItens>
           </S.BodyItens>
         </S.WrapperItens>
