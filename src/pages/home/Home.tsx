@@ -13,7 +13,7 @@ import { useHome } from "./useHome";
 import { maskMoney } from "../../Util/masks";
 
 export const Home = () => {
-  const { DataPizzas } = useHome();
+  const { DataPizzas, DataBurgers } = useHome();
   const [activeNow, setActiveNow] = useState("Pizzas");
   const navigate = useNavigate();
 
@@ -132,27 +132,27 @@ export const Home = () => {
 
           <S.BodyItens id="Hamburguer">
             <S.ContentItens>
-              {/* {burgers?.length > 0 &&
-                burgers.map((b) => (
+              {DataBurgers?.length > 0 &&
+                DataBurgers.map((b) => (
                   <S.Item key={b.id} onClick={() => addProduct(1)}>
                     <div className="content-image">
-                      <img src={getImgBurger()} alt="img produto" />
+                      <img src={b.img} alt="img produto" />
                     </div>
                     <div className="description">
-                      <S.TitleItem>{b.restaurantChain}</S.TitleItem>
+                      <S.TitleItem>{b.name}</S.TitleItem>
                       <S.Description>
-                        <p>{b.title}</p>
+                        <p>{b.description}</p>
                       </S.Description>
 
                       <div>
-                        <S.Price>R$ 29,00</S.Price>
+                        <S.Price>{maskMoney(b.price)}</S.Price>
                         <IconPlus />
                       </div>
                     </div>
 
                     <div className="border-right"></div>
                   </S.Item>
-                ))} */}
+                ))}
             </S.ContentItens>
           </S.BodyItens>
         </S.WrapperItens>
