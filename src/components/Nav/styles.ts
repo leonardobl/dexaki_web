@@ -7,16 +7,15 @@ export const WrapperNav = styled.div`
   display: block;
   padding: 8px 24px 6px 24px;
   z-index: 2;
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  /* position: fixed; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
   bottom: 0px;
   display: flex;
   justify-content: space-between;
   gap: 26px;
   width: 100%;
   backdrop-filter: blur(15px);
-  
 
   a {
     display: flex;
@@ -25,39 +24,35 @@ export const WrapperNav = styled.div`
     text-decoration: none;
 
     /* padding: 0.4rem; */
-    
+
     display: flex;
     flex-direction: column;
     gap: 5px;
-    
+
     color: #666666;
     span {
-      font-size: .75rem;
+      font-size: 0.75rem;
       font-weight: 300;
     }
-  
   }
 
   a.active {
     color: ${(props) => props.theme.primary[800]};
 
     svg {
-      filter: brightness(0) saturate(100%) invert(40%) sepia(76%) saturate(1379%) hue-rotate(1deg) brightness(103%) contrast(107%);
+      filter: brightness(0) saturate(100%) invert(40%) sepia(76%)
+        saturate(1379%) hue-rotate(1deg) brightness(103%) contrast(107%);
     }
   }
-`
-
-interface ILinkProps {
-  isActive: boolean
-}
-
-export const ContentLink = styled.div<ILinkProps>`
-  
 `;
 
-export const Link = styled.a<ILinkProps>`
-  
-`
+interface ILinkProps {
+  isActive: boolean;
+}
+
+export const ContentLink = styled.div<ILinkProps>``;
+
+export const Link = styled.a<ILinkProps>``;
 
 export const Bag = styled.div`
   background-color: #fff;
@@ -71,7 +66,7 @@ export const Bag = styled.div`
 
   justify-content: space-between;
   align-items: center;
-  background-color: ${props => props.theme.primary['800']};
+  background-color: ${(props) => props.theme.primary["800"]};
 
   p {
     color: #fff;
@@ -82,4 +77,4 @@ export const Bag = styled.div`
     color: #fff;
     font-size: 12px;
   }
-`
+`;

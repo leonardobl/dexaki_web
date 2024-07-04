@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div``;
 
 export const WrapperHeader = styled.div`
-  position: fixed;
+  /* position: fixed;
   top: 0;
+  right: 0; */
   background-color: #fff;
   width: 100%;
 `;
