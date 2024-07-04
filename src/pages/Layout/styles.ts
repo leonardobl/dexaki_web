@@ -9,4 +9,5 @@ export const Wrapper = styled.div`
   max-height: calc(100vh - 237px);
   overflow-y: scroll;
   height: 100%;
+  scroll-behavior: smooth;
 `;
