@@ -1,4 +1,3 @@
-import React from "react";
 import * as S from "./styles";
 import { CiPizza } from "react-icons/ci";
 import { IoMdNotificationsOutline } from "react-icons/io";
