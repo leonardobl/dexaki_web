@@ -7,27 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    background-color: ${(props) => props.theme.body};
-
-    --sb-track-color: #232e33;
-    --sb-thumb-color: #ff6b00;
-    --sb-size: 4px;
-  }
-
-  body::-webkit-scrollbar {
-    width: var(--sb-size)
-  }
-
-  body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 3px;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 3px;
-  }
+ 
 
   body, input, button , textarea {
     font-family: 'Roboto', sans-serif;
@@ -35,14 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
 
-
-  
-
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-  }
-}
 
   html{
     scroll-behavior: smooth;
@@ -58,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  h1, h2,h3,h4,h5,p,span {
+  h1,h2,h3,h4,h5,p,span {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
   }

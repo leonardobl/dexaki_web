@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
 `;
 
 export const BodyItens = styled.div`
@@ -65,7 +65,6 @@ export const Item = styled.div`
     background-color: ${(props) => props.theme.primary[800]};
     /* background-color: red; */
     height: 100%;
-    /* height: 100%; */
 
     width: 16px;
     border-radius: 0px 7px 7px 0px;

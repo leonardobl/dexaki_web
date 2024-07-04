@@ -1,19 +1,22 @@
 import styled from "styled-components";
 
 export const WrapperNav = styled.div`
+  /* border: 1px solid red; */
+
   border-top: 1px solid #ccc;
   background-color: #fff;
   width: max-content;
   display: block;
-  padding: 8px 24px 6px 24px;
+  /* padding: 8px 24px 6px 24px; */
   z-index: 2;
   /* position: fixed; */
   /* left: 50%; */
   /* transform: translateX(-50%); */
-  bottom: 0px;
+  /* bottom: 0px; */
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 26px;
+  /* gap: 26px; */
   width: 100%;
   backdrop-filter: blur(15px);
 
@@ -50,7 +53,12 @@ interface ILinkProps {
   isActive: boolean;
 }
 
-export const ContentLink = styled.div<ILinkProps>``;
+export const ContentLink = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+`;
 
 export const Link = styled.a<ILinkProps>``;
 
@@ -59,7 +67,7 @@ export const Bag = styled.div`
   padding: 20px;
   width: 100%;
   height: 50px;
-  position: fixed;
+  /* position: fixed; */
   bottom: 52px;
   left: 0px;
   display: flex;
