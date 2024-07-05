@@ -20,6 +20,7 @@ export const Container = styled.div`
     border-radius: 6px;
     height: 55px;
     width: 55px;
+    display: block;
   }
 
   .description {

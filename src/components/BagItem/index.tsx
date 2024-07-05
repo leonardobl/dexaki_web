@@ -12,7 +12,9 @@ export const BagItem = ({ product, ...rest }: IBagItemProps) => {
   return (
     <S.Container {...rest}>
       <div className="content-left">
-        <div className="img"></div>
+        <div>
+          <img className="img" src={product?.img} alt="imagem do produto" />
+        </div>
         <div className="description">
           <p>{product?.name}</p>
           <span>{product?.description}</span>
