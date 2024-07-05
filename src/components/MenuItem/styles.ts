@@ -33,6 +33,7 @@ export const WrapperContent = styled.div`
 export const WrapperImage = styled.div`
   max-width: 100px;
   width: 100%;
+  display: flex;
 
   img {
     width: 100%;
