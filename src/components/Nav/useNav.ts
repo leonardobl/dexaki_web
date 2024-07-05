@@ -9,11 +9,10 @@ export const useNav = () => {
 
   useEffect(() => {
     const temp = bagProducts
-      .map((i) => i.price)
+      .map((i) => i.price * i.quantity)
       .reduce((acc, price) => acc + price, 0);
 
     setTotal(temp);
-    console.log(temp);
   }, [bagProducts]);
 
   return { navigate, total };
