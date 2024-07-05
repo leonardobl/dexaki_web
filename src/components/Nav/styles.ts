@@ -8,7 +8,7 @@ export const WrapperNav = styled.div`
   width: max-content;
   display: block;
   /* padding: 8px 24px 6px 24px; */
-  z-index: 2;
+  /* z-index: 2; */
   /* position: fixed; */
   /* left: 50%; */
   /* transform: translateX(-50%); */
@@ -68,8 +68,8 @@ export const Bag = styled.div`
   width: 100%;
   height: 50px;
   /* position: fixed; */
-  bottom: 52px;
-  left: 0px;
+  /* bottom: 52px;
+  left: 0px; */
   display: flex;
 
   justify-content: space-between;
