@@ -33,7 +33,7 @@ export function maskCep(value: string) {
 }
 
 export function maskMoney(e: number) {
-  if (!e) return;
+  if (!e) return "R$: 0,00";
 
   const options = {
     style: "currency",

@@ -1,10 +1,13 @@
 import * as S from "./styles";
 import { IconHome, IconPedidos, IconPerfil } from "./Icons";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IoBagCheckOutline } from "react-icons/io5";
+import { useNav } from "./useNav";
+import { maskMoney } from "../../Util/masks";
 
 export const Nav = () => {
-  const navigate = useNavigate();
+  const { navigate, total } = useNav();
+
   return (
     <S.WrapperNav>
       {/* Quando tiver item na sacola exibir este component */}
@@ -15,7 +18,7 @@ export const Nav = () => {
           style={{ marginRight: "30px" }}
         />
         <small>Ver Sacola</small>
-        <p>R$ 24,98</p>
+        <p>{maskMoney(total)}</p>
       </S.Bag>
 
       <S.ContentLink>

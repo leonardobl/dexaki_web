@@ -9,6 +9,10 @@ export interface IDataProducts {
   category: string;
 }
 
+export interface IDataGetProducts extends IDataProducts {
+  quantity: number;
+}
+
 export const DataProducts = [
   {
     id: v4(),

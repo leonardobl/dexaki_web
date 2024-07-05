@@ -11,7 +11,8 @@ export const BodyItens = styled.div`
 export const ContentItens = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 18px 0;
+  padding: 0 16px;
 `;
 
 export const WrapperItens = styled.div`
@@ -19,6 +20,7 @@ export const WrapperItens = styled.div`
 `;
 
 export const Item = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,4 +105,12 @@ export const WrapperInfo = styled.div`
     font-family: "Montserrat", sans-serif;
     color: ${({ theme }) => theme.secondary[700]};
   }
+`;
+
+export const ButtonPlus = styled.button`
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  all: unset;
 `;
