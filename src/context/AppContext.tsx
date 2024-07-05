@@ -24,10 +24,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => {
-    getBagProducts();
+    parserBagProducts();
   }, [products]);
 
-  function getBagProducts() {
+  function parserBagProducts() {
     const ids = [...new Set(products.map((prod) => prod.id))];
 
     const parseProducts = ids.map((id) => {
