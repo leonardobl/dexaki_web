@@ -7,8 +7,8 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   overflow-y: scroll;
-  max-height: calc(100vh - 302px);
-  /* height: 100%; */
+  max-height: calc(100dvh - 302px);
+  height: 100%;
   scroll-behavior: smooth;
 
   --sb-track-color: #232e33;

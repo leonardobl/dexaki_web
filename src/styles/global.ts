@@ -20,9 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
-  html, body, #root {
-    height: 100dvh;
-  }
+
 
   .container {
     max-width: 1216px;
