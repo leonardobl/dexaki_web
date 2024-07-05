@@ -1,27 +1,18 @@
-import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import * as S from "./styles";
-import { FaTrash } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
-// import { useState } from "react";
+import { useBag } from "./useBag";
+import { BagItem } from "../../components/BagItem";
 
 export const Bag = () => {
-  // const [itens, setItens] = useState();
-
-  function add(id: number) {
-    console.log(id);
-
-    // const selectedItem = data.find(i => i.id === id)
-  }
-
-  const navigate = useNavigate();
+  const { navigate, bagProducts } = useBag();
 
   return (
     <S.Wrapper>
       <header>
-        <div onClick={() => navigate("/")}>
+        <div onClick={() => navigate(-1)}>
           <MdOutlineKeyboardArrowLeft size={22} />
           <h3>Sacola</h3>
         </div>
@@ -34,65 +25,9 @@ export const Bag = () => {
 
       <S.Body>
         <h3>Itens adicionados</h3>
-        <S.SelectedItem>
-          <div className="content-left">
-            <div className="img"></div>
-            <div className="description">
-              <p>Hamburguer</p>
-              <span>Mussarela, Ovos, baicon...</span>
-              <strong>R$: 40,00</strong>
 
-              <div className="content-itens">
-                <div>
-                  <p>1</p>
-                  <span> Refrigerante</span>
-                </div>
-
-                <div>
-                  <p>1</p>
-                  <span> Batata Fritas</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="option">
-            <FaTrash color="#FF6B00" size={12} />
-
-            <span>1</span>
-
-            <span onClick={() => add(1)}> + </span>
-          </div>
-        </S.SelectedItem>
-
-        <S.SelectedItem>
-          <div className="content-left">
-            <div className="img"></div>
-            <div className="description">
-              <p>Pizza Quatro Queijos</p>
-              <span>Mussarela, Ovos, baicon...</span>
-              <strong>R$: 40,00</strong>
-
-              <div className="content-itens">
-                <div>
-                  <p>1</p>
-                  <span> Refrigerante</span>
-                </div>
-
-                <div>
-                  <p>1</p>
-                  <span> Batata Fritas</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="option">
-            <FaTrash color="#FF6B00" size={12} />
-
-            <span>1</span>
-
-            <span> + </span>
-          </div>
-        </S.SelectedItem>
+        {bagProducts?.length > 0 &&
+          bagProducts.map((i) => <BagItem key={i.id} product={i} />)}
 
         <S.AddItem onClick={() => navigate("/")}>
           <p>Adicionar mais pedidos</p>
