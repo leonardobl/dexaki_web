@@ -1,6 +1,4 @@
-import { DataBurgers } from "../../Mocks/burguers";
-import { DataPizzas } from "../../Mocks/pizzas";
-
+import { DataProducts } from "../../Mocks/productsMock";
 export const useHome = () => {
-  return { DataPizzas, DataBurgers };
+  return { DataProducts };
 };

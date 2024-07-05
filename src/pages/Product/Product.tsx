@@ -1,16 +1,23 @@
-import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { IoIosArrowBack } from "react-icons/io";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Modal } from "../../components/Modal/Modal";
 import { Button } from "../../components/Button/Button";
+import { useProduct } from "./useProduct";
+import { maskMoney } from "../../Util/masks";
 
 export const Product = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [price] = useState(15.0);
-  const [total, setTotal] = useState(price ?? 0);
-  const [quantity, setQuantity] = useState<number>(1);
-  const navigate = useNavigate();
+  const {
+    navigate,
+    quantity,
+    setQuantity,
+    setShowModal,
+    setTotal,
+    showModal,
+    total,
+    price,
+    product,
+  } = useProduct();
 
   function add() {
     setQuantity(quantity + 1);
@@ -39,7 +46,7 @@ export const Product = () => {
   return (
     <S.WrapperProduct>
       <div className="header-product-image">
-        {/* <img src={ImageMock} alt="" /> */}
+        <img src={product?.img} alt="imagem produto" />
 
         <button type="button" onClick={goBack}>
           <IoIosArrowBack size={24} color="#FF6B00" />
@@ -47,13 +54,9 @@ export const Product = () => {
       </div>
 
       <div className="description-product">
-        <h4>Nome of Product</h4>
-        <span className="price">R$ 15,00</span>
-        <p className="description">
-          Pão de Brioche, 2 X Blend bovino 200g feito na churrasqueira, 4 fatias
-          de queijo cheddar, cebola caramelizada, bacon em fatias e Requeijão
-          cremoso.
-        </p>
+        <h4>{product?.name}</h4>
+        <span className="price">{maskMoney(product?.price)}</span>
+        <p className="description">{product?.description}</p>
       </div>
 
       <div className="content-textarea">

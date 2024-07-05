@@ -7,13 +7,9 @@ import { maskMoney } from "../../Util/masks";
 import { Layout } from "../Layout";
 
 export const Home = () => {
-  const { DataPizzas, DataBurgers } = useHome();
+  const { DataProducts } = useHome();
 
   const navigate = useNavigate();
-
-  function addProduct(item: number) {
-    navigate(`/product/${item}`);
-  }
 
   return (
     <Layout>
@@ -21,9 +17,12 @@ export const Home = () => {
         <S.WrapperItens>
           <S.BodyItens id="Pizzas">
             <S.ContentItens>
-              {DataPizzas?.length > 0 &&
-                DataPizzas.map((p) => (
-                  <S.Item key={p.id} onClick={() => addProduct(1)}>
+              {DataProducts?.length > 0 &&
+                DataProducts.filter((i) => i.category === "pizza").map((p) => (
+                  <S.Item
+                    key={p.id}
+                    onClick={() => navigate(`/product/${p.id}`)}
+                  >
                     <div className="content-image">
                       <img src={p.img} alt="img produto" />
                     </div>
@@ -46,9 +45,12 @@ export const Home = () => {
 
           <S.BodyItens id="Hamburguer">
             <S.ContentItens>
-              {DataBurgers?.length > 0 &&
-                DataBurgers.map((b) => (
-                  <S.Item key={b.id} onClick={() => addProduct(1)}>
+              {DataProducts?.length > 0 &&
+                DataProducts.filter((i) => i.category === "burger").map((b) => (
+                  <S.Item
+                    key={b.id}
+                    onClick={() => navigate(`/product/${b.id}`)}
+                  >
                     <div className="content-image">
                       <img src={b.img} alt="img produto" />
                     </div>
