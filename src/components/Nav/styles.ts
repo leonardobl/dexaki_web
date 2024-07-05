@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const WrapperNav = styled.div`
-  /* border: 1px solid red; */
-
   border-top: 1px solid #ccc;
   background-color: #fff;
   width: max-content;
@@ -57,16 +55,16 @@ export const ContentLink = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 10px 16px;
 `;
 
 export const Link = styled.a<ILinkProps>``;
 
 export const Bag = styled.div`
   background-color: #fff;
-  padding: 20px;
+  padding: 12px 16px;
   width: 100%;
-  height: 50px;
+  /* height: 50px; */
   /* position: fixed; */
   /* bottom: 52px;
   left: 0px; */
