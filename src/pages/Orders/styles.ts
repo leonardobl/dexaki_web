@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-
 export const Wrapper = styled.div`
-  height: 100vh;
-  background-color: #FAFAFA;
+  min-height: calc(100dvh - 100px);
+  height: 100%;
+  background-color: #fafafa;
   padding: 24px;
+  overflow-y: scroll;
 
   h1 {
     color: #333;
@@ -18,7 +19,7 @@ export const Wrapper = styled.div`
     color: #666666;
     margin-bottom: 24px;
   }
-`
+`;
 
 export const CardOrders = styled.div`
   background-color: #fff;
@@ -26,12 +27,10 @@ export const CardOrders = styled.div`
   border-radius: 8px;
   margin-bottom: 8px;
 
-  >div {
+  > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    
   }
 
   .bodyCard {
@@ -52,13 +51,12 @@ export const CardOrders = styled.div`
       }
     }
   }
-`
-
+`;
 
 interface IStatus {
   status?: {
-    bg: string,
-    color: string
+    bg: string;
+    color: string;
   };
 }
 
@@ -68,7 +66,7 @@ export const Status = styled.div<IStatus>`
   gap: 6px;
   background-color: ${(props) => props.status?.bg};
   color: ${(props) => props.status?.color};
-  
+
   padding: 4px;
   border-radius: 4px;
 
@@ -82,10 +80,8 @@ export const Status = styled.div<IStatus>`
   p {
     font-size: 12px;
     font-weight: 500;
-
   }
-
-`
+`;
 
 export const NoOrders = styled.div`
   height: 100%;
@@ -104,4 +100,4 @@ export const NoOrders = styled.div`
     font-size: 16px;
     color: #666;
   }
-`
+`;

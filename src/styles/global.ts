@@ -15,10 +15,17 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
 
+  html, body, #root {
+    min-height: 100dvh;
+    height: 100%;
+  }
+
 
   html{
     scroll-behavior: smooth;
   }
+
+
 
 
 

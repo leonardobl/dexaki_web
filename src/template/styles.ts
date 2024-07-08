@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   /* padding-bottom: 100px; */
+  max-height: 100dvh;
+  height: 100%;
 `;
 
 export const Container = styled.div`
-  max-height: 100dvh;
-  height: 100%;
   /* padding-top: 185px; */
 `;
 
