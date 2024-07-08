@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
 `;
 
 export const Container = styled.div`
   max-height: 100vh;
   height: 100%;
-  padding-top: 185px;
+  /* padding-top: 185px; */
 `;
 
 export const ContentLogo = styled.div`
