@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  max-height: 100vh;
+  max-height: 100dvh;
   height: 100%;
   /* padding-top: 185px; */
 `;
