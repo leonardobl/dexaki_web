@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: 0px 24px;
+  /* padding: 0px 24px; */
   height: 100vh;
-  background-color: #FAFAFA;
-
+  background-color: #fafafa;
 
   header {
     background-color: #fff;
@@ -21,7 +20,7 @@ export const Wrapper = styled.div`
         color: #333;
         font-weight: 600;
         font-size: 14px;
-      
+
         span {
           color: #666;
           font-size: 12px;

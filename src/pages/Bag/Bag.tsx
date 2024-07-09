@@ -5,9 +5,10 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
 import { useBag } from "./useBag";
 import { BagItem } from "../../components/BagItem";
+import { maskMoney } from "../../Util/masks";
 
 export const Bag = () => {
-  const { navigate, bagProducts } = useBag();
+  const { navigate, bagProducts, total, frete } = useBag();
 
   return (
     <S.Wrapper>
@@ -40,12 +41,12 @@ export const Bag = () => {
           <div className="description">
             <div>
               <p>Subtotal</p>
-              <span>R$ 55,80</span>
+              <span>{maskMoney(total)}</span>
             </div>
 
             <div>
               <p>Taxa de Entrega</p>
-              <span>R$ 5,80</span>
+              <span>{maskMoney(frete)}</span>
             </div>
 
             <div>
@@ -55,7 +56,7 @@ export const Bag = () => {
 
             <div>
               <strong>Total</strong>
-              <span className="total">R$ 65,80</span>
+              <span className="total">{maskMoney(total + frete)}</span>
             </div>
           </div>
         </S.Resume>
@@ -65,7 +66,7 @@ export const Bag = () => {
         <div>
           <span>Total com a entrega</span>
           <h3>
-            R$ 42,88/ <small> 1 item</small>
+            {maskMoney(total + frete)}/ <small> 1 item</small>
           </h3>
         </div>
 
