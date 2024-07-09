@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: 24px;
   max-height: 100dvh;
   height: 100%;
   background-color: #fafafa;
 
   header {
+    padding: 24px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -38,8 +38,9 @@ export const Wrapper = styled.div`
 
 export const Body = styled.div`
   overflow-y: scroll;
-  max-height: calc(100dvh - 112px);
+  max-height: calc(100dvh - 136px);
   height: 100%;
+  padding: 16px;
 
   h3 {
     font-size: 14px;
