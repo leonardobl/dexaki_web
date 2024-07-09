@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 24px;
-  height: 100vh;
-  background-color: #FAFAFA;
+  max-height: 100dvh;
+  height: 100%;
+  background-color: #fafafa;
 
   header {
     width: 100%;
@@ -11,15 +12,12 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
 
-
     div {
       display: flex;
       align-items: center;
       gap: 16px;
     }
-    
 
-    
     h3 {
       color: #333;
       font-size: 16px;
@@ -33,12 +31,16 @@ export const Wrapper = styled.div`
       font-weight: 600;
       gap: 6px;
       font-size: 14px;
-      color: ${props => props.theme.primary['800']};
+      color: ${(props) => props.theme.primary["800"]};
     }
   }
 `;
 
 export const Body = styled.div`
+  overflow-y: scroll;
+  max-height: calc(100dvh - 112px);
+  height: 100%;
+
   h3 {
     font-size: 14px;
     color: black;
@@ -56,7 +58,7 @@ export const SelectedItem = styled.div`
 
   display: flex;
   justify-content: space-between;
-  
+
   .content-left {
     display: flex;
     gap: 16px;
@@ -122,7 +124,6 @@ export const SelectedItem = styled.div`
   }
 `;
 
-
 export const Resume = styled.div`
   h3 {
     color: #333;
@@ -164,8 +165,7 @@ export const Resume = styled.div`
       }
     }
   }
-`
-
+`;
 
 export const ContentFooter = styled.div`
   background-color: #fff;
@@ -173,14 +173,13 @@ export const ContentFooter = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 10px 0;
-  position: fixed;
-  bottom: 0px;
+  /* position: fixed; */
+  /* bottom: 0px;
   left: 0px;
-  right: 0px;
+  right: 0px; */
   padding: 12px 24px;
 
-
-  >div {
+  > div {
     width: 100%;
     span {
       font-size: 10px;
@@ -196,7 +195,7 @@ export const ContentFooter = styled.div`
       }
     }
   }
-`
+`;
 
 export const AddItem = styled.div`
   width: 100%;
@@ -210,7 +209,7 @@ export const AddItem = styled.div`
 
   p {
     font-size: 14px;
-    color: ${props => props.theme.primary['800']};
+    color: ${(props) => props.theme.primary["800"]};
     font-weight: 500;
   }
 `;
