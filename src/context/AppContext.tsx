@@ -41,8 +41,24 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setBagProducts(parseProducts as IDataGetProducts[]);
   }
 
+  function handleRemoveBagItem(id: string) {
+    const filter = products.filter((i) => i.id !== id);
+    setProducts(filter);
+  }
+
+  function handleCleanBag() {
+    setProducts([] as IDataGetProducts[]);
+  }
+
   return (
-    <AppContext.Provider value={{ addBagProduct, bagProducts }}>
+    <AppContext.Provider
+      value={{
+        addBagProduct,
+        bagProducts,
+        handleRemoveBagItem,
+        handleCleanBag,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

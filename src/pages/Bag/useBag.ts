@@ -8,6 +8,7 @@ export const useBag = () => {
     .map((i) => i.price * i.quantity)
     .reduce((acc, p) => acc + p, 0);
   const frete = 5.5;
+  const { handleCleanBag } = useAppContext();
 
-  return { navigate, bagProducts, total, frete };
+  return { navigate, bagProducts, total, frete, handleCleanBag };
 };

@@ -8,7 +8,7 @@ import { BagItem } from "../../components/BagItem";
 import { maskMoney } from "../../Util/masks";
 
 export const Bag = () => {
-  const { navigate, bagProducts, total, frete } = useBag();
+  const { navigate, bagProducts, total, frete, handleCleanBag } = useBag();
 
   return (
     <S.Wrapper>
@@ -18,7 +18,7 @@ export const Bag = () => {
           <h3>Sacola</h3>
         </div>
 
-        <h4>
+        <h4 onClick={handleCleanBag}>
           <TbTrashXFilled color="#FF6B00" size={19} />
           Limpar
         </h4>

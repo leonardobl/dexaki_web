@@ -1,14 +1,17 @@
-import { FaTrash } from "react-icons/fa";
 import * as S from "./styles";
 import { ComponentProps } from "react";
 import { IDataGetProducts } from "../../Mocks/productsMock";
 import { maskMoney } from "../../Util/masks";
+import { InputAddItem } from "../InputAddItem";
+import { useAppContext } from "../../context/AppContext";
 
 interface IBagItemProps extends ComponentProps<"div"> {
   product: IDataGetProducts;
 }
 
 export const BagItem = ({ product, ...rest }: IBagItemProps) => {
+  const { handleRemoveBagItem } = useAppContext();
+
   return (
     <S.Container {...rest}>
       <div className="content-left">
@@ -33,13 +36,11 @@ export const BagItem = ({ product, ...rest }: IBagItemProps) => {
           </div>
         </div>
       </div>
-      <div className="option">
-        <FaTrash color="#FF6B00" size={12} />
 
-        <span>1</span>
-
-        <span> + </span>
-      </div>
+      <InputAddItem
+        onRemove={() => handleRemoveBagItem(product.id)}
+        productDefault={product?.quantity}
+      />
     </S.Container>
   );
 };
