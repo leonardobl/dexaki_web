@@ -2,7 +2,6 @@ import { ComponentProps } from "react";
 import * as S from "./styles";
 import { IDataProducts } from "../../Mocks/productsMock";
 import { maskMoney } from "../../Util/masks";
-import { useAppContext } from "../../context/AppContext";
 import { IconPlus } from "../../assets/icons/IconPlus";
 import { useMenuItem } from "./useMenuItem";
 
@@ -11,8 +10,7 @@ interface IMenuItemPros extends ComponentProps<"div"> {
 }
 
 export const MenuItem = ({ product, ...rest }: IMenuItemPros) => {
-  const { addBagProduct } = useAppContext();
-  const { navigate } = useMenuItem();
+  const { navigate, addItem } = useMenuItem();
 
   return (
     <S.Container {...rest}>
@@ -28,7 +26,7 @@ export const MenuItem = ({ product, ...rest }: IMenuItemPros) => {
       </S.WrapperContent>
 
       <S.WrapperAction>
-        <button type="button" onClick={() => addBagProduct(product)}>
+        <button type="button" onClick={() => addItem(product)}>
           <IconPlus />
         </button>
       </S.WrapperAction>
