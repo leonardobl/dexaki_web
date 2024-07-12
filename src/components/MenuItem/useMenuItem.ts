@@ -7,22 +7,26 @@ export const useMenuItem = () => {
   const [bagProductsStore, setBagProductsStore] = useLocalStorage<
     IDataGetProducts[]
   >({
-    storageKey: "bagProductsStore",
+    storageKey: `bagProductsStore`,
     initialValue: [],
   });
 
   function addItem(item: IDataProducts) {
-    const temp = [...bagProductsStore];
-    if (temp?.length) {
-      const newValues = temp.map((i: IDataGetProducts) => {
-        return i.id === item.id
-          ? { ...i, quantity: i.quantity + 1 }
-          : { ...item, quantity: 1 };
-      });
-      setBagProductsStore(newValues);
+    const oldValues = [...bagProductsStore];
+
+    const hasItem = oldValues.some((prod) => prod.id === item.id);
+
+    if (hasItem) {
+      const newValues = oldValues.map((prod) =>
+        prod.id === item.id ? { ...prod, quantity: prod.quantity + 1 } : prod
+      );
+
+      setBagProductsStore(newValues as IDataGetProducts[]);
+
       return;
     }
-    setBagProductsStore([{ ...item, quantity: 1 }]);
+
+    setBagProductsStore([...bagProductsStore, { ...item, quantity: 1 }]);
   }
 
   return { navigate, addItem };

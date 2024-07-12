@@ -5,7 +5,7 @@ import { Layout } from "../Layout";
 import { MenuItem } from "../../components/MenuItem";
 
 export const Home = () => {
-  const { DataProducts } = useHome();
+  const { products } = useHome();
 
   return (
     <Layout>
@@ -13,19 +13,19 @@ export const Home = () => {
         <S.WrapperItens>
           <S.BodyItens id="Pizzas">
             <S.ContentItens>
-              {DataProducts?.length > 0 &&
-                DataProducts.filter((i) => i.category === "pizza").map((p) => (
-                  <MenuItem product={p} key={p.id} />
-                ))}
+              {products?.length > 0 &&
+                products
+                  .filter((i) => i.category === "pizza")
+                  .map((p) => <MenuItem product={p} key={p.id} />)}
             </S.ContentItens>
           </S.BodyItens>
 
           <S.BodyItens id="Hamburguer">
             <S.ContentItens>
-              {DataProducts?.length > 0 &&
-                DataProducts.filter((i) => i.category === "burger").map((b) => (
-                  <MenuItem product={b} key={b.id} />
-                ))}
+              {products?.length > 0 &&
+                products
+                  .filter((i) => i.category === "burger")
+                  .map((b) => <MenuItem product={b} key={b.id} />)}
             </S.ContentItens>
           </S.BodyItens>
         </S.WrapperItens>
