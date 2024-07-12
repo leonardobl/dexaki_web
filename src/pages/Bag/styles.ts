@@ -41,12 +41,14 @@ export const Body = styled.div`
   max-height: calc(100dvh - 136px);
   height: 100%;
   padding: 16px;
+ 
 
   h3 {
     font-size: 14px;
     color: black;
-    margin-bottom: 10px;
-    margin-top: 24px;
+    margin-bottom: 15px;
+    margin-top: 3px;
+    font-weight: 600;
   }
 `;
 
