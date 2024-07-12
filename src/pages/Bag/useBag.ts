@@ -20,7 +20,7 @@ export const useBag = () => {
     .map((i) => i.price * i.quantity)
     .reduce((acc, p) => acc + p, 0);
 
-  const frete = 5.5;
+  const frete = 0.0;
 
   function addQuantity(product: IProductsCart) {
     const update: IProductsCart = {
