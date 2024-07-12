@@ -216,3 +216,16 @@ export const AddItem = styled.div`
     font-weight: 500;
   }
 `;
+
+export const NoItems = styled.div`
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  p {
+    font-size: 14px;
+    color: #999;
+  }
+`;

@@ -7,6 +7,7 @@ import { useBag } from "./useBag";
 import { BagItem } from "../../components/BagItem";
 import { maskMoney } from "../../Util/masks";
 import { IProductsCart } from "../../model/Product";
+import { MdProductionQuantityLimits } from "react-icons/md";
 
 export const Bag = () => {
   const { navigate, dataDelivery, total, CleanAll, frete, addQuantity, lessQuantity } = useBag();
@@ -26,15 +27,20 @@ export const Bag = () => {
       </header>
 
       <S.Body>
-        <h3>Itens adicionados</h3>
+        {dataDelivery.products?.length > 0 && <h3>Itens adicionados</h3>}
 
-        {dataDelivery.products?.length > 0 &&
+        {dataDelivery.products?.length > 0 ?
           dataDelivery.products.map((i: IProductsCart) => <BagItem
             key={i.id}
             product={i}
             addQuantity={() => addQuantity(i)}
             lessQuantity={() => lessQuantity(i)}
-          />)}
+          />) : (
+            <S.NoItems>
+              <p>Não há nenhum item na sua sacola</p>
+              <MdProductionQuantityLimits size={17} color="#999" />
+            </S.NoItems>
+          )}
 
         <S.AddItem onClick={() => navigate("/")}>
           <p>Adicionar mais pedidos</p>
