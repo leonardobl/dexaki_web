@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { IDataDeliveryUser, IProductsCart } from "../../model/Product";
-import { useEffect } from "react";
 
 const userDelivery: IDataDeliveryUser = {
   name: '',
