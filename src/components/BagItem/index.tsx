@@ -41,7 +41,10 @@ export const BagItem = ({ product, ...rest }: IBagItemProps) => {
 
 
       <S.ContentButton {...rest}>
-        <FaTrash color="#FF6B00" size={12} />
+        {product.quantity > 0 ? (<button onClick={() => addQuantity(product)}>
+          {" "}
+          -{" "}
+        </button>) : (<FaTrash color="#FF6B00" size={12} />)}
 
         <span>{product.quantity}</span>
 
