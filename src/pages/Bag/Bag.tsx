@@ -66,7 +66,7 @@ export const Bag = () => {
         <div>
           <span>Total com a entrega</span>
           <h3>
-            {maskMoney(total + frete)}/ <small> 1 item</small>
+            {maskMoney(total + frete)}/ <small> {dataDelivery.products.length} item</small>
           </h3>
         </div>
 
