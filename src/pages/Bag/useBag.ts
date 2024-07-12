@@ -67,6 +67,13 @@ export const useBag = () => {
 
   }
 
+  function CleanAll() {
+    setDataDelivery({
+      ...dataDelivery,
+      products: []
+    })
+  }
 
-  return { navigate, addQuantity, lessQuantity, dataDelivery, total, frete };
+
+  return { navigate, addQuantity, lessQuantity, CleanAll, dataDelivery, total, frete };
 };

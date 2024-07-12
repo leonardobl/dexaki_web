@@ -9,7 +9,7 @@ import { maskMoney } from "../../Util/masks";
 import { IProductsCart } from "../../model/Product";
 
 export const Bag = () => {
-  const { navigate, dataDelivery, total, frete, addQuantity, lessQuantity } = useBag();
+  const { navigate, dataDelivery, total, CleanAll, frete, addQuantity, lessQuantity } = useBag();
 
   return (
     <S.Wrapper>
@@ -19,7 +19,7 @@ export const Bag = () => {
           <h3>Sacola</h3>
         </div>
 
-        <h4 >
+        <h4 onClick={CleanAll}>
           <TbTrashXFilled color="#FF6B00" size={19} />
           Limpar
         </h4>
