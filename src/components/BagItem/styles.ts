@@ -6,6 +6,7 @@ export const Container = styled.div`
   border-radius: 4px;
   width: 100%;
   margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 
   display: flex;
   justify-content: space-between;
@@ -65,3 +66,19 @@ export const Container = styled.div`
     }
   }
 `;
+
+
+export const ContentButton = styled.div`
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  > button {
+    all: unset;
+  }
+`;
+

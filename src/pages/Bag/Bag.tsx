@@ -8,7 +8,7 @@ import { BagItem } from "../../components/BagItem";
 import { maskMoney } from "../../Util/masks";
 
 export const Bag = () => {
-  const { navigate, bagProducts, total, frete, handleCleanBag } = useBag();
+  const { navigate, dataDelivery, total, frete, handleCleanBag } = useBag();
 
   return (
     <S.Wrapper>
@@ -27,8 +27,8 @@ export const Bag = () => {
       <S.Body>
         <h3>Itens adicionados</h3>
 
-        {bagProducts?.length > 0 &&
-          bagProducts.map((i) => <BagItem key={i.id} product={i} />)}
+        {dataDelivery.products?.length > 0 &&
+          dataDelivery.products.map((i) => <BagItem key={i.id} product={i} />)}
 
         <S.AddItem onClick={() => navigate("/")}>
           <p>Adicionar mais pedidos</p>

@@ -1,16 +1,18 @@
 import * as S from "./styles";
 import { ComponentProps } from "react";
-import { IDataGetProducts } from "../../Mocks/productsMock";
 import { maskMoney } from "../../Util/masks";
-import { InputAddItem } from "../InputAddItem";
-import { useAppContext } from "../../context/AppContext";
+import { FaTrash } from "react-icons/fa";
+import { useBagItem } from "./useBagItem";
+import { IProductsCart } from "../../model/Product";
+
 
 interface IBagItemProps extends ComponentProps<"div"> {
-  product: IDataGetProducts;
+  product: IProductsCart;
 }
 
 export const BagItem = ({ product, ...rest }: IBagItemProps) => {
-  const { handleRemoveBagItem } = useAppContext();
+  const { addQuantity } = useBagItem()
+
 
   return (
     <S.Container {...rest}>
@@ -37,10 +39,17 @@ export const BagItem = ({ product, ...rest }: IBagItemProps) => {
         </div>
       </div>
 
-      <InputAddItem
-        onRemove={() => handleRemoveBagItem(product.id)}
-        productDefault={product?.quantity}
-      />
+
+      <S.ContentButton {...rest}>
+        <FaTrash color="#FF6B00" size={12} />
+
+        <span>{product.quantity}</span>
+
+        <button onClick={() => addQuantity(product)}>
+          {" "}
+          +{" "}
+        </button>
+      </S.ContentButton>
     </S.Container>
   );
 };

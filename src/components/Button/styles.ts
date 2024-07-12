@@ -14,4 +14,11 @@ export const Button = styled.button<TProps>`
   height: fit-content;
   font-weight: bold;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
+ 
 `

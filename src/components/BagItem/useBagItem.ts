@@ -1,23 +1,44 @@
-import { IDataGetProducts } from "../../Mocks/productsMock";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { IDataDeliveryUser, IProductsCart } from "../../model/Product";
+
+const userDelivery: IDataDeliveryUser = {
+  name: '',
+  email: '',
+  phone: '',
+  adress: '',
+  typeOfpayment: 'money',
+  delivery: true,
+  products: []
+}
+
 
 export const useBagItem = () => {
-  const [bagProductsStorage, setBagproductsStorage] = useLocalStorage({
-    storageKey: "bagProducts",
-  });
+  const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery", initialValue: userDelivery })
 
-  function handleUpdateQuantity(item: IDataGetProducts) {
-    const temp: IDataGetProducts = {
-      ...item,
-      quantity: item.quantity >= 99 ? 99 : item.quantity + 1,
-    };
+  function addQuantity(product: IProductsCart) {
 
-    const newValues = bagProductsStorage?.map((i: IDataGetProducts) => {
-      return i.id === temp.id ? temp : i;
-    });
+    const updateProduct = dataDelivery.products.find((p: IProductsCart) => p.id === product.id)!
 
-    setBagproductsStorage(newValues);
+
+    const result = {
+      ...updateProduct,
+      quantity: updateProduct.quantity + 1
+    }
+
+    console.log(result)
+
+
+    setDataDelivery({
+      ...dataDelivery,
+      products: [
+        ...dataDelivery.products,
+        result
+      ]
+    })
   }
 
-  return { handleUpdateQuantity };
+
+  function lessuantity() { }
+
+  return { addQuantity, lessuantity };
 };

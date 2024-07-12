@@ -1,47 +1,25 @@
 import * as S from "./styles";
 import { IoIosArrowBack } from "react-icons/io";
-import { useEffect } from "react";
 import { Modal } from "../../components/Modal/Modal";
 import { Button } from "../../components/Button/Button";
 import { useProduct } from "./useProduct";
 import { maskMoney } from "../../Util/masks";
+import { FaCartPlus } from "react-icons/fa";
 
 export const Product = () => {
   const {
+    addToCart,
+    addQuantity,
+    lessQuantity,
+    goBack,
     navigate,
     quantity,
-    setQuantity,
     setShowModal,
-    setTotal,
     showModal,
     total,
-    price,
     product,
   } = useProduct();
 
-  function add() {
-    setQuantity(quantity + 1);
-  }
-
-  function less() {
-    if (quantity == 1) {
-      return;
-    }
-
-    setQuantity((prevState) => {
-      if (prevState == 0) return 0;
-      return prevState - 1;
-    });
-    setTotal(quantity * price);
-  }
-
-  function goBack() {
-    navigate("/");
-  }
-
-  useEffect(() => {
-    setTotal(quantity * price);
-  }, [quantity]);
 
   return (
     <S.WrapperProduct>
@@ -70,13 +48,13 @@ export const Product = () => {
 
       <div className="footer-price">
         <div className="quantity">
-          <button onClick={less}> - </button>
+          <button onClick={lessQuantity}> - </button>
           <span> {quantity} </span>
-          <button type="button" onClick={add}>
+          <button type="button" onClick={addQuantity}>
             +
           </button>
         </div>
-        <button className="button-add" onClick={() => setShowModal(true)}>
+        <button className="button-add" onClick={() => addToCart()}>
           Adicionar R$ {total}
         </button>
       </div>
@@ -90,8 +68,9 @@ export const Product = () => {
         <S.ContentButton>
           <Button variant="outlined" onClick={() => navigate("/bag")}>
             Ir Para carinho
+
           </Button>
-          <Button onClick={() => navigate("/")}>Continuar Comprando</Button>
+          <Button onClick={() => navigate("/")}>Continuar Comprando <FaCartPlus size={18} /></Button>
         </S.ContentButton>
       </Modal>
     </S.WrapperProduct>
