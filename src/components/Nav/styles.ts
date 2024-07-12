@@ -84,3 +84,25 @@ export const Bag = styled.div`
     font-size: 12px;
   }
 `;
+
+
+export const IconBag = styled.div`
+  position: relative;
+  width: 30px;
+
+  .number-item {
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    background-color: #fff;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 9px;
+    font-weight: 500;
+  }
+`;

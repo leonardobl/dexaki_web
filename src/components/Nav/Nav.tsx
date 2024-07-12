@@ -6,17 +6,20 @@ import { useNav } from "./useNav";
 import { maskMoney } from "../../Util/masks";
 
 export const Nav = () => {
-  const { navigate, total } = useNav();
+  const { navigate, total, dataDelivery } = useNav();
 
   return (
     <S.WrapperNav>
       {/* Quando tiver item na sacola exibir este component */}
       <S.Bag onClick={() => navigate("/bag")}>
-        <IoBagCheckOutline
-          color="#fff"
-          size={18}
-          style={{ marginRight: "30px" }}
-        />
+        <S.IconBag>
+          <IoBagCheckOutline
+            color="#fff"
+            size={20}
+            style={{ marginRight: "30px" }}
+          />
+          <span className="number-item">{dataDelivery.products.length}</span>
+        </S.IconBag>
         <small>Ver Sacola</small>
         <p>{maskMoney(total)}</p>
       </S.Bag>
