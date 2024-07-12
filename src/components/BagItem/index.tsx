@@ -2,17 +2,17 @@ import * as S from "./styles";
 import { ComponentProps } from "react";
 import { maskMoney } from "../../Util/masks";
 import { FaTrash } from "react-icons/fa";
-import { useBagItem } from "./useBagItem";
+
 import { IProductsCart } from "../../model/Product";
 
 
 interface IBagItemProps extends ComponentProps<"div"> {
   product: IProductsCart;
+  addQuantity: (product: IProductsCart) => void;
+  lessQuantity: (product: IProductsCart) => void
 }
 
-export const BagItem = ({ product, ...rest }: IBagItemProps) => {
-  const { addQuantity } = useBagItem()
-
+export const BagItem = ({ product, addQuantity, lessQuantity, ...rest }: IBagItemProps) => {
 
   return (
     <S.Container {...rest}>
@@ -41,10 +41,10 @@ export const BagItem = ({ product, ...rest }: IBagItemProps) => {
 
 
       <S.ContentButton {...rest}>
-        {product.quantity > 0 ? (<button onClick={() => addQuantity(product)}>
+        {product.quantity > 1 ? (<button onClick={() => lessQuantity(product)}>
           {" "}
           -{" "}
-        </button>) : (<FaTrash color="#FF6B00" size={12} />)}
+        </button>) : (<FaTrash color="#FF6B00" size={12} onClick={() => lessQuantity(product)} />)}
 
         <span>{product.quantity}</span>
 

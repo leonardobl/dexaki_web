@@ -6,9 +6,10 @@ import { TbTrashXFilled } from "react-icons/tb";
 import { useBag } from "./useBag";
 import { BagItem } from "../../components/BagItem";
 import { maskMoney } from "../../Util/masks";
+import { IProductsCart } from "../../model/Product";
 
 export const Bag = () => {
-  const { navigate, dataDelivery, total, frete, handleCleanBag } = useBag();
+  const { navigate, dataDelivery, total, frete, addQuantity, lessQuantity } = useBag();
 
   return (
     <S.Wrapper>
@@ -18,7 +19,7 @@ export const Bag = () => {
           <h3>Sacola</h3>
         </div>
 
-        <h4 onClick={handleCleanBag}>
+        <h4 >
           <TbTrashXFilled color="#FF6B00" size={19} />
           Limpar
         </h4>
@@ -28,7 +29,12 @@ export const Bag = () => {
         <h3>Itens adicionados</h3>
 
         {dataDelivery.products?.length > 0 &&
-          dataDelivery.products.map((i) => <BagItem key={i.id} product={i} />)}
+          dataDelivery.products.map((i: IProductsCart) => <BagItem
+            key={i.id}
+            product={i}
+            addQuantity={() => addQuantity(i)}
+            lessQuantity={() => lessQuantity(i)}
+          />)}
 
         <S.AddItem onClick={() => navigate("/")}>
           <p>Adicionar mais pedidos</p>

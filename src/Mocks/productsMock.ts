@@ -1,4 +1,3 @@
-import { v4 } from "uuid";
 
 export interface IDataProducts {
   id: string;
@@ -15,7 +14,7 @@ export interface IDataGetProducts extends IDataProducts {
 
 export const DataProducts = [
   {
-    id: v4(),
+    id: '2b3f7e1d-c27a-40b2-9e2c-5f6a7e9d4b13',
     category: "burger",
     name: "Tribute Burger",
     description: "A mouth-watering honest beef burger",
@@ -23,7 +22,7 @@ export const DataProducts = [
     price: 16.96,
   },
   {
-    id: v4(),
+    id: '3d7e5b2f-a18c-45d6-9c4a-2b8e7f1c6e21',
     category: "burger",
     name: "Pulled Mooshie",
     description: "Spicy vegan burger with jackfruit",
@@ -32,7 +31,7 @@ export const DataProducts = [
   },
 
   {
-    id: v4(),
+    id: '8f2c1b3e-9d4e-49b6-8c3a-7a1d2e4f6b89',
     category: "burger",
     name: "The Good Burger",
     description:
@@ -41,7 +40,7 @@ export const DataProducts = [
     img: "https://blog.colombo.com.br/wp-content/uploads/2021/05/hamburguer-artesanal.jpg",
   },
   {
-    id: v4(),
+    id: '4e6a9f1d-b12c-42a7-8f5e-3d9c1b7e8d64',
     category: "burger",
     name: "Crunchy Nacho Burger",
     price: 11.99,
@@ -50,7 +49,7 @@ export const DataProducts = [
       "The best combination of crunchiness and softness, all in one single burger",
   },
   {
-    id: v4(),
+    id: '7b4d3e2a-8c5f-41b6-9d1a-6e3b4f7a1c58',
     category: "burger",
     name: "Barbie Burger",
     price: 13.2,
@@ -59,7 +58,7 @@ export const DataProducts = [
       "From a pink explosion was born Barbie Burger, a special edition in partnership with Mattel",
   },
   {
-    id: v4(),
+    id: '1d2e6b3f-9a8c-42d7-8f4a-7b5e1c3a9d72',
     category: "burger",
     name: "Curry On My Wayward Bun",
     price: 19.16,
@@ -67,7 +66,7 @@ export const DataProducts = [
     description: "N/A",
   },
   {
-    id: v4(),
+    id: '5a9c7b1d-4e3f-48c6-9d2a-8f1b2e7d3c61',
     category: "pizza",
     name: "Vegan Veggie",
     price: 23.95,
@@ -75,7 +74,7 @@ export const DataProducts = [
     img: "https://img.cybercook.com.br/receitas/559/pizza-de-presunto-e-mussarela-2-840x480.jpeg?q=75",
   },
   {
-    id: v4(),
+    id: '3b2e1c9d-7a6f-49d8-8f4c-2d5b3a9e1d47',
     category: "pizza",
     name: "Veggie Zupreme",
     price: 19.95,
@@ -83,7 +82,7 @@ export const DataProducts = [
     img: "https://www.estadao.com.br/resizer/v2/MHEB7V2WRFDVHBXPFP6RFYZ66U.jpg?quality=80&auth=85422b9ae9f827268adb7b84ac2c7620d207e353e18955193beb3480e0b246ac&width=1200&height=900&smart=true",
   },
   {
-    id: v4(),
+    id: '6f5a3e4b-2d9c-41b7-8f1a-7e8d6b9a3c25',
     category: "pizza",
     name: "The O.G.",
     price: 16.95,
@@ -91,7 +90,7 @@ export const DataProducts = [
     img: "https://s5.static.brasilescola.uol.com.br/be/2023/03/pizza-italiana-tradicional-com-tomates-e-manjericao-em-alusao-a-historia-da-pizza.jpg",
   },
   {
-    id: v4(),
+    id: '9d1b2e8c-5f4a-47c6-8b3d-6a7f1e2d4b98',
     category: "pizza",
     name: "Napoletana",
     description: "Fresh tomatoes and mozzarella cheese.",
@@ -99,7 +98,7 @@ export const DataProducts = [
     img: "https://content.jdmagicbox.com/comp/delhi/t6/011pxx11.xx11.200819160345.c5t6/catalogue/pizza-time-najafgarh-delhi-pizza-outlets-1fqclerswy.jpg",
   },
   {
-    id: v4(),
+    id: '4f7c3a2d-8e1b-42d9-9f5a-3b6e1d9a7c53',
     category: "pizza",
     name: "Marinara",
     description: "Fresh tomatoes, extra virgin olive oil, oregano and garlic.",
@@ -107,7 +106,7 @@ export const DataProducts = [
     img: "https://static.itdg.com.br/images/1200-630/b7f54a0f65e624a4862fb721b895bbc9/pizza-caipira.png",
   },
   {
-    id: v4(),
+    id: '1a6b5d9f-3e7c-48b2-9f4d-2c8e3a1b7d64',
     category: "pizza",
     name: "Caprese",
     description: "Fresh mozzarella, tomatoes, basil and balsamic vinegar.",
@@ -115,7 +114,7 @@ export const DataProducts = [
     img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/0f/27/03/chopizza.jpg?w=600&h=400&s=1",
   },
   {
-    id: v4(),
+    id: '8c2f1e3b-9d7a-41b4-8f5c-6a3d2b4e1f78',
     category: "pizza",
     name: "Margherita",
     description:
