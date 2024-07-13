@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  
-  height: 100%;
   background-color: #fafafa;
-
-  overflow-y: scroll;
 
   header {
     padding: 24px;
@@ -25,9 +21,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Body = styled.div`
-  overflow-y: scroll;
-  max-height: calc(100vh - 186px);
-  height: 100%;
   padding: 0px 16px;
 `;
 

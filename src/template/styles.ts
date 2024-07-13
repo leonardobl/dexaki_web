@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  /* padding-bottom: 100px; */
-  max-height: 100vh;
   height: 100%;
 `;
 
 export const Container = styled.div`
-  /* padding-top: 185px; */
+  overflow-y: scroll;
+  max-height: calc(100vh - 282px);
+  height: 100%;
+  scroll-behavior: smooth;
 `;
 
 export const ContentLogo = styled.div`
@@ -122,7 +123,7 @@ export const Link = styled.a<ILinkProps>`
 
 
 export const ContentMenu = styled.div`
-width: 100%;
+  width: 100%;
   position: fixed;
   bottom: 0;
 `;
