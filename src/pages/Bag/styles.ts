@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 16px;
 
     div {
       display: flex;
@@ -19,9 +21,8 @@ export const Wrapper = styled.div`
     }
 
     h3 {
+      font-size: 18px;
       color: #333;
-      font-size: 16px;
-      text-align: center;
       font-weight: 600;
     }
 
@@ -38,9 +39,9 @@ export const Wrapper = styled.div`
 
 export const Body = styled.div`
   overflow-y: scroll;
-  max-height: calc(100dvh - 136px);
+  max-height: calc(100vh - 146px);
   height: 100%;
-  padding: 16px;
+  padding: 0px 16px 16px 16px;
  
 
   h3 {
@@ -176,10 +177,10 @@ export const ContentFooter = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 10px 0;
-  /* position: fixed; */
-  /* bottom: 0px;
+  position: fixed;
+   bottom: 0px;
   left: 0px;
-  right: 0px; */
+  right: 0px; 
   padding: 12px 24px;
 
   > div {

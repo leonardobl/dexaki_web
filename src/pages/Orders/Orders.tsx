@@ -1,8 +1,12 @@
 import { Template } from "../../template/Template";
-
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import * as S from "./styles";
+import { useOrders } from "./useOrders";
 
 export const Orders = () => {
+  const { navigate } = useOrders()
+
+
   function parsStatus(status: string) {
     switch (status) {
       case "WAITING":
@@ -19,17 +23,62 @@ export const Orders = () => {
   return (
     <Template>
       <S.Wrapper>
-        <h1>Pedidos</h1>
+        <header onClick={() => navigate(-1)}>
+          <MdOutlineKeyboardArrowLeft size={22} />
+          <h3>Pedidos</h3>
+        </header>
 
-        <div>
-          <h3>Em Andamento</h3>
-
+        <S.Body>
           <S.CardOrders>
             <div className="">
               <p>Pedido #45</p>
               <S.Status status={parsStatus("DONE")}>
                 <span></span>
                 <p>Pronto!</p>
+              </S.Status>
+            </div>
+
+            <div className="bodyCard">
+              <p>
+                <span>1X</span>
+                Frango com Catupiry
+              </p>
+
+              <p>
+                <span>1X</span>
+                Quatro Queijos
+              </p>
+            </div>
+          </S.CardOrders>
+
+          <S.CardOrders>
+            <div className="">
+              <p>Pedido #16</p>
+              <S.Status status={parsStatus("IN_PRODUCTION")}>
+                <span></span>
+                <p>Entrou em produção</p>
+              </S.Status>
+            </div>
+
+            <div className="bodyCard">
+              <p>
+                <span>1X</span>
+                Frango com Catupiry
+              </p>
+
+              <p>
+                <span>1X</span>
+                Quatro Queijos
+              </p>
+            </div>
+          </S.CardOrders>
+
+          <S.CardOrders>
+            <div className="">
+              <p>Pedido #16</p>
+              <S.Status status={parsStatus("IN_PRODUCTION")}>
+                <span></span>
+                <p>Entrou em produção</p>
               </S.Status>
             </div>
 
@@ -93,7 +142,7 @@ export const Orders = () => {
               </div>
             </S.CardOrders>
           </div>
-        </div>
+        </S.Body>
 
         {/* <S.NoOrders>
         <IconNotification />

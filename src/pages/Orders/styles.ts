@@ -1,29 +1,40 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  min-height: calc(100dvh - 100px);
+  
   height: 100%;
   background-color: #fafafa;
-  padding: 24px;
+
   overflow-y: scroll;
 
-  h1 {
-    color: #333;
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 43px;
+  header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 24px;
+    gap: 16px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 16px;
+
+    h3 {
+      font-size: 18px;
+      color: #333;
+      font-weight: 600;
+    }
   }
 
-  h3 {
-    font-size: 18px;
-    color: #666666;
-    margin-bottom: 24px;
-  }
+`;
+
+export const Body = styled.div`
+  overflow-y: scroll;
+  max-height: calc(100vh - 186px);
+  height: 100%;
+  padding: 0px 16px;
 `;
 
 export const CardOrders = styled.div`
   background-color: #fff;
-  padding: 24px;
+  padding: 18px;
   border-radius: 8px;
   margin-bottom: 8px;
 
@@ -31,6 +42,10 @@ export const CardOrders = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    > p {
+      color: #555;
+    }
   }
 
   .bodyCard {
@@ -43,7 +58,7 @@ export const CardOrders = styled.div`
     p {
       font-size: 14px;
       font-weight: 300;
-      color: #333333;
+      color: #999;
 
       span {
         margin-right: 6px;
@@ -67,7 +82,7 @@ export const Status = styled.div<IStatus>`
   background-color: ${(props) => props.status?.bg};
   color: ${(props) => props.status?.color};
 
-  padding: 4px;
+  padding: 6px 12px;
   border-radius: 4px;
 
   span {
@@ -79,7 +94,7 @@ export const Status = styled.div<IStatus>`
 
   p {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
   }
 `;
 

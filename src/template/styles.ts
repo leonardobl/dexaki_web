@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   /* padding-bottom: 100px; */
-  max-height: 100dvh;
+  max-height: 100vh;
   height: 100%;
 `;
 
@@ -23,6 +23,7 @@ export const ContentLogo = styled.div`
     font-family: "Montserrat", sans-serif;
   }
 `;
+
 export const Logo = styled.div`
   height: 42px;
   width: 42px;
@@ -111,10 +112,17 @@ export const Link = styled.a<ILinkProps>`
   li {
     p {
       color: ${(props) =>
-        props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
+    props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
     }
   }
 
   &:hover {
   }
+`;
+
+
+export const ContentMenu = styled.div`
+width: 100%;
+  position: fixed;
+  bottom: 0;
 `;
