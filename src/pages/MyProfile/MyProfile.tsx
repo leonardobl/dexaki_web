@@ -100,6 +100,30 @@ export const MyProfile = () => {
                 <MdKeyboardArrowRight />
               </S.Card>
 
+              <S.Card>
+                <div className='content-info'>
+                  <CiCircleQuestion size={24} />
+                  <div>
+                    <p>Ajuda</p>
+                    <span>Algumas dúvidas</span>
+                  </div>
+                </div>
+                <MdKeyboardArrowRight />
+              </S.Card>
+
+
+              <S.Card>
+                <div className='content-info'>
+                  <CiCircleQuestion size={24} />
+                  <div>
+                    <p>Ajuda</p>
+                    <span>Algumas dúvidas</span>
+                  </div>
+                </div>
+                <MdKeyboardArrowRight />
+              </S.Card>
+
+
 
             </S.Body>
           </div>

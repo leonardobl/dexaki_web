@@ -40,7 +40,7 @@ export const Body = styled.div`
   overflow-y: scroll;
   max-height: calc(100vh - 146px);
   height: 100%;
-  padding: 0px 16px 16px 16px;
+  padding: 0px 16px 24px 16px;
  
 
   h3 {

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   overflow-y: scroll;
   height: 100%;
-  padding-bottom: 105px;
+  max-height: calc(100vh - 104px);
   scroll-behavior: smooth;
 `;
 
