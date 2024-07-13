@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  height: 100%;
 `;
 
 export const Container = styled.div`
   overflow-y: scroll;
-  max-height: calc(100vh - 107px);
+  max-height: calc(100vh - 101px);
+  height: 100%;
   scroll-behavior: smooth;
 `;
 
@@ -122,6 +124,5 @@ export const Link = styled.a<ILinkProps>`
 
 export const ContentMenu = styled.div`
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  
 `;

@@ -9,9 +9,7 @@ export const Template = ({ children }: ITemplateProps) => {
   return (
     <S.Wrapper>
       <S.Container>{children}</S.Container>
-      <S.ContentMenu>
-        <Nav />
-      </S.ContentMenu>
+      <Nav />
     </S.Wrapper>
   );
 };
