@@ -7,10 +7,10 @@ export const WrapperNav = styled.div`
   display: block;
   /* padding: 8px 24px 6px 24px; */
   /* z-index: 2; */
-  /* position: fixed; */
+  position: fixed;
   /* left: 50%; */
   /* transform: translateX(-50%); */
-  /* bottom: 0px; */
+  bottom: 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

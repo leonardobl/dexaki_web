@@ -13,7 +13,6 @@ export const Wrapper = styled.div`
     align-items: center;
     padding-bottom: 24px;
     gap: 16px;
-    border-bottom: 1px solid #ccc;
     margin-bottom: 16px;
 
     h3 {

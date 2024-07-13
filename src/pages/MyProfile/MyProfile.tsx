@@ -16,7 +16,7 @@ export const MyProfile = () => {
 
 
   useEffect(() => {
-    setIsAutenticated(false)
+    setIsAutenticated(true)
   }, [])
 
   return (
