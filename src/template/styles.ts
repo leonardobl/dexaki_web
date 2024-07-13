@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   overflow-y: scroll;
-  max-height: calc(100vh - 101px);
   height: 100%;
+  padding-bottom: 105px;
   scroll-behavior: smooth;
 `;
 
@@ -120,7 +120,6 @@ export const Link = styled.a<ILinkProps>`
   &:hover {
   }
 `;
-
 
 export const ContentMenu = styled.div`
   width: 100%;

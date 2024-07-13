@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  
-
-
   header {
     padding: 24px;
     display: flex;
@@ -18,7 +15,6 @@ export const Wrapper = styled.div`
       font-weight: 600;
     }
   }
-
 `;
 
 export const Body = styled.div`

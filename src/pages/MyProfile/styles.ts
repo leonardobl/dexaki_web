@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   padding: 0px 24px;
 
-
   header {
     padding-top: 24px;
     width: 100%;
