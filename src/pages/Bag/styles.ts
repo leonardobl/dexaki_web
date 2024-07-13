@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  max-height: 100dvh;
-  height: 100%;
   background-color: #fafafa;
 
   header {
