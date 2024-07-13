@@ -32,7 +32,9 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
- 
+  body {
+    background-color: #FAFAFA;
+  }
 
   body, input, button , textarea {
     font-family: 'Roboto', sans-serif;

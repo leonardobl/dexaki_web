@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 0px 24px;
-  height: 100vh;
-  background-color: #FAFAFA;
 
 
   header {
@@ -30,6 +28,7 @@ export const Profile = styled.div`
 
 export const Body = styled.div`
   width: 100%;
+  height: 100%;
   margin-top: 16px;
 `
 

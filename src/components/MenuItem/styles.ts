@@ -11,6 +11,7 @@ export const Container = styled.div`
   height: 100px;
   position: relative;
   padding-right: 10px;
+  background-color: #fff;
 
   &::after {
     content: "";

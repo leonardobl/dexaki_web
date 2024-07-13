@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: 100%;
 `;
 
 export const Container = styled.div`
   overflow-y: scroll;
-  max-height: calc(100vh - 282px);
-  height: 100%;
+  max-height: calc(100vh - 107px);
   scroll-behavior: smooth;
 `;
 
