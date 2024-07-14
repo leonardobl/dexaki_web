@@ -58,7 +58,7 @@ function removerCaracteresEspeciais(s: string): string {
   return s.replace(/[^a-zA-Z0-9]/g, "");
 }
 
-export const masks: Record<MaskType, (value: string) => string> = {
+export const masks: Record<MaskType, (value: any) => any> = {
   maskCpf,
   maskPhone,
   maskCep,
