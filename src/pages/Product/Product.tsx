@@ -3,7 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { Modal } from "../../components/Modal/Modal";
 import { Button } from "../../components/Button/Button";
 import { useProduct } from "./useProduct";
-import { maskMoney } from "../../util/masks";
+import { masks } from "../../util/masks";
 import { FaCartPlus } from "react-icons/fa";
 
 export const Product = () => {
@@ -32,7 +32,7 @@ export const Product = () => {
 
       <div className="description-product">
         <h4>{product?.name}</h4>
-        <span className="price">{maskMoney(product?.price)}</span>
+        <span className="price">{masks.maskMoney(product?.price)}</span>
         <p className="description">{product?.description}</p>
       </div>
 

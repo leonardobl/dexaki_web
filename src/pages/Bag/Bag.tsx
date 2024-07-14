@@ -5,7 +5,7 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
 import { useBag } from "./useBag";
 import { BagItem } from "../../components/BagItem";
-import { maskMoney } from "../../util/masks";
+import { masks } from "../../util/masks";
 import { IProductsCart } from "../../model/Product";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { ModalBottom } from "../../components/ModalBottom";
@@ -71,12 +71,12 @@ export const Bag = () => {
           <div className="description">
             <div>
               <p>Subtotal</p>
-              <span>{maskMoney(total)}</span>
+              <span>{masks.maskMoney(total)}</span>
             </div>
 
             <div>
               <p>Taxa de Entrega</p>
-              <span>{maskMoney(frete)}</span>
+              <span>{masks.maskMoney(frete)}</span>
             </div>
 
             <div>
@@ -86,7 +86,7 @@ export const Bag = () => {
 
             <div>
               <strong>Total</strong>
-              <span className="total">{maskMoney(total + frete)}</span>
+              <span className="total">{masks.maskMoney(total + frete)}</span>
             </div>
           </div>
         </S.Resume>
@@ -96,7 +96,7 @@ export const Bag = () => {
         <div>
           <span>Total com a entrega</span>
           <h3>
-            {maskMoney(total + frete)}/ <small> {dataDelivery.products.length} item</small>
+            {masks.maskMoney(total + frete)}/ <small> {dataDelivery.products.length} item</small>
           </h3>
         </div>
 

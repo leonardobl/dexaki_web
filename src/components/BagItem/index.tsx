@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import { ComponentProps } from "react";
-import { maskMoney } from "../../util/masks";
+import { masks } from "../../util/masks";
 import { FaTrash } from "react-icons/fa";
 import { IProductsCart } from "../../model/Product";
 
@@ -22,7 +22,7 @@ export const BagItem = ({ product, addQuantity, lessQuantity, ...rest }: IBagIte
         <div className="description">
           <p>{product?.name}</p>
           <span>{product?.description}</span>
-          <strong>{maskMoney(product?.price)}</strong>
+          <strong>{masks.maskMoney(product?.price)}</strong>
 
           <div className="content-itens">
             <div>
