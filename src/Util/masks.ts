@@ -1,4 +1,4 @@
-import { MaskType } from './maskType';
+
 
 function maskCpf(v: string): string {
   if (!v) return '';
@@ -58,7 +58,7 @@ function removerCaracteresEspeciais(s: string): string {
   return s.replace(/[^a-zA-Z0-9]/g, "");
 }
 
-export const masks: Record<MaskType, (value: any) => any> = {
+export const masks: any = {
   maskCpf,
   maskPhone,
   maskCep,
