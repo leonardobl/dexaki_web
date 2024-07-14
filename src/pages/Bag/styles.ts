@@ -227,3 +227,26 @@ export const NoItems = styled.div`
     color: #999;
   }
 `;
+
+
+export const ModalDescription = styled.div`
+  margin-bottom: 16px;
+
+  h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 14px;
+    color: #999;
+    font-weight: 300;
+  }
+`;
+
+export const ContentModalInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;

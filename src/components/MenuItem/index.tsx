@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import * as S from "./styles";
 import { IDataProducts } from "../../Mocks/productsMock";
-import { maskMoney } from "../../Util/masks";
+import { maskMoney } from "../../util/masks";
 import { useMenuItem } from "./useMenuItem";
 
 interface IMenuItemPros extends ComponentProps<"div"> {

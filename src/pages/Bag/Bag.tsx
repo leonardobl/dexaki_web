@@ -5,12 +5,30 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
 import { useBag } from "./useBag";
 import { BagItem } from "../../components/BagItem";
-import { maskMoney } from "../../Util/masks";
+import { maskMoney } from "../../util/masks";
 import { IProductsCart } from "../../model/Product";
 import { MdProductionQuantityLimits } from "react-icons/md";
+import { ModalBottom } from "../../components/ModalBottom";
+import { InputRHF } from "../../components/FormRHF/InputRHF";
+
 
 export const Bag = () => {
-  const { navigate, dataDelivery, total, CleanAll, frete, addQuantity, lessQuantity } = useBag();
+  const {
+    navigate,
+    dataDelivery,
+    total,
+    CleanAll,
+    frete,
+    addQuantity,
+    lessQuantity,
+    setShowModal,
+    showModal,
+    methods,
+    FormProvider,
+    onSendSubmit,
+    errors
+  } = useBag();
+
 
   return (
     <S.Wrapper>
@@ -82,8 +100,40 @@ export const Bag = () => {
           </h3>
         </div>
 
-        <Button onClick={() => navigate("/typeDelivery")}>Continuar</Button>
+        <Button onClick={() => setShowModal(true)}>Continuar</Button>
       </S.ContentFooter>
+
+
+      <ModalBottom isOpen={showModal} onClose={() => setShowModal(false)}>
+        <S.ModalDescription>
+          <h3>Falta pouco!</h3>
+          <p>Coloque abaixo seu nome e seu número!</p>
+        </S.ModalDescription>
+
+        <S.ContentModalInput>
+          <FormProvider {...methods}>
+
+            <InputRHF
+              name="phone"
+              placeholder="(XX) XXXXX - XXXX"
+              maxLength={15}
+              mask="maskPhone"
+              error={errors?.phone?.message}
+            />
+            <InputRHF
+              name="name"
+              placeholder="Digite seu Nome e sobrenome"
+              error={errors?.name?.message}
+            />
+
+            <Button
+              onClick={() => methods.handleSubmit(onSendSubmit)()}
+            >Avançar
+            </Button>
+
+          </FormProvider>
+        </S.ContentModalInput>
+      </ModalBottom>
     </S.Wrapper>
   );
 };

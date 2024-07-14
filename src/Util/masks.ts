@@ -17,6 +17,7 @@ export function maskCnpj(v: string) {
   v = v.replace(/(\d{4})(\d)/, "$1-$2"); //Coloca um hífen depois do bloco de quatro dígitos
   return v;
 }
+
 export function maskPhone(value: string) {
   if (!value) return "";
   value = value.replace(/\D/g, "");
@@ -55,4 +56,11 @@ export function removeDigitos(s: string) {
 export function removerCaracteresEspeciais(s: string) {
   if (!s) return;
   return s.replace(/[^a-zA-Z0-9]/g, "");
+}
+
+
+export const masks = {
+  maskPhone,
+  maskCep,
+  maskCnpj
 }

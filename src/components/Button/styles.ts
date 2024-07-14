@@ -20,5 +20,10 @@ export const Button = styled.button<TProps>`
   align-items: center;
   gap: 10px;
   
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
  
 `
