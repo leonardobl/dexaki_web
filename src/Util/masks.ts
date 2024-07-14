@@ -1,6 +1,6 @@
 
 
-function maskCpf(v: string): string {
+export function maskCpf(v: string) {
   if (!v) return '';
   v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
   v = v.replace(/(\d{3})(\d)/, "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
@@ -9,7 +9,7 @@ function maskCpf(v: string): string {
   return v;
 }
 
-function maskCnpj(v: string): string {
+export function maskCnpj(v: string) {
   if (!v) return '';
   v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
   v = v.replace(/^(\d{2})(\d)/, "$1.$2"); //Coloca ponto entre o segundo e o terceiro dígitos
@@ -19,7 +19,7 @@ function maskCnpj(v: string): string {
   return v;
 }
 
-function maskPhone(value: string): string {
+export function maskPhone(value: string) {
   if (!value) return '';
   value = value.replace(/\D/g, "");
   value = value.replace(/(\d{2})(\d)/, "($1) $2");
@@ -27,14 +27,14 @@ function maskPhone(value: string): string {
   return value;
 }
 
-function maskCep(value: string): string {
+export function maskCep(value: string) {
   if (!value) return '';
   value = value.replace(/\D/g, "");
   value = value.replace(/(\d{5})(\d)/, "$1-$2");
   return value;
 }
 
-export function maskMoney(e: number): string {
+export function maskMoney(e: number) {
   if (!e) return "R$: 0,00";
 
   const options = {
@@ -47,22 +47,15 @@ export function maskMoney(e: number): string {
   return formatNumber.format(e);
 }
 
-function removeDigitos(s: string): string {
+export function removeDigitos(s: string) {
   if (!s) return "";
   const newValue = s.replace(/\D/g, "");
   return newValue;
 }
 
-function removerCaracteresEspeciais(s: string): string {
+export function removerCaracteresEspeciais(s: string) {
   if (!s) return '';
   return s.replace(/[^a-zA-Z0-9]/g, "");
 }
 
-export const masks: any = {
-  maskCpf,
-  maskPhone,
-  maskCep,
-  maskCnpj,
-  removeDigitos,
-  removerCaracteresEspeciais
-};
+

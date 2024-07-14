@@ -1,13 +1,12 @@
 import { Controller, useFormContext, RegisterOptions } from "react-hook-form"
-import { MaskType } from "../../util/maskType"
 import { IInputProps, Input } from "../Form/Input"
-import { masks } from "../../util/masks"
+
 
 export interface IInputRHF extends Omit<IInputProps, 'name'> {
   type?: string
   name: string
   rules?: RegisterOptions
-  mask?: MaskType
+  mask?: any
 }
 
 export const InputRHF = ({
@@ -32,7 +31,7 @@ export const InputRHF = ({
           error={error}
           onChange={(e) => {
             const newValue = e.target.value;
-            const maskedValue = mask ? masks[mask](newValue) : newValue;
+            const maskedValue = mask ? mask(newValue) : newValue;
             onChange(maskedValue);
           }}
         />

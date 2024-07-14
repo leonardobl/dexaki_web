@@ -5,7 +5,7 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
 import { useBag } from "./useBag";
 import { BagItem } from "../../components/BagItem";
-import { maskMoney } from "../../util/masks";
+import { maskMoney, maskPhone } from "../../util/masks";
 import { IProductsCart } from "../../model/Product";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { ModalBottom } from "../../components/ModalBottom";
@@ -117,7 +117,7 @@ export const Bag = () => {
               name="phone"
               placeholder="(XX) XXXXX - XXXX"
               maxLength={15}
-              mask="maskPhone"
+              mask={maskPhone}
               error={errors?.phone?.message}
             />
             <InputRHF
