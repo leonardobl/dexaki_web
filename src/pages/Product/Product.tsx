@@ -20,7 +20,6 @@ export const Product = () => {
     product,
   } = useProduct();
 
-
   return (
     <S.WrapperProduct>
       <div className="header-product-image">

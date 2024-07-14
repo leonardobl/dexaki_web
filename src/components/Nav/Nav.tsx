@@ -7,7 +7,6 @@ import { maskMoney } from "../../util/masks";
 
 export const Nav = () => {
   const { navigate, total, dataDelivery } = useNav();
-
   return (
     <S.WrapperNav>
       {/* Quando tiver item na sacola exibir este component */}

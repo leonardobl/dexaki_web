@@ -2,7 +2,6 @@ import * as S from "./styles";
 import { ComponentProps } from "react";
 import { maskMoney } from "../../util/masks";
 import { FaTrash } from "react-icons/fa";
-
 import { IProductsCart } from "../../model/Product";
 
 
