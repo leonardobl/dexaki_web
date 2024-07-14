@@ -3,7 +3,7 @@ import { IconHome, IconPedidos, IconPerfil } from "./Icons";
 import { NavLink } from "react-router-dom";
 import { IoBagCheckOutline } from "react-icons/io5";
 import { useNav } from "./useNav";
-import { masks } from "../../util/masks";
+import { maskMoney } from "../../util/masks";
 
 export const Nav = () => {
   const { navigate, total, dataDelivery } = useNav();
@@ -20,7 +20,7 @@ export const Nav = () => {
           <span className="number-item">{dataDelivery.products.length}</span>
         </S.IconBag>
         <small>Ver Sacola</small>
-        <p>{masks.maskMoney(total)}</p>
+        <p>{maskMoney(total)}</p>
       </S.Bag>
 
       <S.ContentLink>

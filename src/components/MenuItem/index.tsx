@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import * as S from "./styles";
 import { IDataProducts } from "../../Mocks/productsMock";
-import { masks } from "../../util/masks";
+import { maskMoney } from "../../util/masks";
 import { useMenuItem } from "./useMenuItem";
 
 interface IMenuItemPros extends ComponentProps<"div"> {
@@ -20,7 +20,7 @@ export const MenuItem = ({ product, ...rest }: IMenuItemPros) => {
         <S.WrapperText>
           <h4>{product?.name}</h4>
           <span>{product?.description}</span>
-          <p>{masks.maskMoney(product?.price)}</p>
+          <p>{maskMoney(product?.price)}</p>
         </S.WrapperText>
       </S.WrapperContent>
     </S.Container>
