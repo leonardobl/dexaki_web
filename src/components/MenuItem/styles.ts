@@ -84,7 +84,7 @@ export const WrapperAction = styled.div`
 export const Price = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 3px;
 
   span {
     font-size: 14px;

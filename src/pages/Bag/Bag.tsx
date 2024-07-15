@@ -10,6 +10,7 @@ import { IProductsCart } from "../../model/Product";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { ModalBottom } from "../../components/ModalBottom";
 import { InputRHF } from "../../components/FormRHF/InputRHF";
+import { GiStorkDelivery } from "react-icons/gi";
 
 
 export const Bag = () => {
@@ -26,6 +27,7 @@ export const Bag = () => {
     methods,
     FormProvider,
     onSendSubmit,
+    BtnContinuar,
     errors
   } = useBag();
 
@@ -100,13 +102,13 @@ export const Bag = () => {
           </h3>
         </div>
 
-        <Button onClick={() => setShowModal(true)}>Continuar</Button>
+        <Button onClick={() => BtnContinuar()}>Continuar</Button>
       </S.ContentFooter>
 
 
       <ModalBottom isOpen={showModal} onClose={() => setShowModal(false)}>
         <S.ModalDescription>
-          <h3>Falta pouco!</h3>
+          <h3>Falta pouco <GiStorkDelivery size={25} /></h3>
           <p>Coloque abaixo seu nome e seu número!</p>
         </S.ModalDescription>
 

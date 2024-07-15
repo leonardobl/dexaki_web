@@ -236,6 +236,9 @@ export const ModalDescription = styled.div`
     font-size: 18px;
     color: #333;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   p {

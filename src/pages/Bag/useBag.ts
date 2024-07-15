@@ -38,7 +38,14 @@ export const useBag = () => {
 
 
   function onSendSubmit(data: IDataUserProps) {
-    console.log(data)
+    const result: IDataDeliveryUser = {
+      ...dataDelivery,
+      name: data.name,
+      phone: data.phone
+    }
+
+    setDataDelivery(result)
+    navigate('/adress')
   }
 
   const total = dataDelivery.products
@@ -100,10 +107,20 @@ export const useBag = () => {
   }
 
 
+  function BtnContinuar() {
+    if (dataDelivery.name && dataDelivery.phone) {
+      navigate('/adress')
+    } else {
+      setShowModal(true)
+    }
+  }
+
+
   return {
     navigate,
     addQuantity,
     lessQuantity,
+    BtnContinuar,
     CleanAll,
     dataDelivery,
     total,
