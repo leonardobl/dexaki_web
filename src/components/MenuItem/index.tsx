@@ -14,13 +14,20 @@ export const MenuItem = ({ product, ...rest }: IMenuItemPros) => {
   return (
     <S.Container {...rest}>
       <S.WrapperContent onClick={() => navigate(`/product/${product.id}`)}>
+        <S.Cashback>
+          <p>15% Cashback</p>
+        </S.Cashback>
         <S.WrapperImage>
           <img src={product?.img} alt="imagem produto" />
         </S.WrapperImage>
         <S.WrapperText>
           <h4>{product?.name}</h4>
           <span>{product?.description}</span>
-          <p>{maskMoney(product?.price)}</p>
+          <S.Price>
+            <span>R$ 50,00</span>
+            <p>{maskMoney(product?.price)}</p>
+          </S.Price>
+
         </S.WrapperText>
       </S.WrapperContent>
     </S.Container>

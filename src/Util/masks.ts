@@ -1,5 +1,3 @@
-
-
 export function maskCpf(v: string) {
   if (!v) return '';
   v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito

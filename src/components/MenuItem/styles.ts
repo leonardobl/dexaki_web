@@ -13,21 +13,21 @@ export const Container = styled.div`
   padding-right: 10px;
   background-color: #fff;
 
-  &::after {
+  /* &::after {
     content: "";
     display: block;
-    width: 12px;
+    width: 8px;
     background-color: rgb(255, 107, 0);
     position: absolute;
     top: 0;
     right: 0;
     height: 100%;
-  }
+  } */
 `;
 
 export const WrapperContent = styled.div`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex: 1;
 `;
 
@@ -48,26 +48,23 @@ export const WrapperImage = styled.div`
 export const WrapperText = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding-left: 8px;
+  gap: 3px;
+  padding: 8px;
 
   h4 {
-    font-size: 12px;
-    color: ${({ theme }) => theme.secondary[700]};
-    font-weight: 600;
+    font-size: 14px;
+    color: ${({ theme }) => theme.secondary[600]};
+    font-weight: 500;
     margin: 0;
     padding: 0;
   }
 
-  p {
-    font-size: 12px;
-    color: #333;
-    font-weight: 700;
-  }
+  
 
   span {
     font-family: "Montserrat", sans-serif;
-    font-size: 10px;
+    font-size: 12px;
+    color: ${({ theme }) => theme.secondary[500]};
   }
 `;
 
@@ -81,5 +78,40 @@ export const WrapperAction = styled.div`
     height: fit-content;
     padding: 6px;
     all: unset;
+  }
+`;
+
+export const Price = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 13px;
+    color: #666;
+    font-weight: 700;
+  }
+`;
+
+export const Cashback = styled.div`
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  width: fit-content;
+  background-color: rgba(206,209,205, 0.5);
+
+  p {
+    font-size: 9px;
+    color: #333;
+
   }
 `;
