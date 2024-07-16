@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: 0px 24px;
-  height: 100vh;
+
+  /* height: 100vh;  */
   background-color: #FAFAFA;
+`;
+
+export const HeaderAdress = styled.div`
+  display: flex;
+  padding: 16px;
+
 `;
 
 export const Header = styled.div`
   display: flex;
   align-items: center;
-  padding: 24px 0px;
+  padding: 24px 16px;
   gap: 18px;
 
   h1 {
@@ -19,7 +25,10 @@ export const Header = styled.div`
 `;
 
 export const Body = styled.div`
-  
+  overflow-y: scroll;
+  max-height: calc(100vh - 146px);
+  height: 100%;
+  padding: 0px 16px 24px 16px;
 
 `
 
@@ -78,4 +87,10 @@ export const Card = styled.div`
       font-weight: 300;
     }
   }
+`;
+
+export const ContentCardAdress = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `;

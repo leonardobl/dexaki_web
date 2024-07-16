@@ -6,7 +6,8 @@ export const Wrapper = styled.div`
 export const ContainerModal = styled.div`
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
+  z-index: 1000;
   top: 0;
   display: flex;
   justify-items: center;
@@ -15,9 +16,8 @@ export const ContainerModal = styled.div`
   /* opacity: 0.9; */
   /* filter: blur(5px);  */
 
-  &::before {
-    content: "";
-    position: absolute;
+  #overlay-modal {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -30,17 +30,18 @@ export const ContainerModal = styled.div`
 
 export const HeaderModal = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Modal = styled.div`
-  position: fixed;
+  z-index: 1000;
+  position: absolute;
   background-color: #fff;
   width: 100%;
   border-radius: 8px 8px 0px 0px;
   padding: 16px;
   /* transform: translate3d(0, -25%, 0); */
-
 `;
 
 
@@ -57,4 +58,12 @@ export const OverleayModal = styled.div`
 
 export const ModalBody = styled.div`
 
+`;
+
+export const Line = styled.div`
+  max-width: 134px;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #ADADAD;
 `;

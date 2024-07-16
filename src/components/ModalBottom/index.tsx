@@ -1,6 +1,4 @@
 import * as S from './styles'
-import { GrFormClose } from 'react-icons/gr'
-
 interface IModalProps {
   onClose: () => void
   isOpen: boolean
@@ -14,14 +12,14 @@ export const ModalBottom = ({ onClose, isOpen, children }: IModalProps) => {
         <S.ContainerModal>
           <S.Modal>
             <S.HeaderModal>
-              <GrFormClose size={30} onClick={() => onClose()} />
+              <S.Line />
             </S.HeaderModal>
 
             <S.ModalBody>
               {children}
             </S.ModalBody>
           </S.Modal>
-          {/* <S.OverleayModal /> */}
+          <div id='overlay-modal' onClick={() => onClose()}></div>
         </S.ContainerModal>
       )
       }
