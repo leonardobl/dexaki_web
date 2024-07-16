@@ -10,7 +10,7 @@ const userDelivery: IDataDeliveryUser = {
   name: '',
   email: '',
   phone: '',
-  adress: '',
+  adress: undefined,
   typeOfpayment: 'money',
   delivery: true,
   products: []

@@ -94,3 +94,62 @@ export const ContentCardAdress = styled.div`
   flex-direction: column;
   gap: 16px;
 `;
+
+export const DescriptionAdress = styled.div`
+  .description {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    > div {
+      line-height: 17px;
+      strong {
+        font-size: 14px;
+        color: #333;
+
+      }
+      p {
+        color: #999;
+        font-size: 14px;
+      }
+    }
+  }
+  
+
+  .content-btn {
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+`;
+
+export const ContentFormAdress = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const DescriptionAdressEdit = styled.div`
+  margin: 24px 0;
+  .description {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    > div {
+      line-height: 17px;
+      strong {
+        font-size: 14px;
+        color: #333;
+
+      }
+      p {
+        color: #999;
+        font-size: 14px;
+      }
+    }
+  }
+`;

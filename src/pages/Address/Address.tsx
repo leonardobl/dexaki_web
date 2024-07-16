@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom'
 import { IconArrowLeft } from '../../assets/icons/IconArrowLeft'
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineMoreHoriz } from "react-icons/md";
@@ -11,13 +10,11 @@ import { Button } from '../../components/Button/Button';
 import { MdOutlineAddLocationAlt } from "react-icons/md";
 import { ModalBottom } from '../../components/ModalBottom';
 import { useAdress } from './useAdress';
-
+import { FaTrash } from "react-icons/fa";
+import { MdEdit } from "react-icons/md";
 
 export const Address = () => {
-  const navigate = useNavigate()
-
-
-  const { modalAdress, showModalAdress, setShowModalAdress } = useAdress()
+  const { modalAdress, showModalAdress, setShowModalAdress, navigate } = useAdress()
 
   return (
     <Template>
@@ -45,9 +42,11 @@ export const Address = () => {
           </S.CardMain>
 
           <S.ContentCardAdress>
-            <S.Card onClick={() => modalAdress()}>
+            <S.Card >
               <div className='content-description'>
+
                 <IoLocationOutline size={30} />
+
 
                 <div className='description'>
                   <p>Rua Muniz de Sousa, 448</p>
@@ -57,7 +56,7 @@ export const Address = () => {
                 </div>
               </div>
 
-              <div>
+              <div onClick={() => modalAdress()}>
                 <MdOutlineMoreHoriz />
               </div>
             </S.Card>
@@ -101,16 +100,23 @@ export const Address = () => {
         </S.Body>
 
         <ModalBottom isOpen={showModalAdress} onClose={() => setShowModalAdress(!showModalAdress)}>
-          <p>editar</p>
-          <p>editar</p>
-          <p>editar</p>
-          <p>editar</p>
-          <p>editar</p>
-          <p>editar</p>
-          <p>editar</p>
-          <p>editar</p>
-          <p>editar</p>
-          <p>editar</p>
+          <S.DescriptionAdress>
+            <div className='description'>
+              <IoLocationOutline size={30} />
+              <div>
+                <strong>Casa Z, 448</strong>
+                <p>R.Engenheiro Davi Caldas, 245, Bloco 1 ap 09</p>
+                <p>Próximo ao comercial didi</p>
+              </div>
+            </div>
+            <div className="content-btn">
+              <Button variant='outlined'><FaTrash />Excluir</Button>
+              <Button onClick={() => navigate('/editAdress')}>
+                <MdEdit />
+                Editar
+              </Button>
+            </div>
+          </S.DescriptionAdress>
         </ModalBottom>
 
       </S.Wrapper>

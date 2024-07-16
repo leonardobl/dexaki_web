@@ -12,11 +12,17 @@ export interface IProductsCart extends IProducts {
   discountCoupon: number
 }
 
+export interface IAdress {
+  numero: number,
+  rua: string,
+  complemento: string
+}
+
 export interface IDataDeliveryUser {
   name: string
   email: string,
   phone: string,
-  adress: string,
+  adress?: IAdress,
   typeOfpayment: 'card' | 'pix' | 'money',
   delivery: boolean,
   products: IProductsCart[]
