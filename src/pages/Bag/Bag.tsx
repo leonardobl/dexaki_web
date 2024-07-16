@@ -5,7 +5,7 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
 import { useBag } from "./useBag";
 import { BagItem } from "../../components/BagItem";
-import { maskMoney, maskPhone } from "../../util/OptionsMaks.ts";
+import { maskMoney, maskPhone } from "../../util/masks.ts";
 import { IProductsCart } from "../../model/Product";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { ModalBottom } from "../../components/ModalBottom";
