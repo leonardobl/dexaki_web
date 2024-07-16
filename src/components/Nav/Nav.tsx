@@ -3,7 +3,7 @@ import { IconHome, IconPedidos, IconPerfil } from "./Icons";
 import { NavLink } from "react-router-dom";
 import { IoBagCheckOutline } from "react-icons/io5";
 import { useNav } from "./useNav";
-import { maskMoney } from "../../util/masks";
+import { maskMoney } from "../../util/masks.ts";
 
 export const Nav = () => {
   const { navigate, total, dataDelivery } = useNav();

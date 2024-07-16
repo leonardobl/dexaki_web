@@ -3,7 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { Modal } from "../../components/Modal/Modal";
 import { Button } from "../../components/Button/Button";
 import { useProduct } from "./useProduct";
-import { maskMoney } from "../../util/masks";
+import { maskMoney } from "../../util/masks.ts";
 import { FaCartPlus } from "react-icons/fa";
 
 export const Product = () => {
