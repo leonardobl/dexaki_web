@@ -3,7 +3,7 @@ import { ComponentProps } from "react";
 
 import { FaTrash } from "react-icons/fa";
 import { IProductsCart } from "../../model/Product";
-import { maskMoney } from "../../util/masks.ts";
+import { maskMoney } from "../../Util/masks.ts";
 
 
 interface IBagItemProps extends ComponentProps<"div"> {

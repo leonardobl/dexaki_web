@@ -37,8 +37,8 @@ export const Wrapper = styled.div`
   label:before{
     content: '';
     position: absolute;
-    height: 12px;
-    width:  12px;
+    height: 10px;
+    width:  10px;
     right: 5px;
     top: 5px;
     border-radius: 50%;

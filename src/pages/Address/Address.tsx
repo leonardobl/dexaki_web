@@ -11,7 +11,7 @@ import { useAdress } from './useAdress';
 import { FaTrash } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { InputRHF } from '../../components/FormRHF/InputRHF';
-import { maskPhone } from '../../util/masks';
+import { maskPhone } from '../../Util/masks';
 import { GiStorkDelivery } from "react-icons/gi";
 import { FaLocationDot } from "react-icons/fa6";
 import { Radio } from '../../components/Form/Radio';
@@ -123,7 +123,7 @@ export const Address = () => {
               title='Pix'
               label='Pagamento seguro via Pix (Recomendado)'
               id='pix'
-              value={'local'}
+              value={'pix'}
               name='typePay'
             />
             <Radio
@@ -131,7 +131,7 @@ export const Address = () => {
               title='Dinheiro'
               label='Fazer pagamento no momento da entrega'
               id='dinheiro'
-              value={'local'}
+              value={'dinheiro'}
               name='typePay'
             />
             <Radio
@@ -140,7 +140,7 @@ export const Address = () => {
               label='Fazer pagamento no momento da entrega.'
               description='visa, mastercard, elo, hipercard, AmericanExpress'
               id='cartao'
-              value={'local'}
+              value={'cartao'}
               name='typePay'
             />
             <Button variant='outlined'>Finalizar</Button>
