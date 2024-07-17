@@ -32,6 +32,7 @@ export const HeaderModal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 24px;
 `;
 
 export const Modal = styled.div`

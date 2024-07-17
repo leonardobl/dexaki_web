@@ -3,7 +3,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { IDataDeliveryUser, IProductsCart } from "../../model/Product";
 import { useState } from "react";
 import { FormProvider, useForm, } from 'react-hook-form'
-import { IDataUserProps, formSchema } from "./types";
+import { IDataUserProps, formSchemaUser } from "./schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const userDelivery: IDataDeliveryUser = {
@@ -31,7 +31,7 @@ export const useBag = () => {
     mode: 'onSubmit',
     shouldFocusError: false,
     defaultValues: initialValue,
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchemaUser),
   })
 
   const { formState: { errors } } = methods;

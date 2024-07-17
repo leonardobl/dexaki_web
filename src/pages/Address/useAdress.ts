@@ -1,42 +1,72 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { FormProvider, useForm, } from 'react-hook-form'
-import { IDataAdressProps, formSchema } from "./types"
+import { IDataAdressProps, formSchema } from "./schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useLocalStorage } from "../../hooks/useLocalStorage"
 import { IDataDeliveryUser } from "../../model/Product"
-
-
+import { IDataUserProps, formSchemaUser } from "../Bag/schema"
 
 export const useAdress = () => {
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery" })
   const [showModalAdress, setShowModalAdress] = useState(false)
+  const [showModalUser, setShowModalUser] = useState(false)
 
   const navigate = useNavigate()
+  const { mode } = useParams()
 
-  const initialValue = {
-    numero: '345',
-    rua: 'Rua. Edinaelza S.Correia',
-    complemento: 'Próximo ao Atacadão'
+  // const currentAdress = dataDelivery.adress ? dataDelivery.adress.find(adress => adress.currentAdress) : []
+
+  const initialValueAdress = {
+    numero: '',
+    rua: '',
+    complemento: ''
   }
 
-  const methods = useForm<IDataAdressProps>({
+  const initialValueUser = {
+    phone: dataDelivery.phone,
+    name: dataDelivery.name
+  }
+
+  const methodsAdress = useForm<IDataAdressProps>({
     mode: 'onSubmit',
     shouldFocusError: false,
-    defaultValues: initialValue,
+    defaultValues: initialValueAdress,
     resolver: zodResolver(formSchema),
   })
 
-  const { formState: { errors } } = methods;
+  const { formState: { errors: adressErros } } = methodsAdress;
 
 
-  function onSendSubmit(data: IDataAdressProps) {
+  const methodsUser = useForm<IDataUserProps>({
+    mode: 'onSubmit',
+    shouldFocusError: false,
+    defaultValues: initialValueUser,
+    resolver: zodResolver(formSchemaUser),
+  })
+
+  const { formState: { errors: userErros } } = methodsUser;
+
+
+  function onSendSubmitEditUser(data: IDataUserProps) {
+    const result: IDataDeliveryUser = {
+      ...dataDelivery,
+      name: data.name,
+      phone: data.phone
+    }
+
+    setDataDelivery(result)
+    setShowModalUser(false)
+  }
+
+  function onSendSubmitSaveAdress(data: IDataAdressProps) {
     const result: IDataDeliveryUser = {
       ...dataDelivery,
       adress: {
         rua: data.rua,
         numero: Number(data.numero),
-        complemento: data.complemento
+        complemento: data.complemento,
+        currentAdress: true
       }
     }
 
@@ -44,19 +74,33 @@ export const useAdress = () => {
     navigate('/adress')
   }
 
-  function modalAdress() {
-    setShowModalAdress(true)
+  function editUser() {
+    setShowModalUser(true)
   }
 
+  function formAdress(mode: string) {
+    navigate(`/editAdress/${mode}`)
+  }
+
+
+
   return {
-    errors,
+    onSendSubmitSaveAdress,
+    dataDelivery,
+    userErros,
+    adressErros,
     FormProvider,
-    methods,
-    onSendSubmit,
+    methodsAdress,
     navigate,
-    modalAdress,
     showModalAdress,
-    setShowModalAdress
+    setShowModalAdress,
+    editUser,
+    showModalUser,
+    setShowModalUser,
+    methodsUser,
+    onSendSubmitEditUser,
+    formAdress,
+    mode
   }
 }
 

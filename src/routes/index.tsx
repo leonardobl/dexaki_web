@@ -25,7 +25,7 @@ const Rotas = () => {
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/cupons" element={<Cupons />} />
           <Route path="/adress" element={<Address />} />
-          <Route path="/editAdress" element={<EditAdress />} />
+          <Route path="/editAdress/:mode" element={<EditAdress />} />
           <Route path="/bag" element={<Bag />} />
           <Route path="/typeDelivery" element={<TypeDelivery />} />
           <Route path="/profileCompany" element={<ProfileCompany />} />

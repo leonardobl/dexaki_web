@@ -15,7 +15,8 @@ export interface IProductsCart extends IProducts {
 export interface IAdress {
   numero: number,
   rua: string,
-  complemento: string
+  complemento: string,
+  currentAdress: boolean,
 }
 
 export interface IDataDeliveryUser {
