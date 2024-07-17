@@ -197,7 +197,7 @@ export const UserDescription = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 2px;
-  margin: 24px 0;
+  margin: 0px 0px 24px 0px;
 
   > div {
     display: flex;
