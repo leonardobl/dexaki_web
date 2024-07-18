@@ -14,7 +14,7 @@ export const BodyItens = styled.div`
 export const ContentItens = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 6px;
   padding: 0 16px;
 `;
 
