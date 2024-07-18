@@ -37,7 +37,8 @@ export const Address = () => {
     formAdress,
     showModalConfirm,
     setShowModalConfirm,
-    finalizar
+    finalizar,
+    deleteAdress
   } = useAdress()
 
   return (
@@ -164,7 +165,7 @@ export const Address = () => {
               </div>
             </div>
             <div className="content-btn">
-              <Button variant='outlined'><FaTrash />Excluir</Button>
+              <Button variant='outlined' onClick={() => deleteAdress()}><FaTrash />Excluir</Button>
               <Button onClick={() => formAdress('edit')}>
                 <MdEdit />
                 Editar

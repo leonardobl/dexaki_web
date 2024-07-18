@@ -73,6 +73,15 @@ export const useAdress = () => {
     navigate('/adress')
   }
 
+  function deleteAdress() {
+    const result = {
+      ...dataDelivery,
+      adress: undefined
+    }
+    setDataDelivery(result)
+    setShowModalAdress(false)
+  }
+
   function finalizar() {
     if (dataDelivery.adress) {
       setShowModalConfirm(true)
@@ -106,7 +115,8 @@ export const useAdress = () => {
     mode,
     showModalConfirm,
     setShowModalConfirm,
-    finalizar
+    finalizar,
+    deleteAdress
   }
 }
 
