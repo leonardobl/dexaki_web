@@ -122,9 +122,6 @@ export const MyProfile = () => {
                 </div>
                 <MdKeyboardArrowRight />
               </S.Card>
-
-
-
             </S.Body>
           </div>
         ) : (

@@ -17,7 +17,7 @@ export const ProfileCompany = () => {
           <h1>Sobre o estabelecimento</h1>
         </S.Header>
 
-        <header>
+        <S.CardContent>
           <div>
             <RiBuilding3Line size={22} color="#333" />
             <p>
@@ -58,7 +58,7 @@ export const ProfileCompany = () => {
               <li>Sábado 18: às 22h45m</li>
             </ul>
           </div>
-        </header>
+        </S.CardContent>
       </S.Wrapper>
     </Template>
   );
