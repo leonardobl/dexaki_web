@@ -102,7 +102,10 @@ export const Bag = () => {
           </h3>
         </div>
 
-        <Button onClick={() => BtnContinuar()}>Continuar</Button>
+        <Button
+          disabled={!(dataDelivery.products.length > 0)}
+          onClick={() => BtnContinuar()}
+        >Continuar</Button>
       </S.ContentFooter>
 
 
