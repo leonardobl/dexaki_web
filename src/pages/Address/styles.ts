@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   height: 100vh;
   /* height: 100vh;  */
   background-color: #FAFAFA;
+  
 `;
 
 export const HeaderAdress = styled.div`
@@ -24,11 +25,7 @@ export const Header = styled.div`
 `;
 
 export const Body = styled.div`
-  overflow-y: scroll;
-  max-height: calc(100vh - 146px);
-  height: 100%;
-  padding: 0px 16px 24px 16px;
-
+  padding: 0 16px;
 `
 
 

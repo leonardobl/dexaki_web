@@ -7,9 +7,6 @@ export const Wrapper = styled.div`
 
 export const BodyItens = styled.div`
   margin-bottom: 16px;
-  overflow-y: scroll;
-  max-height: calc(100vh - 246px);
-  height: 100%;
 `;
 
 export const ContentItens = styled.div`
