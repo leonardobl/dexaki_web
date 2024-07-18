@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   /* padding-bottom: 40px; */
+  height: 100vh;
 `;
 
 export const BodyItens = styled.div`
   margin-bottom: 16px;
   overflow-y: scroll;
-  max-height: calc(100vh - 146px);
+  max-height: calc(100vh - 246px);
   height: 100%;
 `;
 
