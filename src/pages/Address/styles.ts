@@ -285,3 +285,70 @@ export const ContentPay = styled.div`
     font-weight: 600;
   }
 `;
+
+export const ModalConfirm = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  h3 {
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+  }
+`;
+
+export const UserData = styled.div`
+  display: flex;
+  gap: 6px;
+  div {
+    strong {
+      font-size: 14px;
+      color: #333;
+    }
+    p {
+      font-size: 12px;
+      color: #333;
+    }
+  }
+`;
+
+export const AdressUser = styled.div`
+  display: flex;
+  gap: 6px;
+
+  > div {
+    strong {
+      font-size: 12px;
+      color: #333;
+    }
+
+    p {
+      font-size: 12px;
+      color: #333;
+    }
+  }
+`;
+
+export const Ticket = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  
+  p {
+    font-size: 12px;
+    color: #333;
+  }
+`;
+
+export const TypePay = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  p {
+    font-size: 12px;
+    color: #333;
+  }
+`;

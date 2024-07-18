@@ -10,6 +10,7 @@ import { IDataUserProps, formSchemaUser } from "../Bag/schema"
 export const useAdress = () => {
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery" })
   const [showModalAdress, setShowModalAdress] = useState(false)
+  const [showModalConfirm, setShowModalConfirm] = useState(false)
   const [showModalUser, setShowModalUser] = useState(false)
 
   const navigate = useNavigate()
@@ -37,7 +38,6 @@ export const useAdress = () => {
 
   const { formState: { errors: adressErros } } = methodsAdress;
 
-
   const methodsUser = useForm<IDataUserProps>({
     mode: 'onSubmit',
     shouldFocusError: false,
@@ -46,7 +46,6 @@ export const useAdress = () => {
   })
 
   const { formState: { errors: userErros } } = methodsUser;
-
 
   function onSendSubmitEditUser(data: IDataUserProps) {
     const result: IDataDeliveryUser = {
@@ -74,6 +73,12 @@ export const useAdress = () => {
     navigate('/adress')
   }
 
+  function finalizar() {
+    if (dataDelivery.adress) {
+      setShowModalConfirm(true)
+    }
+  }
+
   function editUser() {
     setShowModalUser(true)
   }
@@ -81,8 +86,6 @@ export const useAdress = () => {
   function formAdress(mode: string) {
     navigate(`/editAdress/${mode}`)
   }
-
-
 
   return {
     onSendSubmitSaveAdress,
@@ -100,7 +103,10 @@ export const useAdress = () => {
     methodsUser,
     onSendSubmitEditUser,
     formAdress,
-    mode
+    mode,
+    showModalConfirm,
+    setShowModalConfirm,
+    finalizar
   }
 }
 

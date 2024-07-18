@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     padding: 16px 16px;
     border: 1px solid #ccc;
     color: #999;
-    font-size: 14px;
+    font-size: 12px;
 
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
     strong {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 3px;
       margin-bottom: 5px;
     }
 

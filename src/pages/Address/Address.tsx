@@ -18,6 +18,8 @@ import { Radio } from '../../components/Form/Radio';
 import { FaPix } from "react-icons/fa6";
 import { IoMdCard } from "react-icons/io";
 import { MdAttachMoney } from "react-icons/md";
+import { AiOutlineUser } from "react-icons/ai";
+import { IoTicket } from "react-icons/io5";
 
 export const Address = () => {
   const {
@@ -32,7 +34,10 @@ export const Address = () => {
     userErros,
     editUser,
     dataDelivery,
-    formAdress
+    formAdress,
+    showModalConfirm,
+    setShowModalConfirm,
+    finalizar
   } = useAdress()
 
   return (
@@ -143,7 +148,7 @@ export const Address = () => {
               value={'cartao'}
               name='typePay'
             />
-            <Button variant='outlined'>Finalizar</Button>
+            <Button variant='outlined' onClick={() => finalizar()}>Finalizar</Button>
           </S.ContentPay>
 
         </S.Body>
@@ -199,6 +204,40 @@ export const Address = () => {
 
           </FormProvider>
         </S.ContentModalInput>
+      </ModalBottom>
+
+      <ModalBottom isOpen={showModalConfirm} onClose={() => setShowModalConfirm(false)}>
+        <S.ModalConfirm>
+          <h3>Revise o seu pedido</h3>
+          <S.UserData>
+            <AiOutlineUser size={22} />
+            <div>
+              <strong>{dataDelivery.name}</strong>
+              <p>{dataDelivery.phone}</p>
+            </div>
+          </S.UserData>
+          <S.AdressUser>
+            <FaLocationDot size={22} />
+            <div>
+              <strong>Número: {dataDelivery.adress?.numero}</strong>
+              <p>{dataDelivery.adress?.rua}</p>
+              <p>{dataDelivery.adress?.complemento}</p>
+            </div>
+          </S.AdressUser>
+          <S.Ticket>
+            <IoTicket size={22} />
+            <p>Nenhum cupom aplicado</p>
+          </S.Ticket>
+          <S.TypePay>
+            {dataDelivery.typeOfpayment === 'pix' && <FaPix size={22} />}
+            {dataDelivery.typeOfpayment === 'money' && <MdAttachMoney size={22} />}
+            {dataDelivery.typeOfpayment === 'card' && <IoMdCard size={22} />}
+
+            <p>Forma de pagamento selecionado: Dinheiro</p>
+          </S.TypePay>
+          <Button>Fazer Pedido</Button>
+          <Button variant='outlined'>Alterar Pedido</Button>
+        </S.ModalConfirm>
       </ModalBottom>
     </Template>
   )
