@@ -2,24 +2,18 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: #fafafa;
-
   
-`;
-
-export const Body = styled.div`
-  overflow-y: scroll;
-  max-height: calc(100vh - 100px);
-  height: 100%;
-  padding: 0px 16px 24px 16px;
-
 
   header {
-    
+    position: fixed;
+    background-color: #fff;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0px;
+    height: 60px;
+    padding: 0px 16px;
 
     div {
       display: flex;
@@ -43,6 +37,15 @@ export const Body = styled.div`
       color: ${(props) => props.theme.primary["800"]};
     }
   }
+`;
+
+export const Body = styled.div`
+  overflow-y: scroll;
+  height: calc(100vh - 130px);
+  
+  padding: 0px 16px 24px 16px;
+  margin-top: 60px;
+ 
  
 
   h3 {

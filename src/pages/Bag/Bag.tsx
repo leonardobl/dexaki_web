@@ -34,20 +34,18 @@ export const Bag = () => {
 
   return (
     <S.Wrapper>
+      <header>
+        <div onClick={() => navigate(-1)}>
+          <MdOutlineKeyboardArrowLeft size={22} />
+          <h3>Sacola</h3>
+        </div>
 
-
+        <h4 onClick={CleanAll}>
+          <TbTrashXFilled color="#FF6B00" size={19} />
+          Limpar
+        </h4>
+      </header>
       <S.Body>
-        <header>
-          <div onClick={() => navigate(-1)}>
-            <MdOutlineKeyboardArrowLeft size={22} />
-            <h3>Sacola</h3>
-          </div>
-
-          <h4 onClick={CleanAll}>
-            <TbTrashXFilled color="#FF6B00" size={19} />
-            Limpar
-          </h4>
-        </header>
         {dataDelivery.products?.length > 0 && <h3>Itens adicionados</h3>}
 
         {dataDelivery.products?.length > 0 ?
