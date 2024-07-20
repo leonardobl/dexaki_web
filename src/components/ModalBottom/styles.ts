@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 
 export const ContainerModal = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   z-index: 1000;
   top: 0;

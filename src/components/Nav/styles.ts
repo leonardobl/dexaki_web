@@ -39,6 +39,7 @@ export const WrapperNav = styled.div`
 
   a.active {
     color: ${(props) => props.theme.primary[800]};
+    font-weight: 500;
 
     svg {
       filter: brightness(0) saturate(100%) invert(40%) sepia(76%)
@@ -47,29 +48,21 @@ export const WrapperNav = styled.div`
   }
 `;
 
-interface ILinkProps {
-  isActive: boolean;
-}
-
 export const ContentLink = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 16px;
+  padding: 0px 16px;
+  height: 60px;
 `;
 
-export const Link = styled.a<ILinkProps>``;
 
 export const Bag = styled.div`
   background-color: #fff;
-  padding: 12px 16px;
+  padding: 0px 16px;
+  height: 40px;
   width: 100%;
-  /* height: 50px; */
-  /* position: fixed; */
-  /* bottom: 52px;
-  left: 0px; */
   display: flex;
-
   justify-content: space-between;
   align-items: center;
   background-color: ${(props) => props.theme.primary["800"]};
