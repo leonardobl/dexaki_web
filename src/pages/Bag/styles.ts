@@ -45,6 +45,7 @@ export const Body = styled.div`
   
   padding: 0px 16px 24px 16px;
   margin-top: 60px;
+  margin-bottom: 70px;
  
  
 
