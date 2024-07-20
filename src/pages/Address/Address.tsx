@@ -38,7 +38,10 @@ export const Address = () => {
     showModalConfirm,
     setShowModalConfirm,
     finalizar,
-    deleteAdress
+    deleteAdress,
+    setTypePayment,
+    setDelivery,
+    fazerPedido
   } = useAdress()
 
   return (
@@ -102,10 +105,11 @@ export const Address = () => {
 
                   <S.ContentRadio>
                     <Radio
-                      title='Retirar No Local'
+                      title='Consumir No Local'
                       label='Rua Trevos, 1223 Morada do Sol, Teresina'
                       id='local'
                       value={'local'}
+                      onChange={(e) => setDelivery(e.target.value)}
                       name='group'
                     />
                     <Radio
@@ -113,6 +117,7 @@ export const Address = () => {
                       label='Rua Trevos, 1223 Morada do Sol, Teresina'
                       id='retirada'
                       value={'retirada'}
+                      onChange={(e) => setDelivery(e.target.value)}
                       name='group'
                     />
                   </S.ContentRadio>
@@ -123,13 +128,14 @@ export const Address = () => {
           </S.ContentCardAdress>
 
           <S.ContentPay>
-            <h3>Forma de pagamento: </h3>
+            <h3>Selecione uma forma de pagamento: </h3>
             <Radio
               icon={<FaPix size={18} />}
               title='Pix'
               label='Pagamento seguro via Pix (Recomendado)'
               id='pix'
               value={'pix'}
+              onChange={(e) => setTypePayment(e.target.value)}
               name='typePay'
             />
             <Radio
@@ -138,6 +144,7 @@ export const Address = () => {
               label='Fazer pagamento no momento da entrega'
               id='dinheiro'
               value={'dinheiro'}
+              onChange={(e) => setTypePayment(e.target.value)}
               name='typePay'
             />
             <Radio
@@ -147,9 +154,14 @@ export const Address = () => {
               description='visa, mastercard, elo, hipercard, AmericanExpress'
               id='cartao'
               value={'cartao'}
+              onChange={(e) => setTypePayment(e.target.value)}
               name='typePay'
             />
-            <Button variant='outlined' onClick={() => finalizar()}>Finalizar</Button>
+            <Button
+              variant='outlined'
+              onClick={() => finalizar()}
+
+            >Finalizar</Button>
           </S.ContentPay>
 
         </S.Body>
@@ -236,8 +248,8 @@ export const Address = () => {
 
             <p>Forma de pagamento selecionado: Dinheiro</p>
           </S.TypePay>
-          <Button>Fazer Pedido</Button>
-          <Button variant='outlined'>Alterar Pedido</Button>
+          <Button onClick={() => fazerPedido()}>Fazer Pedido</Button>
+          <Button variant='outlined' onClick={() => navigate('/bag')}>Alterar Pedido</Button>
         </S.ModalConfirm>
       </ModalBottom>
     </Template>

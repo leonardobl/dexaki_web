@@ -10,18 +10,23 @@ import { IDataUserProps, formSchemaUser } from "../Bag/schema"
 export const useAdress = () => {
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery" })
   const [showModalAdress, setShowModalAdress] = useState(false)
+  const [typePayment, setTypePayment] = useState<string | undefined>(undefined)
+  const [delivery, setDelivery] = useState<string | undefined>(undefined)
   const [showModalConfirm, setShowModalConfirm] = useState(false)
   const [showModalUser, setShowModalUser] = useState(false)
+
+  console.log({
+    delivery: delivery,
+    typeOfPaymant: typePayment,
+  })
 
   const navigate = useNavigate()
   const { mode } = useParams()
 
-  // const currentAdress = dataDelivery.adress ? dataDelivery.adress.find(adress => adress.currentAdress) : []
-
   const initialValueAdress = {
-    numero: '',
-    rua: '',
-    complemento: ''
+    numero: dataDelivery.adress?.numero.toString() ?? '',
+    rua: dataDelivery.adress?.rua ?? '',
+    complemento: dataDelivery.adress?.complemento ?? ''
   }
 
   const initialValueUser = {
@@ -88,6 +93,10 @@ export const useAdress = () => {
     }
   }
 
+  function fazerPedido() {
+    navigate('/payment')
+  }
+
   function editUser() {
     setShowModalUser(true)
   }
@@ -95,6 +104,7 @@ export const useAdress = () => {
   function formAdress(mode: string) {
     navigate(`/editAdress/${mode}`)
   }
+
 
   return {
     onSendSubmitSaveAdress,
@@ -116,7 +126,12 @@ export const useAdress = () => {
     showModalConfirm,
     setShowModalConfirm,
     finalizar,
-    deleteAdress
+    deleteAdress,
+    typePayment,
+    setTypePayment,
+    setDelivery,
+    delivery,
+    fazerPedido
   }
 }
 

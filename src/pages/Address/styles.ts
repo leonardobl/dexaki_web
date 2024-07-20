@@ -278,7 +278,7 @@ export const ContentPay = styled.div`
 
   h3 {
     font-size: 15px;
-    color: #999;
+    color: #333;
     font-weight: 600;
   }
 `;

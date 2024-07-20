@@ -24,7 +24,7 @@ export interface IDataDeliveryUser {
   email: string,
   phone: string,
   adress?: IAdress,
-  typeOfpayment: 'card' | 'pix' | 'money',
+  typeOfpayment: 'card' | 'pix' | 'money' | undefined,
   delivery: boolean,
   products: IProductsCart[]
 }

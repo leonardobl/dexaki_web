@@ -22,7 +22,9 @@ export const Button = styled.button<TProps>`
   
 
   &:disabled {
-    background-color: #ccc;
+    border:  1px solid #ccc;
+    background-color: #d1d2d3;
+    color: #999 !important;
     cursor: not-allowed;
   }
  
