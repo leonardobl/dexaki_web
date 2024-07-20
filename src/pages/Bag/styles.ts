@@ -3,13 +3,23 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   background-color: #fafafa;
 
+  
+`;
+
+export const Body = styled.div`
+  overflow-y: scroll;
+  max-height: calc(100vh - 70px);
+  height: 100%;
+  padding: 0px 16px 24px 16px;
+
+
   header {
-    padding: 24px;
+    
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    padding: 16px 0px;
 
     div {
       display: flex;
@@ -21,6 +31,7 @@ export const Wrapper = styled.div`
       font-size: 18px;
       color: #333;
       font-weight: 600;
+      margin-bottom: 0px;
     }
 
     h4 {
@@ -32,13 +43,6 @@ export const Wrapper = styled.div`
       color: ${(props) => props.theme.primary["800"]};
     }
   }
-`;
-
-export const Body = styled.div`
-  overflow-y: scroll;
-  max-height: calc(100vh - 146px);
-  height: 100%;
-  padding: 0px 16px 24px 16px;
  
 
   h3 {
@@ -173,9 +177,11 @@ export const ContentFooter = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 10px 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
   position: fixed;
-   bottom: 0px;
+  bottom: 0px;
   left: 0px;
   right: 0px; 
   padding: 12px 24px;
