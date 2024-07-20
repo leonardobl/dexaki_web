@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const Body = styled.div`
   overflow-y: scroll;
-  max-height: calc(100vh - 70px);
+  max-height: calc(100vh - 80px);
   height: 100%;
   padding: 0px 16px 24px 16px;
 
