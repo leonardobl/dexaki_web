@@ -150,3 +150,17 @@ export const ContentButton = styled.div`
   flex-direction: column;
   gap: 10px;
 `;
+
+
+export const WrapperModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    font-size: 16px;
+    color: #999;
+    font-weight: 600;
+    text-align: center;
+  }
+`;

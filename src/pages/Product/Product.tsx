@@ -1,10 +1,10 @@
 import * as S from "./styles";
 import { IoIosArrowBack } from "react-icons/io";
-import { Modal } from "../../components/Modal/Modal";
 import { Button } from "../../components/Button/Button";
 import { useProduct } from "./useProduct";
 import { maskMoney } from "../../Util/masks.ts";
 import { FaCartPlus } from "react-icons/fa";
+import { ModalBottom } from "../../components/ModalBottom/index.tsx";
 
 export const Product = () => {
   const {
@@ -58,20 +58,23 @@ export const Product = () => {
         </button>
       </div>
 
-      <Modal
-        title="Confirme Seus Dados"
+      <ModalBottom
         isOpen={showModal}
         onClose={() => setShowModal(!showModal)}
       >
-        <div></div>
-        <S.ContentButton>
-          <Button variant="outlined" onClick={() => navigate("/bag")}>
-            Ir Para carinho
+        <S.WrapperModal>
+          <h3>Você deseja ir para</h3>
+          <S.ContentButton>
+            <Button variant="outlined" onClick={() => navigate("/bag")}>
+              Ir Para carinho
 
-          </Button>
-          <Button onClick={() => navigate("/")}>Continuar Comprando <FaCartPlus size={18} /></Button>
-        </S.ContentButton>
-      </Modal>
+            </Button>
+            <Button onClick={() => navigate("/")}>Continuar Comprando <FaCartPlus size={18} /></Button>
+
+          </S.ContentButton>
+        </S.WrapperModal>
+
+      </ModalBottom>
     </S.WrapperProduct>
   );
 };
