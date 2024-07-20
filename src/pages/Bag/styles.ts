@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: #fafafa;
-  
+  height: 100vh; 
 
   header {
     position: fixed;
@@ -41,14 +41,12 @@ export const Wrapper = styled.div`
 
 export const Body = styled.div`
   overflow-y: scroll;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 100px);
   
   padding: 0px 16px 24px 16px;
   margin-top: 60px;
 
  
- 
-
   h3 {
     font-size: 14px;
     color: black;
