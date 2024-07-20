@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 0px 24px;
-  height: 100vh;
   background-color: #FAFAFA;
 `;
 
@@ -19,7 +18,6 @@ export const Header = styled.div`
 `;
 
 export const Body = styled.div`
-  height: 100%;
   width: 100%;
 `;
 
