@@ -10,15 +10,8 @@ import { IDataUserProps, formSchemaUser } from "../Bag/schema"
 export const useAdress = () => {
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery" })
   const [showModalAdress, setShowModalAdress] = useState(false)
-  const [typePayment, setTypePayment] = useState<string | undefined>(undefined)
-  const [delivery, setDelivery] = useState<string | undefined>(undefined)
   const [showModalConfirm, setShowModalConfirm] = useState(false)
   const [showModalUser, setShowModalUser] = useState(false)
-
-  console.log({
-    delivery: delivery,
-    typeOfPaymant: typePayment,
-  })
 
   const navigate = useNavigate()
   const { mode } = useParams()
@@ -66,6 +59,7 @@ export const useAdress = () => {
   function onSendSubmitSaveAdress(data: IDataAdressProps) {
     const result: IDataDeliveryUser = {
       ...dataDelivery,
+      delivery: undefined,
       adress: {
         rua: data.rua,
         numero: Number(data.numero),
@@ -88,7 +82,7 @@ export const useAdress = () => {
   }
 
   function finalizar() {
-    if (dataDelivery.adress) {
+    if (dataDelivery.adress || dataDelivery.delivery) {
       setShowModalConfirm(true)
     }
   }
@@ -105,6 +99,38 @@ export const useAdress = () => {
     navigate(`/editAdress/${mode}`)
   }
 
+  function onChangeTypeOfPayment(value: string) {
+    const result = {
+      ...dataDelivery,
+      typeOfpayment: value
+    }
+    setDataDelivery(result)
+  }
+
+  function onChangeDeliveryType(value: string) {
+    const result = {
+      ...dataDelivery,
+      delivery: value
+    }
+    setDataDelivery(result)
+  }
+
+  function parseTypeOfPayment(value: string) {
+    switch (value) {
+      case 'pix':
+        return 'Pix'
+      case 'card':
+        return 'Cartão';
+      case 'money':
+        return 'Dinheiro'
+    }
+  }
+
+  // function fazerPedido() {
+  //   if(dataDelivery.typeOfpayment === 'Pix') {
+
+  //   }
+  // }
 
   return {
     onSendSubmitSaveAdress,
@@ -127,11 +153,10 @@ export const useAdress = () => {
     setShowModalConfirm,
     finalizar,
     deleteAdress,
-    typePayment,
-    setTypePayment,
-    setDelivery,
-    delivery,
-    fazerPedido
+    fazerPedido,
+    onChangeTypeOfPayment,
+    onChangeDeliveryType,
+    parseTypeOfPayment
   }
 }
 

@@ -11,7 +11,7 @@ const userDelivery: IDataDeliveryUser = {
   phone: '',
   adress: undefined,
   typeOfpayment: undefined,
-  delivery: false,
+  delivery: undefined,
   products: []
 }
 

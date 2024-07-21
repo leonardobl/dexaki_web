@@ -39,9 +39,10 @@ export const Address = () => {
     setShowModalConfirm,
     finalizar,
     deleteAdress,
-    setTypePayment,
-    setDelivery,
-    fazerPedido
+    onChangeDeliveryType,
+    fazerPedido,
+    onChangeTypeOfPayment,
+    parseTypeOfPayment
   } = useAdress()
 
   return (
@@ -108,17 +109,19 @@ export const Address = () => {
                       title='Consumir No Local'
                       label='Rua Trevos, 1223 Morada do Sol, Teresina'
                       id='local'
-                      value={'local'}
-                      onChange={(e) => setDelivery(e.target.value)}
+                      value={'consumir_no_local'}
+                      onChange={(e) => onChangeDeliveryType(e.target.value)}
                       name='group'
+                      checked={dataDelivery.delivery === 'consumir_no_local'}
                     />
                     <Radio
                       title='Retirar No Estabelecimento'
                       label='Rua Trevos, 1223 Morada do Sol, Teresina'
                       id='retirada'
-                      value={'retirada'}
-                      onChange={(e) => setDelivery(e.target.value)}
+                      value={'retirar_no_estabelecimento'}
+                      onChange={(e) => onChangeDeliveryType(e.target.value)}
                       name='group'
+                      checked={dataDelivery.delivery === 'retirar_no_estabelecimento'}
                     />
                   </S.ContentRadio>
 
@@ -135,32 +138,36 @@ export const Address = () => {
               label='Pagamento seguro via Pix (Recomendado)'
               id='pix'
               value={'pix'}
-              onChange={(e) => setTypePayment(e.target.value)}
+              onChange={(e) => onChangeTypeOfPayment(e.target.value)}
               name='typePay'
+              checked={dataDelivery.typeOfpayment === 'pix'}
             />
             <Radio
               icon={<MdAttachMoney size={20} />}
               title='Dinheiro'
               label='Fazer pagamento no momento da entrega'
-              id='dinheiro'
-              value={'dinheiro'}
-              onChange={(e) => setTypePayment(e.target.value)}
+              id='money'
+              value={'money'}
+              onChange={(e) => onChangeTypeOfPayment(e.target.value)}
               name='typePay'
+              checked={dataDelivery.typeOfpayment === 'money'}
             />
             <Radio
               icon={<IoMdCard size={20} />}
               title='Cartão'
               label='Fazer pagamento no momento da entrega.'
               description='visa, mastercard, elo, hipercard, AmericanExpress'
-              id='cartao'
-              value={'cartao'}
-              onChange={(e) => setTypePayment(e.target.value)}
+              id='card'
+              value={'card'}
+              onChange={(e) => onChangeTypeOfPayment(e.target.value)}
               name='typePay'
+              checked={dataDelivery.typeOfpayment === 'card'}
             />
+
             <Button
               variant='outlined'
               onClick={() => finalizar()}
-
+              disabled={(!dataDelivery.adress && !dataDelivery.delivery) || !dataDelivery.typeOfpayment}
             >Finalizar</Button>
           </S.ContentPay>
 
@@ -231,11 +238,15 @@ export const Address = () => {
           </S.UserData>
           <S.AdressUser>
             <FaLocationDot size={22} />
-            <div>
+            {dataDelivery.adress ? (<div>
               <strong>Número: {dataDelivery.adress?.numero}</strong>
               <p>{dataDelivery.adress?.rua}</p>
               <p>{dataDelivery.adress?.complemento}</p>
-            </div>
+            </div>) : (
+              <div>
+                <p>{dataDelivery.delivery === 'consumir_no_local' ? 'Consumir no Local' : 'Retirar no Estabelecimento'}</p>
+              </div>
+            )}
           </S.AdressUser>
           <S.Ticket>
             <IoTicket size={22} />
@@ -246,7 +257,7 @@ export const Address = () => {
             {dataDelivery.typeOfpayment === 'money' && <MdAttachMoney size={22} />}
             {dataDelivery.typeOfpayment === 'card' && <IoMdCard size={22} />}
 
-            <p>Forma de pagamento selecionado: Dinheiro</p>
+            <p>Forma de pagamento selecionado: {parseTypeOfPayment(dataDelivery.typeOfpayment!)}</p>
           </S.TypePay>
           <Button onClick={() => fazerPedido()}>Fazer Pedido</Button>
           <Button variant='outlined' onClick={() => navigate('/bag')}>Alterar Pedido</Button>

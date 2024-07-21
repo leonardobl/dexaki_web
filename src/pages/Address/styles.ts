@@ -312,6 +312,7 @@ export const UserData = styled.div`
 
 export const AdressUser = styled.div`
   display: flex;
+  align-items: center;
   gap: 6px;
 
   > div {
