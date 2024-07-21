@@ -1,17 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { IDataDeliveryUser, IProductsCart } from "../../model/Product";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { FormProvider, useForm, } from 'react-hook-form'
 import { IDataUserProps, formSchemaUser } from "./schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAppContext } from "../../context/AppContext";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 
 
 export const useBag = () => {
   const [showModal, setShowModal] = useState(false)
-  const { total, frete } = useAppContext()
+
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery" })
 
   const navigate = useNavigate();
@@ -20,6 +19,14 @@ export const useBag = () => {
     phone: '',
     name: ''
   }
+
+  const total = useMemo(() => {
+    return dataDelivery.products
+      .map((i) => i.price * i.quantity)
+      .reduce((acc, p) => acc + p, 0);
+  }, [dataDelivery.products])
+
+  const frete = 0.0;
 
   const methods = useForm<IDataUserProps>({
     mode: 'onSubmit',
