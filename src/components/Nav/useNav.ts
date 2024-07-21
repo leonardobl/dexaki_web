@@ -8,8 +8,8 @@ const userDelivery: IDataDeliveryUser = {
   email: '',
   phone: '',
   adress: undefined,
-  typeOfpayment: 'money',
-  delivery: true,
+  typeOfpayment: undefined,
+  delivery: undefined,
   products: []
 }
 
