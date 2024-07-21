@@ -1,24 +1,18 @@
 import { useNavigate } from "react-router-dom";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { IDataDeliveryUser, IProductsCart } from "../../model/Product";
 import { useState } from "react";
 import { FormProvider, useForm, } from 'react-hook-form'
 import { IDataUserProps, formSchemaUser } from "./schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useAppContext } from "../../context/AppContext";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
-const userDelivery: IDataDeliveryUser = {
-  name: '',
-  email: '',
-  phone: '',
-  adress: undefined,
-  typeOfpayment: undefined,
-  delivery: undefined,
-  products: []
-}
+
 
 export const useBag = () => {
   const [showModal, setShowModal] = useState(false)
-  const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery", initialValue: userDelivery })
+  const { total, frete } = useAppContext()
+  const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery" })
 
   const navigate = useNavigate();
 
@@ -47,12 +41,6 @@ export const useBag = () => {
     setDataDelivery(result)
     navigate('/adress')
   }
-
-  const total = dataDelivery.products
-    .map((i) => i.price * i.quantity)
-    .reduce((acc, p) => acc + p, 0);
-
-  const frete = 0.0;
 
   function addQuantity(product: IProductsCart) {
     const update: IProductsCart = {
@@ -106,7 +94,6 @@ export const useBag = () => {
     })
   }
 
-
   function BtnContinuar() {
     if (dataDelivery.name && dataDelivery.phone) {
       navigate('/adress')
@@ -114,7 +101,6 @@ export const useBag = () => {
       setShowModal(true)
     }
   }
-
 
   return {
     navigate,

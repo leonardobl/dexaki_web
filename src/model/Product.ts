@@ -26,5 +26,6 @@ export interface IDataDeliveryUser {
   adress?: IAdress,
   typeOfpayment: string | undefined,
   delivery: string | undefined,
-  products: IProductsCart[]
+  products: IProductsCart[],
+  qr_code?: string
 }

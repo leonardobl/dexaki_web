@@ -3,17 +3,19 @@ import { useNavigate, useParams } from "react-router-dom"
 import { FormProvider, useForm, } from 'react-hook-form'
 import { IDataAdressProps, formSchema } from "./schema"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useLocalStorage } from "../../hooks/useLocalStorage"
 import { IDataDeliveryUser } from "../../model/Product"
 import { IDataUserProps, formSchemaUser } from "../Bag/schema"
+import { useAppContext } from "../../context/AppContext"
+import { api } from "../../Api"
 
 export const useAdress = () => {
-  const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery" })
+
   const [showModalAdress, setShowModalAdress] = useState(false)
   const [showModalConfirm, setShowModalConfirm] = useState(false)
   const [showModalUser, setShowModalUser] = useState(false)
 
   const navigate = useNavigate()
+  const { dataDelivery, setDataDelivery, total } = useAppContext()
   const { mode } = useParams()
 
   const initialValueAdress = {
@@ -87,10 +89,6 @@ export const useAdress = () => {
     }
   }
 
-  function fazerPedido() {
-    navigate('/payment')
-  }
-
   function editUser() {
     setShowModalUser(true)
   }
@@ -126,11 +124,34 @@ export const useAdress = () => {
     }
   }
 
-  // function fazerPedido() {
-  //   if(dataDelivery.typeOfpayment === 'Pix') {
+  async function fazerPedido() {
+    if (dataDelivery.typeOfpayment === 'pix') {
+      const body = {
+        transaction_amount: total,
+        description: "teste App dexaki",
+        paymentMethodId: "pix",
+        email: "danrleypow@gmail.com",
+        identificationType: "04544207304",
+        number: dataDelivery.phone,
+      }
 
-  //   }
-  // }
+      try {
+        const result = await api.post('create-pix', body);
+        if (result) {
+          const udapte = {
+            ...dataDelivery,
+            qr_code: result.data.point_of_interaction.transaction_data.qr_code
+          }
+          setDataDelivery(udapte);
+          navigate('/payment')
+        }
+      } catch (error) {
+        console.error('Erro ao criar o PIX', error);
+      }
+    } else {
+      console.log('outra opção de cartão')
+    }
+  }
 
   return {
     onSendSubmitSaveAdress,

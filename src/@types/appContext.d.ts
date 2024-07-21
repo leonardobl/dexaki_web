@@ -1,8 +1,9 @@
-import { IDataGetProducts, IDataProducts } from "../Mocks/productsMock";
+import { IDataDeliveryUser } from "../model/Product"
+
 
 export interface IAppContextprops {
-  bagProducts: IDataGetProducts[];
-  addBagProduct: (prod: IDataProducts) => void;
-  handleRemoveBagItem: (id: string) => void;
-  handleCleanBag: () => void;
+  total: number
+  dataDelivery: IDataDeliveryUser,
+  setDataDelivery: (value: IDataDeliveryUser) => void;
+  frete: number
 }

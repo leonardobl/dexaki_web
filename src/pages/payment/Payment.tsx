@@ -5,8 +5,10 @@ import { InputCopy } from '../../components/Form/InputCopy/InputCopy'
 import { Button } from '../../components/Button/Button'
 import { FaWhatsapp } from "react-icons/fa";
 
+
 export const Payment = () => {
-  const { navigate } = usePayment()
+  const { navigate, dataDelivery } = usePayment()
+
 
   return (
     <S.Wrapper>
@@ -24,7 +26,7 @@ export const Payment = () => {
 
         <div className='content-code'>
           <p>Copie o código PIX abaixo e cole para pagar em qualquer aplicativo</p>
-          <InputCopy />
+          <InputCopy value={dataDelivery.qr_code!} />
           <Button >Copiar Código</Button>
           <Button variant='outlined'>
             Continuar no Whatsapp

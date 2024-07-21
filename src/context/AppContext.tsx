@@ -2,61 +2,43 @@ import {
   ReactNode,
   createContext,
   useContext,
-  useEffect,
-  useState,
+  useMemo,
 } from "react";
 import { IAppContextprops } from "../@types/appContext";
-import { IDataGetProducts, IDataProducts } from "../Mocks/productsMock";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { IDataDeliveryUser } from "../model/Product";
 
 export const AppContext = createContext({} as IAppContextprops);
 
+const initialValuesDelivery: IDataDeliveryUser = {
+  name: '',
+  email: '',
+  phone: '',
+  adress: undefined,
+  typeOfpayment: undefined,
+  delivery: undefined,
+  products: [],
+}
+
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [products, setProducts] = useState<IDataProducts[]>(
-    [] as IDataProducts[]
-  );
+  const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery", initialValue: initialValuesDelivery })
 
-  const [bagProducts, setBagProducts] = useState<IDataGetProducts[]>(
-    [] as IDataGetProducts[]
-  );
+  const total = useMemo(() => {
+    return dataDelivery.products
+      .map((i) => i.price * i.quantity)
+      .reduce((acc, p) => acc + p, 0);
+  }, [dataDelivery.products])
 
-  function addBagProduct(prod: IDataProducts) {
-    setProducts((prev) => [...prev, prod]);
-  }
+  const frete = 0.0;
 
-  useEffect(() => {
-    parserBagProducts();
-  }, [products]);
-
-  function parserBagProducts() {
-    const ids = [...new Set(products.map((prod) => prod.id))];
-
-    const parseProducts = ids.map((id) => {
-      const quantity = products.filter((i) => i.id === id)?.length;
-      return {
-        ...products.find((i) => i.id === id),
-        quantity,
-      };
-    });
-
-    setBagProducts(parseProducts as IDataGetProducts[]);
-  }
-
-  function handleRemoveBagItem(id: string) {
-    const filter = products.filter((i) => i.id !== id);
-    setProducts(filter);
-  }
-
-  function handleCleanBag() {
-    setProducts([] as IDataGetProducts[]);
-  }
 
   return (
     <AppContext.Provider
       value={{
-        addBagProduct,
-        bagProducts,
-        handleRemoveBagItem,
-        handleCleanBag,
+        total,
+        dataDelivery,
+        setDataDelivery,
+        frete
       }}
     >
       {children}

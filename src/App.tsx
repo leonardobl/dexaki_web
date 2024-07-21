@@ -10,6 +10,7 @@ export function App() {
       <AppProvider>
         <GlobalStyle />
         <Rotas />
+
       </AppProvider>
     </ThemeProvider>
   );

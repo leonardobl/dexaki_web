@@ -1,8 +1,8 @@
 import axios from "axios";
 // import { toast } from "react-toastify";
 
-export const API = axios.create({
-  baseURL: "https://cdn-dev.preoday.com",
+export const api = axios.create({
+  baseURL: "http://localhost:3000",
   headers: {
     "Content-type": "application/json; charset=UTF-8",
   },
