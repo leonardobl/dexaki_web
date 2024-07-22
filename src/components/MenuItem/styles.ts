@@ -39,7 +39,7 @@ export const WrapperImage = styled.div`
   img {
     width: 100%;
     /* display: block; */
-    border-radius: 4px;
+    border-radius: 4px 0px 0px 4px;
     height: 100px;
     object-fit: fill;
   }

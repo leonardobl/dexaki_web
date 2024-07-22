@@ -7,6 +7,7 @@ import { IDataDeliveryUser } from "../../model/Product"
 import { IDataUserProps, formSchemaUser } from "../Bag/schema"
 import { useAppContext } from "../../context/AppContext"
 import { api } from "../../Api"
+import moment from "moment"
 
 export const useAdress = () => {
 
@@ -126,6 +127,9 @@ export const useAdress = () => {
 
   async function fazerPedido() {
     if (dataDelivery.typeOfpayment === 'pix') {
+      const expirationDate = moment().add(5, 'minutes');
+      const formattedExpirationDate = expirationDate.format("YYYY-MM-DDTHH:mm:ssZ");
+
       const body = {
         transaction_amount: total,
         description: "teste App dexaki",
@@ -133,6 +137,7 @@ export const useAdress = () => {
         email: "danrleypow@gmail.com",
         identificationType: "04544207304",
         number: dataDelivery.phone,
+        date_of_expiration: formattedExpirationDate
       }
 
       try {

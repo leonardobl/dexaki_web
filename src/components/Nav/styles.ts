@@ -23,7 +23,6 @@ export const WrapperNav = styled.div`
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-
     /* padding: 0.4rem; */
 
     display: flex;
@@ -53,14 +52,14 @@ export const ContentLink = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0px 16px;
-  height: 60px;
+  height: 50px;
 `;
 
 
 export const Bag = styled.div`
   background-color: #fff;
   padding: 0px 16px;
-  height: 40px;
+  height: 45px;
   width: 100%;
   display: flex;
   justify-content: space-between;
