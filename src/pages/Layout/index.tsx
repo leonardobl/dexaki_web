@@ -14,7 +14,7 @@ export const Layout = ({ children, ...rest }: ILayout) => {
   return (
     <S.Container {...rest}>
       <MainMenu />
-      <S.Wrapper data-product={dataDelivery.products.length > 0}>{children}</S.Wrapper>
+      <S.Wrapper className="aqui" data-product={dataDelivery.products.length > 0}>{children}</S.Wrapper>
       <Nav />
     </S.Container>
   );

@@ -1,17 +1,10 @@
 import styled from "styled-components";
 
 export const Wrraper = styled.div`
-  .content-hiden {
-    height: 180px;
-  }
 `;
 
 export const Container = styled.div`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+  
 `;
 
 export const WrapperHeader = styled.div`
