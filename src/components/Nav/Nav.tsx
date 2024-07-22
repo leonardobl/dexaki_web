@@ -13,6 +13,7 @@ export const Nav = () => {
 
       {
         dataDelivery.products.length > 0 && (
+
           <S.Bag onClick={() => navigate("/bag")}>
             <S.IconBag>
               <IoBagCheckOutline
