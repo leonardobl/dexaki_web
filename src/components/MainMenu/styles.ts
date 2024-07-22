@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  
+`;
 
 export const WrapperHeader = styled.div`
   /* position: fixed;
@@ -109,7 +111,7 @@ export const Link = styled.a<ILinkProps>`
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
   /* border-bottom:  ${(props) =>
     props.isActive ? `1px solid ${props.theme.primary[700]}` : ""}; */
   transition: all 0.2s ease-in-out;
@@ -120,7 +122,7 @@ export const Link = styled.a<ILinkProps>`
       font-size: 12px;
       font-weight: ${(props) => (props.isActive ? 500 : 300)};
       color: ${(props) =>
-        props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
+    props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
     }
   }
 
