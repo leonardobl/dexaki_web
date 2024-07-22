@@ -121,5 +121,5 @@ export const Link = styled.a<ILinkProps>`
 
 export const ContentMenu = styled.div`
   width: 100%;
-  
+
 `;
