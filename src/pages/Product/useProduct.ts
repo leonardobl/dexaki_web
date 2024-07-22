@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DataProducts, IDataProducts } from "../../Mocks/productsMock";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
@@ -20,11 +20,11 @@ export const useProduct = () => {
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({ storageKey: "@delivery", initialValue: userDelivery })
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
-  const [price] = useState(15.0);
-  const [total, setTotal] = useState(price ?? 0);
   const [quantity, setQuantity] = useState<number>(1);
   const { id } = useParams();
   const [product, setProduct] = useState<IDataProducts>({} as IDataProducts);
+  const [price, setPrice] = useState(0);
+  const [total, setTotal] = useState(0);
 
   function addToCart() {
 
@@ -81,14 +81,16 @@ export const useProduct = () => {
     navigate("/");
   }
 
-  useEffect(() => {
+  useMemo(() => {
     setTotal(quantity * price);
-  }, [quantity]);
+  }, [quantity, price]);
 
   useEffect(() => {
     if (id) {
       const prod = DataProducts.find((i) => i.id === id) as IDataProducts;
       setProduct(prod);
+      setPrice(prod.price)
+      setTotal(prod.price)
     }
   }, [id]);
 

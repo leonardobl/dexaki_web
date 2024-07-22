@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   /* padding-bottom: 40px; */
-  height: 100vh;
+  /* height: 100vh; */
 `;
 
 export const BodyItens = styled.div`
