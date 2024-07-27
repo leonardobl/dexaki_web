@@ -1,13 +1,19 @@
 import * as S from "./styles";
-import { CiPizza } from "react-icons/ci";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { IoFastFoodOutline } from "react-icons/io5";
 import { useMainMenu } from "./useMainMenu";
-import { LiaHamburgerSolid } from "react-icons/lia";
-import { BiDrink } from "react-icons/bi";
+import { ComponentProps, useEffect } from "react";
+import { IParserCategory } from "../../@types/product";
 
-export const MainMenu = () => {
+interface IMainMenuProps extends ComponentProps<"div"> {
+  categorys: IParserCategory[];
+}
+
+export const MainMenu = ({ categorys }: IMainMenuProps) => {
   const { activeNow, setActiveNow, navigate } = useMainMenu();
+
+  useEffect(() => {
+    categorys?.length && setActiveNow(categorys[0]?.name);
+  }, [categorys]);
 
   return (
     <S.Container>
@@ -36,20 +42,22 @@ export const MainMenu = () => {
 
         <S.MenuTab>
           <ul>
-            <S.Link
-              isActive={activeNow == "Pizzas" ? true : false}
-              onClick={() => setActiveNow("Pizzas")}
-              href="#Pizzas"
-            >
-              <li>
-                <div>
-                  <CiPizza size={18} />
-                </div>
-                <p>Pizzas</p>
-              </li>
-            </S.Link>
+            {categorys?.length > 0 &&
+              categorys.map((i) => (
+                <S.Link
+                  key={`${Math.random()}`}
+                  isActive={activeNow === i?.name}
+                  onClick={() => setActiveNow(i?.name)}
+                  href={`#${i.name}`}
+                >
+                  <li>
+                    <div>{i.icon}</div>
+                    <p>{i.name}</p>
+                  </li>
+                </S.Link>
+              ))}
 
-            <S.Link
+            {/* <S.Link
               isActive={activeNow == "Hamburguer" ? true : false}
               onClick={() => setActiveNow("Hamburguer")}
               href="#Hamburguer"
@@ -86,7 +94,7 @@ export const MainMenu = () => {
                 </div>
                 <p>Combos</p>
               </li>
-            </S.Link>
+            </S.Link> */}
           </ul>
         </S.MenuTab>
       </S.WrapperHeader>

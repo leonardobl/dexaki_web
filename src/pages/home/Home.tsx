@@ -1,35 +1,30 @@
 import * as S from "./styles";
-// import { Template } from "../../template/Template";
 import { useHome } from "./useHome";
-import { Layout } from "../Layout";
 import { MenuItem } from "../../components/MenuItem";
+import { MainMenu } from "../../components/MainMenu";
+import { Nav } from "../../components/Nav/Nav";
 
 export const Home = () => {
-  const { products } = useHome();
+  const { dataProducts } = useHome();
 
   return (
-    <Layout>
+    <S.Container>
+      <MainMenu categorys={dataProducts.map((i) => i.category)} />
       <S.Wrapper>
         <S.WrapperItens>
-          <S.BodyItens id="Pizzas">
-            <S.ContentItens>
-              {products?.length > 0 &&
-                products
-                  .filter((i) => i.category === "pizza")
-                  .map((p) => <MenuItem product={p} key={p.id} />)}
-            </S.ContentItens>
-          </S.BodyItens>
-
-          <S.BodyItens id="Hamburguer">
-            <S.ContentItens>
-              {products?.length > 0 &&
-                products
-                  .filter((i) => i.category === "burger")
-                  .map((b) => <MenuItem product={b} key={b.id} />)}
-            </S.ContentItens>
-          </S.BodyItens>
+          {dataProducts?.length > 0 &&
+            dataProducts.map((cat) => (
+              <S.BodyItens key={`${Math.random()}`} id={`${cat.category.name}`}>
+                <S.ContentItens>
+                  {cat.products.map((i) => (
+                    <MenuItem product={i} key={`${Math.random()}`} />
+                  ))}
+                </S.ContentItens>
+              </S.BodyItens>
+            ))}
         </S.WrapperItens>
       </S.Wrapper>
-    </Layout>
+      <Nav />
+    </S.Container>
   );
 };
