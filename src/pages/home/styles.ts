@@ -5,6 +5,9 @@ export const Container = styled.div``;
 export const Wrapper = styled.div`
   /* padding-bottom: 40px; */
   /* height: 100vh; */
+
+  height: calc(100dvh - 268px);
+  overflow-y: scroll;
 `;
 
 export const BodyItens = styled.div`

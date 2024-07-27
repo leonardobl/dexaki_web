@@ -9,7 +9,7 @@ export const useHome = () => {
   );
 
   const getProducts = useCallback(() => {
-    Product.get().then(({ data }) => {
+    Product.get({ limit: 200 }).then(({ data }) => {
       setProducts(data.products);
     });
   }, []);

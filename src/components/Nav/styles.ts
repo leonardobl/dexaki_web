@@ -7,7 +7,7 @@ export const WrapperNav = styled.div`
   background-color: #fff;
   width: max-content;
   display: block;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0px;
   /* padding: 8px 24px 6px 24px; */
   /* z-index: 2; */
@@ -57,7 +57,6 @@ export const ContentLink = styled.div`
   height: 50px;
 `;
 
-
 export const Bag = styled.div`
   background-color: #fff;
   padding: 0px 16px;
@@ -78,7 +77,6 @@ export const Bag = styled.div`
     font-size: 12px;
   }
 `;
-
 
 export const IconBag = styled.div`
   position: relative;
