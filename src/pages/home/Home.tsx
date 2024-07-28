@@ -12,7 +12,7 @@ export const Home = () => {
       <MainMenu categorys={dataProducts.map((i) => i.category)} />
       <S.Wrapper>
         <S.WrapperItens>
-          {dataProducts?.length > 0 &&
+          {dataProducts?.length > 0 ? (
             dataProducts.map((cat) => (
               <S.BodyItens key={`${Math.random()}`} id={`${cat.category.name}`}>
                 <S.ContentItens>
@@ -21,7 +21,10 @@ export const Home = () => {
                   ))}
                 </S.ContentItens>
               </S.BodyItens>
-            ))}
+            ))
+          ) : (
+            <S.NotFoundItensText>Nenhum item encontrado</S.NotFoundItensText>
+          )}
         </S.WrapperItens>
       </S.Wrapper>
       <Nav />

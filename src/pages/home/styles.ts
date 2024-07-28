@@ -21,6 +21,11 @@ export const ContentItens = styled.div`
   padding: 0 16px;
 `;
 
+export const NotFoundItensText = styled.p`
+  text-align: center;
+  margin-top: 60px;
+`;
+
 export const WrapperItens = styled.div`
   /* margin-top: 185px; */
 `;
