@@ -1,3 +1,5 @@
+import { IProductDTO } from "../@types/product";
+
 export interface IProducts {
   id: string;
   name: string;
@@ -9,23 +11,23 @@ export interface IProducts {
 
 export interface IProductsCart extends IProducts {
   quantity: number;
-  discountCoupon: number
+  discountCoupon: number;
 }
 
 export interface IAdress {
-  numero: number,
-  rua: string,
-  complemento: string,
-  currentAdress: boolean,
+  numero: number;
+  rua: string;
+  complemento: string;
+  currentAdress: boolean;
 }
 
 export interface IDataDeliveryUser {
-  name: string
-  email: string,
-  phone: string,
-  adress?: IAdress,
-  typeOfpayment: string | undefined,
-  delivery: string | undefined,
-  products: IProductsCart[],
-  qr_code?: string
+  name: string;
+  email: string;
+  phone: string;
+  adress?: IAdress;
+  typeOfpayment: string | undefined;
+  delivery: string | undefined;
+  products: IProductDTO[];
+  qr_code?: string;
 }

@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import { API } from "../../Api";
-import { IPageProduct } from "../../@types/product";
+import { IPageProduct, IProductDTO } from "../../@types/product";
 import { IPageRequest } from "../../@types/pagination";
 import { removeEmpty } from "../../Util/removeEmpty";
 
@@ -15,5 +15,9 @@ export class Product {
     }
 
     return API.get(`${basePath}`);
+  }
+
+  static async getById(id: string): Promise<AxiosResponse<IProductDTO>> {
+    return API.get(`${basePath}/${id}`);
   }
 }

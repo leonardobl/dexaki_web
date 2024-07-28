@@ -23,7 +23,10 @@ export const Product = () => {
   return (
     <S.WrapperProduct>
       <div className="header-product-image">
-        <img src={product?.img} alt="imagem produto" />
+        <img
+          src={`${import.meta.env.VITE_API_URL}/uploads/${product?.imagePath}`}
+          alt="imagem produto"
+        />
 
         <button type="button" onClick={goBack}>
           <IoIosArrowBack size={24} color="#FF6B00" />
@@ -32,7 +35,7 @@ export const Product = () => {
 
       <div className="description-product">
         <h4>{product?.name}</h4>
-        <span className="price">{maskMoney((product?.price))}</span>
+        <span className="price">{maskMoney(product?.price)}</span>
         <p className="description">{product?.description}</p>
       </div>
 
@@ -58,22 +61,18 @@ export const Product = () => {
         </button>
       </div>
 
-      <ModalBottom
-        isOpen={showModal}
-        onClose={() => setShowModal(!showModal)}
-      >
+      <ModalBottom isOpen={showModal} onClose={() => setShowModal(!showModal)}>
         <S.WrapperModal>
           <h3>Você deseja ir para</h3>
           <S.ContentButton>
             <Button variant="outlined" onClick={() => navigate("/bag")}>
               Ir Para carinho
-
             </Button>
-            <Button onClick={() => navigate("/")}>Continuar Comprando <FaCartPlus size={18} /></Button>
-
+            <Button onClick={() => navigate("/")}>
+              Continuar Comprando <FaCartPlus size={18} />
+            </Button>
           </S.ContentButton>
         </S.WrapperModal>
-
       </ModalBottom>
     </S.WrapperProduct>
   );
