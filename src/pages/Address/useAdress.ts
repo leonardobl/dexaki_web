@@ -15,7 +15,7 @@ export const useAdress = () => {
   const [showModalUser, setShowModalUser] = useState(false);
 
   const navigate = useNavigate();
-  const { dataDelivery, setDataDelivery, total } = useAppContext();
+  const { dataDelivery, setDataDelivery } = useAppContext();
   const { mode } = useParams();
 
   const initialValueAdress = {
@@ -136,7 +136,7 @@ export const useAdress = () => {
       );
 
       const body = {
-        transaction_amount: total,
+        // transaction_amount:
         description: "teste App dexaki",
         paymentMethodId: "pix",
         email: "danrleypow@gmail.com",

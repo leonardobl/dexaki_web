@@ -17,6 +17,12 @@ export interface IProductDTO {
   __v: number;
 }
 
+export interface ISelectedProducts {
+  _id: string;
+  name: string;
+  quantity: number;
+}
+
 export interface IParserProducts {
   category: IParserCategory;
   products: IProductDTO[];

@@ -16,7 +16,6 @@ export const Product = () => {
     quantity,
     setShowModal,
     showModal,
-    total,
     product,
   } = useProduct();
 
@@ -56,16 +55,16 @@ export const Product = () => {
             +
           </button>
         </div>
-        <button className="button-add" onClick={() => addToCart()}>
-          Adicionar R$ {total}
-        </button>
+        <Button onClick={() => addToCart()} disabled={quantity === 0}>
+          Adicionar {maskMoney(product.price * quantity)}
+        </Button>
       </div>
 
       <ModalBottom isOpen={showModal} onClose={() => setShowModal(!showModal)}>
         <S.WrapperModal>
           <h3>Você deseja ir para</h3>
           <S.ContentButton>
-            <Button variant="outlined" onClick={() => navigate("/bag")}>
+            <Button data-variant-outline onClick={() => navigate("/bag")}>
               Ir Para carinho
             </Button>
             <Button onClick={() => navigate("/")}>

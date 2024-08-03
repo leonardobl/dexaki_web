@@ -32,14 +32,14 @@ export const useHome = () => {
   function parseProducts(products: IProductDTO[]) {
     const categorys = [
       ...new Set(
-        products.map((p) =>
+        products?.map((p) =>
           JSON.stringify({
             name: p.category.name,
             icon: p.category.icon,
           })
         )
       ),
-    ].map((i) => JSON.parse(i));
+    ]?.map((i) => JSON.parse(i));
 
     const dataParser = categorys.map((c) => {
       return {

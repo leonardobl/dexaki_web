@@ -1,31 +1,34 @@
 import styled from "styled-components";
 
-type TProps = {
-  variant: 'outlined' | 'normal'
-}
-
-export const Button = styled.button<TProps>`
-  background-color: ${props => props.variant === 'outlined' ? 'transparent' : props.theme.primary['800']};
-  color: ${props => props.variant === 'outlined' ? props.theme.primary['800'] : '#fff'} !important;
-  border: ${props => props.variant === 'outlined' ? '1px solid  #FF6B00' : 'none'};
-  padding: 12px 0px;
+export const Button = styled.button`
+  background-color: #ff6b00;
+  border: none;
+  height: 48px;
+  color: #fff;
   width: 100%;
-  border-radius: 8px;
-  height: fit-content;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+
   cursor: pointer;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  
+  &[data-variant-outline="true"] {
+    background-color: transparent;
+    border: 1px solid #ff6b00;
+  }
+
+  &[data-variant-text="true"] {
+    background-color: transparent;
+    color: #fff;
+  }
 
   &:disabled {
-    border:  1px solid #ccc;
     background-color: #d1d2d3;
-    color: #999 !important;
+    color: #999;
     cursor: not-allowed;
   }
- 
-`
+`;

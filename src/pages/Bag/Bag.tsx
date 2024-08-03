@@ -4,33 +4,25 @@ import { FaCartPlus } from "react-icons/fa";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
 import { useBag } from "./useBag";
-import { BagItem } from "../../components/BagItem";
 import { maskMoney, maskPhone } from "../../Util/masks.ts";
-import { IProductsCart } from "../../model/Product";
-import { MdProductionQuantityLimits } from "react-icons/md";
 import { ModalBottom } from "../../components/ModalBottom";
 import { InputRHF } from "../../components/FormRHF/InputRHF";
 import { GiStorkDelivery } from "react-icons/gi";
-
 
 export const Bag = () => {
   const {
     navigate,
     dataDelivery,
-    total,
     CleanAll,
     frete,
-    addQuantity,
-    lessQuantity,
     setShowModal,
     showModal,
     methods,
     FormProvider,
     onSendSubmit,
     BtnContinuar,
-    errors
+    errors,
   } = useBag();
-
 
   return (
     <S.Wrapper>
@@ -48,18 +40,21 @@ export const Bag = () => {
       <S.Body>
         {dataDelivery.products?.length > 0 && <h3>Itens adicionados</h3>}
 
-        {dataDelivery.products?.length > 0 ?
-          dataDelivery.products.map((i: IProductsCart) => <BagItem
-            key={i.id}
-            product={i}
-            addQuantity={() => addQuantity(i)}
-            lessQuantity={() => lessQuantity(i)}
-          />) : (
-            <S.NoItems>
-              <p>Não há nenhum item na sua sacola</p>
-              <MdProductionQuantityLimits size={17} color="#999" />
-            </S.NoItems>
-          )}
+        {/* {dataDelivery.products?.length > 0 ? (
+          dataDelivery?.map((i: IProductsCart) => (
+            <BagItem
+              key={i.id}
+              product={i}
+              addQuantity={() => addQuantity(i)}
+              lessQuantity={() => lessQuantity(i)}
+            />
+          ))
+        ) : (
+          <S.NoItems>
+            <p>Não há nenhum item na sua sacola</p>
+            <MdProductionQuantityLimits size={17} color="#999" />
+          </S.NoItems>
+        )} */}
 
         <S.AddItem onClick={() => navigate("/")}>
           <p>Adicionar mais pedidos</p>
@@ -72,7 +67,7 @@ export const Bag = () => {
           <div className="description">
             <div>
               <p>Subtotal</p>
-              <span>{maskMoney(total)}</span>
+              {/* <span>{maskMoney(total)}</span> */}
             </div>
 
             <div>
@@ -87,7 +82,7 @@ export const Bag = () => {
 
             <div>
               <strong>Total</strong>
-              <span className="total">{maskMoney(total + frete)}</span>
+              {/* <span className="total">{maskMoney(total + frete)}</span> */}
             </div>
           </div>
         </S.Resume>
@@ -97,25 +92,29 @@ export const Bag = () => {
         <div>
           <span>Total com a entrega</span>
           <h3>
-            {maskMoney(total + frete)}/ <small> {dataDelivery.products.length} item</small>
+            {/* {maskMoney(total + frete)}/{" "} */}
+            <small> {dataDelivery.products?.length} item</small>
           </h3>
         </div>
 
         <Button
-          disabled={!(dataDelivery.products.length > 0)}
+          disabled={!(dataDelivery.products?.length > 0)}
           onClick={() => BtnContinuar()}
-        >Continuar</Button>
+        >
+          Continuar
+        </Button>
       </S.ContentFooter>
 
       <ModalBottom isOpen={showModal} onClose={() => setShowModal(false)}>
         <S.ModalDescription>
-          <h3>Falta pouco <GiStorkDelivery size={25} /></h3>
+          <h3>
+            Falta pouco <GiStorkDelivery size={25} />
+          </h3>
           <p>Coloque abaixo seu nome e seu número!</p>
         </S.ModalDescription>
 
         <S.ContentModalInput>
           <FormProvider {...methods}>
-
             <InputRHF
               name="phone"
               placeholder="(XX) XXXXX - XXXX"
@@ -129,11 +128,9 @@ export const Bag = () => {
               error={errors?.name?.message}
             />
 
-            <Button
-              onClick={() => methods.handleSubmit(onSendSubmit)()}
-            >Avançar
+            <Button onClick={() => methods.handleSubmit(onSendSubmit)()}>
+              Avançar
             </Button>
-
           </FormProvider>
         </S.ContentModalInput>
       </ModalBottom>

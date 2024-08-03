@@ -1,20 +1,8 @@
-import { ButtonHTMLAttributes } from 'react'
-import * as S from './styles'
+import { ComponentProps } from "react";
+import * as S from "./styles";
 
-interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: React.ReactNode
-  variant?: 'outlined' | 'normal'
-}
+export interface IButtonProps extends ComponentProps<"button"> {}
 
-export const Button = ({ variant = 'normal', children, ...rest }: IProps) => {
-  return (
-    <S.Button
-      {...rest}
-      style={{ color: '#fff' }}
-      variant={variant}
-    >
-      {children}
-    </S.Button>
-  )
-}
-
+export const Button = (props: IButtonProps) => {
+  return <S.Button {...props} />;
+};

@@ -11,23 +11,20 @@ export const Nav = () => {
     <S.WrapperNav>
       {/* Quando tiver item na sacola exibir este component */}
 
-      {
-        dataDelivery.products.length > 0 && (
-
-          <S.Bag onClick={() => navigate("/bag")}>
-            <S.IconBag>
-              <IoBagCheckOutline
-                color="#fff"
-                size={20}
-                style={{ marginRight: "30px" }}
-              />
-              <span className="number-item">{dataDelivery.products.length}</span>
-            </S.IconBag>
-            <small>Ver Sacola</small>
-            <p>{maskMoney(total)}</p>
-          </S.Bag>
-        )
-      }
+      {dataDelivery.products?.length > 0 && (
+        <S.Bag onClick={() => navigate("/bag")}>
+          <S.IconBag>
+            <IoBagCheckOutline
+              color="#fff"
+              size={20}
+              style={{ marginRight: "30px" }}
+            />
+            <span className="number-item">{dataDelivery.products?.length}</span>
+          </S.IconBag>
+          <small>Ver Sacola</small>
+          <p>{maskMoney(total)}</p>
+        </S.Bag>
+      )}
 
       <S.ContentLink>
         <NavLink to={"/"}>

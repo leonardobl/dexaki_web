@@ -9,14 +9,17 @@ export const Home = () => {
 
   return (
     <S.Container>
-      <MainMenu categorys={dataProducts.map((i) => i.category)} />
+      <MainMenu categorys={dataProducts?.map((i) => i.category)} />
       <S.Wrapper>
         <S.WrapperItens>
           {dataProducts?.length > 0 ? (
-            dataProducts.map((cat) => (
-              <S.BodyItens key={`${Math.random()}`} id={`${cat.category.name}`}>
+            dataProducts?.map((cat) => (
+              <S.BodyItens
+                key={`${Math.random()}`}
+                id={`${cat?.category?.name}`}
+              >
                 <S.ContentItens>
-                  {cat.products.map((i) => (
+                  {cat?.products?.map((i) => (
                     <MenuItem product={i} key={`${Math.random()}`} />
                   ))}
                 </S.ContentItens>

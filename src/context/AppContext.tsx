@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useMemo, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 import { IAppContextprops } from "../@types/appContext";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { IDataDeliveryUser } from "../model/Product";
@@ -23,18 +23,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
   });
   const [isLoad, setIsLoad] = useState(false);
 
-  const total = useMemo(() => {
-    return dataDelivery.products
-      .map((i) => i.price * i.quantity)
-      .reduce((acc, p) => acc + p, 0);
-  }, [dataDelivery.products]);
+  // const total = useMemo(() => {
+  //   return dataDelivery.products
+  //     ?.map((i) => i.price * i.quantity)
+  //     .reduce((acc, p) => acc + p, 0);
+  // }, [dataDelivery.products]);
 
   const frete = 0.0;
 
   return (
     <AppContext.Provider
       value={{
-        total,
         dataDelivery,
         setDataDelivery,
         frete,

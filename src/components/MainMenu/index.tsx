@@ -43,7 +43,7 @@ export const MainMenu = ({ categorys }: IMainMenuProps) => {
         <S.MenuTab>
           <ul>
             {categorys?.length > 0 &&
-              categorys.map((i) => (
+              categorys?.map((i) => (
                 <S.Link
                   key={`${Math.random()}`}
                   isActive={activeNow === i?.name}
@@ -56,45 +56,6 @@ export const MainMenu = ({ categorys }: IMainMenuProps) => {
                   </li>
                 </S.Link>
               ))}
-
-            {/* <S.Link
-              isActive={activeNow == "Hamburguer" ? true : false}
-              onClick={() => setActiveNow("Hamburguer")}
-              href="#Hamburguer"
-            >
-              <li>
-                <div>
-                  <LiaHamburgerSolid size={18} />
-                </div>
-                <p>Hamburguer</p>
-              </li>
-            </S.Link>
-
-            <S.Link
-              isActive={activeNow == "Bebidas" ? true : false}
-              onClick={() => setActiveNow("Bebidas")}
-              href="#Bebidas"
-            >
-              <li>
-                <div>
-                  <BiDrink size={18} />
-                </div>
-                <p>Bebidas</p>
-              </li>
-            </S.Link>
-
-            <S.Link
-              isActive={activeNow == "Combos" ? true : false}
-              onClick={() => setActiveNow("Combos")}
-              href="#Combos"
-            >
-              <li>
-                <div>
-                  <IoFastFoodOutline size={18} />
-                </div>
-                <p>Combos</p>
-              </li>
-            </S.Link> */}
           </ul>
         </S.MenuTab>
       </S.WrapperHeader>
