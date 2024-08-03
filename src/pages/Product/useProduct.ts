@@ -20,6 +20,8 @@ export const useProduct = () => {
   const { setIsLoad } = useAppContext();
 
   function addToCart() {
+    setShowModal(true);
+
     if (dataDelivery?.some((i) => i._id === id)) {
       const dataUpdated = dataDelivery.map((p) => {
         return p._id === id ? { ...p, quantity } : p;
@@ -70,10 +72,6 @@ export const useProduct = () => {
       return 0;
     });
   }
-
-  useEffect(() => {
-    console.log(quantity);
-  }, [quantity]);
 
   function goBack() {
     navigate("/");

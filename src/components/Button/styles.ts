@@ -19,11 +19,12 @@ export const Button = styled.button`
   &[data-variant-outline="true"] {
     background-color: transparent;
     border: 1px solid #ff6b00;
+    color: #ff6b00;
   }
 
   &[data-variant-text="true"] {
     background-color: transparent;
-    color: #fff;
+    color: #ff6b00;
   }
 
   &:disabled {
