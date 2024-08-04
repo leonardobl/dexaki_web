@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  height: 100dvh;
 `;
 
 export const Container = styled.div`
-  overflow-y: scroll;
-  max-height: calc(100vh - 110px);
-  scroll-behavior: smooth;
+  height: calc(100dvh - 52px);
 `;
 
 export const ContentLogo = styled.div`
@@ -111,7 +110,7 @@ export const Link = styled.a<ILinkProps>`
   li {
     p {
       color: ${(props) =>
-    props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
+        props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
     }
   }
 
@@ -121,5 +120,4 @@ export const Link = styled.a<ILinkProps>`
 
 export const ContentMenu = styled.div`
   width: 100%;
-
 `;

@@ -11,7 +11,7 @@ export const API = axios.create({
 // API.interceptors.request.use((config) => {
 //   let token = "";
 //   if (typeof window !== "undefined") {
-//     const localToken = localStorage.getItem("@token");
+//     const localToken = sessionStorage.getItem("@token");
 
 //     if (localToken) {
 //       token = localToken.replaceAll('"', "");
@@ -31,7 +31,7 @@ export const API = axios.create({
 //     if (error.response.status === 403) {
 //       toast.error("Token expirado");
 //       setTimeout(() => {
-//         localStorage.clear();
+//         sessionStorage.clear();
 //         window.location.href = "/login";
 //       }, 1000);
 //     }

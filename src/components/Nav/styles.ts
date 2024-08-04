@@ -6,7 +6,6 @@ export const WrapperNav = styled.div`
   border-top: 1px solid #ccc;
   background-color: #fff;
   width: max-content;
-  display: block;
   /* position: fixed; */
   bottom: 0px;
   /* padding: 8px 24px 6px 24px; */

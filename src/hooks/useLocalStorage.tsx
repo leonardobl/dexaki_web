@@ -5,10 +5,13 @@ interface IUseLocalStorageProps<T> {
   initialValue?: T;
 }
 
-export const useLocalStorage = <T,>({ storageKey, initialValue }: IUseLocalStorageProps<T>) => {
+export const useLocalStorage = <T,>({
+  storageKey,
+  initialValue,
+}: IUseLocalStorageProps<T>) => {
   const [state, setState] = useState<T>(() => {
     try {
-      const storageValue = localStorage.getItem(storageKey);
+      const storageValue = sessionStorage.getItem(storageKey);
       return storageValue ? JSON.parse(storageValue) : initialValue;
     } catch {
       return initialValue;
@@ -19,7 +22,7 @@ export const useLocalStorage = <T,>({ storageKey, initialValue }: IUseLocalStora
     (value: T) => {
       try {
         setState(value);
-        localStorage.setItem(storageKey, JSON.stringify(value));
+        sessionStorage.setItem(storageKey, JSON.stringify(value));
       } catch (error) {
         console.error(error);
       }

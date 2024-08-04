@@ -4,8 +4,7 @@ import * as S from "./styles";
 import { useOrders } from "./useOrders";
 
 export const Orders = () => {
-  const { navigate } = useOrders()
-
+  const { navigate } = useOrders();
 
   function parsStatus(status: string) {
     switch (status) {
