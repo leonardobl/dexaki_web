@@ -16,8 +16,8 @@ export const useProduct = () => {
   const [quantity, setQuantity] = useState<number>(0);
   const { id } = useParams();
   const [product, setProduct] = useState<IProductDTO>({} as IProductDTO);
-  const [price] = useState(0);
   const { setIsLoad } = useAppContext();
+  const [comment, setComment] = useState("");
 
   function addToCart() {
     setShowModal(true);
@@ -78,6 +78,15 @@ export const useProduct = () => {
   }
 
   useEffect(() => {
+    if (comment && dataDelivery?.some((i) => i._id === id)) {
+      const updatedValues = dataDelivery.map((i) =>
+        i._id === id ? { ...i, comment } : i
+      );
+      setDataDelivery(updatedValues);
+    }
+  }, [comment]);
+
+  useEffect(() => {
     if (!id) return;
 
     setIsLoad(true);
@@ -93,6 +102,7 @@ export const useProduct = () => {
     if (dataDelivery?.some((i) => i._id === id)) {
       const product = dataDelivery.find((i) => i._id === id);
       setQuantity(product!.quantity);
+      setComment(product?.comment || "");
     }
   }, [id]);
 
@@ -106,7 +116,8 @@ export const useProduct = () => {
     setShowModal,
     quantity,
     setQuantity,
-    price,
     product,
+    comment,
+    setComment,
   };
 };

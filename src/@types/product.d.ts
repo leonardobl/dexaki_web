@@ -21,6 +21,7 @@ export interface ISelectedProducts {
   _id: string;
   name: string;
   quantity: number;
+  comment?: string;
 }
 
 export interface IParserProducts {

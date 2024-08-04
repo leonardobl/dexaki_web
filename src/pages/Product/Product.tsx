@@ -17,6 +17,8 @@ export const Product = () => {
     setShowModal,
     showModal,
     product,
+    comment,
+    setComment,
   } = useProduct();
 
   return (
@@ -41,6 +43,8 @@ export const Product = () => {
       <div className="content-textarea">
         <p>Observações</p>
         <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
           name=""
           id=""
           placeholder="Ex: Tiraa cebola, ovo, etc.."

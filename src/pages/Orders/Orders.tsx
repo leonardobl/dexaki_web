@@ -4,7 +4,7 @@ import * as S from "./styles";
 import { useOrders } from "./useOrders";
 
 export const Orders = () => {
-  const { navigate } = useOrders();
+  const { navigate, dataDelivery } = useOrders();
 
   function parsStatus(status: string) {
     switch (status) {
@@ -37,83 +37,16 @@ export const Orders = () => {
               </S.Status>
             </div>
 
-            <div className="bodyCard">
-              <p>
-                <span>1X</span>
-                Frango com Catupiry
-              </p>
-
-              <p>
-                <span>1X</span>
-                Quatro Queijos
-              </p>
-            </div>
-          </S.CardOrders>
-
-          <S.CardOrders>
-            <div className="">
-              <p>Pedido #16</p>
-              <S.Status status={parsStatus("IN_PRODUCTION")}>
-                <span></span>
-                <p>Entrou em produção</p>
-              </S.Status>
-            </div>
-
-            <div className="bodyCard">
-              <p>
-                <span>1X</span>
-                Frango com Catupiry
-              </p>
-
-              <p>
-                <span>1X</span>
-                Quatro Queijos
-              </p>
-            </div>
-          </S.CardOrders>
-
-          <S.CardOrders>
-            <div className="">
-              <p>Pedido #16</p>
-              <S.Status status={parsStatus("IN_PRODUCTION")}>
-                <span></span>
-                <p>Entrou em produção</p>
-              </S.Status>
-            </div>
-
-            <div className="bodyCard">
-              <p>
-                <span>1X</span>
-                Frango com Catupiry
-              </p>
-
-              <p>
-                <span>1X</span>
-                Quatro Queijos
-              </p>
-            </div>
-          </S.CardOrders>
-
-          <S.CardOrders>
-            <div className="">
-              <p>Pedido #16</p>
-              <S.Status status={parsStatus("IN_PRODUCTION")}>
-                <span></span>
-                <p>Entrou em produção</p>
-              </S.Status>
-            </div>
-
-            <div className="bodyCard">
-              <p>
-                <span>1X</span>
-                Frango com Catupiry
-              </p>
-
-              <p>
-                <span>1X</span>
-                Quatro Queijos
-              </p>
-            </div>
+            {dataDelivery?.length > 0 && (
+              <div className="bodyCard">
+                {dataDelivery.map((i) => (
+                  <p key={Math.random()}>
+                    <span>{i.quantity}X</span>
+                    {i.name}
+                  </p>
+                ))}
+              </div>
+            )}
           </S.CardOrders>
 
           <div style={{ marginTop: "40px" }}>
