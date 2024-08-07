@@ -5,6 +5,7 @@ import { MainMenu } from "../../components/MainMenu";
 import { Nav } from "../../components/Nav/Nav";
 
 export const Home = () => {
+
   const { dataProducts } = useHome();
 
   return (
