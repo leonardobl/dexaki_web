@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Product } from "../../services/Product";
-import { IParserProducts, IProductDTO } from "../../@types/product";
+import { IParserProducts, IProductDTO } from "../../types/product";
 import { useAppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
 

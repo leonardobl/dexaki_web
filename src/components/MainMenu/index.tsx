@@ -2,7 +2,7 @@ import * as S from "./styles";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { useMainMenu } from "./useMainMenu";
 import { ComponentProps, useEffect } from "react";
-import { IParserCategory } from "../../@types/product";
+import { IParserCategory } from "../../types/product";
 
 interface IMainMenuProps extends ComponentProps<"div"> {
   categorys: IParserCategory[];

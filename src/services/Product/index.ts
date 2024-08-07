@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { API } from "../../Api";
-import { IPageProduct, IProductDTO } from "../../@types/product";
-import { IPageRequest } from "../../@types/pagination";
+import { IPageProduct, IProductDTO } from "../../types/product";
+import { IPageRequest } from "../../types/pagination";
 import { removeEmpty } from "../../Util/removeEmpty";
 
 const basePath = "/products";

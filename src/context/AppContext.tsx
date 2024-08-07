@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useContext, useState } from "react";
-import { IAppContextprops } from "../@types/appContext";
+import { IAppContextprops } from "../types/appContext";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { IDataDeliveryUser } from "../model/Product";
 import { Loading } from "../components/Loading";

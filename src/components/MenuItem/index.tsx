@@ -2,7 +2,7 @@ import { ComponentProps } from "react";
 import * as S from "./styles";
 import { maskMoney } from "../../Util/masks.ts";
 import { useMenuItem } from "./useMenuItem";
-import { IProductDTO } from "../../@types/product";
+import { IProductDTO } from "../../types/product";
 
 interface IMenuItemPros extends ComponentProps<"div"> {
   product: IProductDTO;

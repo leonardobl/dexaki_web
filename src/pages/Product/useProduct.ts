@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAppContext } from "../../context/AppContext";
 import { Product } from "../../services/Product";
 import { toast } from "react-toastify";
-import { IProductDTO, ISelectedProducts } from "../../@types/product";
+import { IProductDTO, ISelectedProducts } from "../../types/product";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export const useProduct = () => {

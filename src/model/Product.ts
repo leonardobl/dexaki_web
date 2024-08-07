@@ -1,4 +1,4 @@
-import { IProductDTO } from "../@types/product";
+import { IProductDTO } from "../types/product";
 
 export interface IProducts {
   id: string;

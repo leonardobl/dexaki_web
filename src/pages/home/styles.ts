@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   /* padding-bottom: 40px; */
   /* height: 100vh; */
 
-  height: calc(100dvh - 223px);
+  height: calc(100dvh - 160px);
   overflow-y: scroll;
 `;
 
