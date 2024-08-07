@@ -23,12 +23,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
   });
   const [isLoad, setIsLoad] = useState(false);
 
-  // const total = useMemo(() => {
-  //   return dataDelivery.products
-  //     ?.map((i) => i.price * i.quantity)
-  //     .reduce((acc, p) => acc + p, 0);
-  // }, [dataDelivery.products]);
-
   const frete = 0.0;
 
   return (
