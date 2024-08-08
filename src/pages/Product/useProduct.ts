@@ -22,7 +22,10 @@ export const useProduct = () => {
   function addToCart() {
     setShowModal(true);
 
-    if (dataDelivery?.some((i) => i._id === id)) {
+    if (
+      Array.isArray(dataDelivery) &&
+      dataDelivery?.some((i) => i._id === id)
+    ) {
       const dataUpdated = dataDelivery.map((p) => {
         return p._id === id ? { ...p, quantity } : p;
       });
@@ -40,7 +43,10 @@ export const useProduct = () => {
 
   function addQuantity() {
     setQuantity((prev) => {
-      if (dataDelivery?.some((i) => i._id === id)) {
+      if (
+        Array.isArray(dataDelivery) &&
+        dataDelivery?.some((i) => i._id === id)
+      ) {
         const updatedValues = dataDelivery.map((i) =>
           i._id === id ? { ...i, quantity: prev + 1 } : i
         );
@@ -54,7 +60,10 @@ export const useProduct = () => {
   function lessQuantity() {
     setQuantity((prev) => {
       if (prev > 0) {
-        if (dataDelivery?.some((i) => i._id === id)) {
+        if (
+          Array.isArray(dataDelivery) &&
+          dataDelivery?.some((i) => i._id === id)
+        ) {
           const updatedValues = dataDelivery.map((i) =>
             i._id === id ? { ...i, quantity: prev - 1 } : i
           );
@@ -78,8 +87,12 @@ export const useProduct = () => {
   }
 
   useEffect(() => {
-    if (comment && dataDelivery?.some((i) => i._id === id)) {
-      const updatedValues = dataDelivery.map((i) =>
+    if (
+      comment &&
+      Array.isArray(dataDelivery) &&
+      dataDelivery?.some((i) => i._id === id)
+    ) {
+      const updatedValues = dataDelivery?.map((i) =>
         i._id === id ? { ...i, comment } : i
       );
       setDataDelivery(updatedValues);
@@ -99,8 +112,11 @@ export const useProduct = () => {
         setIsLoad(false);
       });
 
-    if (dataDelivery?.some((i) => i._id === id)) {
-      const product = dataDelivery.find((i) => i._id === id);
+    if (
+      Array.isArray(dataDelivery) &&
+      dataDelivery?.some((i) => i._id === id)
+    ) {
+      const product = dataDelivery?.find((i) => i._id === id);
       setQuantity(product!.quantity);
       setComment(product?.comment || "");
     }

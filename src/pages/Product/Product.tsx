@@ -60,7 +60,7 @@ export const Product = () => {
           </button>
         </div>
         <Button onClick={() => addToCart()} disabled={quantity === 0}>
-          Adicionar {maskMoney(product.price * quantity)}
+          Adicionar {maskMoney(product?.price * quantity)}
         </Button>
       </div>
 
