@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div``;
 
 export const Wrapper = styled.div`
-  height: 100%;
-  max-height: 100dvh;
-  overflow-y: scroll;
+  min-height: calc(100dvh - 222px);
+  overflow-y: auto;
 `;
 
 export const BodyItens = styled.div`
@@ -24,11 +23,6 @@ export const NotFoundItensText = styled.p`
   margin-top: 60px;
 `;
 
-export const WrapperItens = styled.div`
-  min-height: calc(100dvh - 222px);
-  overflow-y: auto;
-`;
-
 export const Item = styled.div`
   position: relative;
   display: flex;
@@ -44,7 +38,6 @@ export const Item = styled.div`
     border-radius: 7px;
     width: 150px;
     height: 100%;
-    /* height: 96px; */
 
     img {
       width: 100%;
