@@ -25,7 +25,7 @@ export const NotFoundItensText = styled.p`
 `;
 
 export const WrapperItens = styled.div`
-  min-height: calc(100dvh - 223px);
+  min-height: calc(100dvh - 222px);
   overflow-y: auto;
 `;
 
