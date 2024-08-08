@@ -1,17 +1,16 @@
-
-import { useNavigate } from 'react-router-dom'
-import { IconArrowLeft } from '../../assets/icons/IconArrowLeft'
+import { useNavigate } from "react-router-dom";
+import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
 // import { IconNotification } from '../../assets/icons/IconNotification'
 
 import { TbChefHat } from "react-icons/tb";
 import { FaRegClock } from "react-icons/fa";
 import { GiStorkDelivery } from "react-icons/gi";
 
-import * as S from './styles'
-import { Template } from '../../template/Template';
+import * as S from "./styles";
+import { Template } from "../../template/Template";
 
 export const Notification = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // 'WAITING', 'IN_PRODUCTION', 'DONE'
   // function parsStatus(status: string) {
@@ -25,13 +24,10 @@ export const Notification = () => {
   //   }
   // }
 
-
-
   return (
     <Template>
-
       <S.Wrapper>
-        <S.Header onClick={() => navigate('/')}>
+        <S.Header onClick={() => navigate(-1)}>
           <IconArrowLeft />
           <h1>Notificação</h1>
         </S.Header>
@@ -43,7 +39,7 @@ export const Notification = () => {
         </S.ContentNotification> */}
 
           <S.NotificationItem>
-            <div className='left-box'>
+            <div className="left-box">
               <S.Icon>
                 <FaRegClock />
               </S.Icon>
@@ -53,14 +49,14 @@ export const Notification = () => {
               </div>
             </div>
 
-            <div className='right-box'>
+            <div className="right-box">
               <p>Há 5 minutos</p>
-              <S.StatusItem status='#D73035'></S.StatusItem>
+              <S.StatusItem status="#D73035"></S.StatusItem>
             </div>
           </S.NotificationItem>
 
           <S.NotificationItem>
-            <div className='left-box'>
+            <div className="left-box">
               <S.Icon>
                 <TbChefHat />
               </S.Icon>
@@ -70,15 +66,14 @@ export const Notification = () => {
               </div>
             </div>
 
-            <div className='right-box'>
+            <div className="right-box">
               <p>Há 5 minutos</p>
-              <S.StatusItem status={'#FFA500'}></S.StatusItem>
+              <S.StatusItem status={"#FFA500"}></S.StatusItem>
             </div>
           </S.NotificationItem>
 
-
           <S.NotificationItem>
-            <div className='left-box'>
+            <div className="left-box">
               <S.Icon>
                 <GiStorkDelivery />
               </S.Icon>
@@ -88,18 +83,13 @@ export const Notification = () => {
               </div>
             </div>
 
-            <div className='right-box'>
+            <div className="right-box">
               <p>Há 5 minutos</p>
-              <S.StatusItem status={'#30D787'}></S.StatusItem>
+              <S.StatusItem status={"#30D787"}></S.StatusItem>
             </div>
           </S.NotificationItem>
-
         </S.Body>
-
-
-
       </S.Wrapper>
     </Template>
-  )
-}
-
+  );
+};
