@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div``;
 
 export const Wrapper = styled.div`
-  min-height: calc(100dvh - 222px);
+  height: calc(100dvh - 223px);
   overflow-y: auto;
 `;
 

@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-export const Wrraper = styled.div`
-`;
+export const Wrraper = styled.div``;
 
-export const Container = styled.div`
-  
-`;
+export const Container = styled.div``;
 
 export const WrapperHeader = styled.div`
   /* position: fixed;
@@ -85,6 +82,7 @@ export const MenuTab = styled.div`
     display: flex;
     align-items: center;
     gap: 25px;
+    height: 74px;
     padding-bottom: 10px;
 
     li {
@@ -125,7 +123,7 @@ export const Link = styled.a<ILinkProps>`
       font-size: 12px;
       font-weight: ${(props) => (props.isActive ? 500 : 300)};
       color: ${(props) =>
-    props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
+        props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
     }
   }
 

@@ -6,8 +6,9 @@ export const WrapperNav = styled.div`
   border-top: 1px solid #ccc;
   background-color: #fff;
   width: max-content;
-  /* position: fixed; */
+  position: relative;
   bottom: 0px;
+  z-index: 99;
   /* padding: 8px 24px 6px 24px; */
   /* z-index: 2; */
   /* left: 50%; */

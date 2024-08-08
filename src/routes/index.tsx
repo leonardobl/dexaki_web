@@ -1,19 +1,19 @@
-import { AuthProvider } from '../context/Auth';
+import { AuthProvider } from "../context/Auth";
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home } from '../pages/home/Home';
-import { Product } from '../pages/Product/Product';
-import { Notification } from '../pages/Notification/Notification'
-import { MyProfile } from '../pages/MyProfile/MyProfile';
-import { Orders } from '../pages/Orders/Orders';
-import { Favorite } from '../pages/Favorite/Favorite';
-import { Cupons } from '../pages/Cupons/Cupons';
-import { Address } from '../pages/Address/Address';
-import { ProfileCompany } from '../pages/ProfileCompany/ProfileCompany';
-import { Bag } from '../pages/Bag/Bag';
-import { TypeDelivery } from '../pages/TypeDelivery/TypeDelivery';
-import { EditAdress } from '../pages/Address/EditAdress';
-import { Payment } from '../pages/payment/Payment';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home } from "../pages/home/Home";
+import { Product } from "../pages/Product/Product";
+import { Notification } from "../pages/Notification/Notification";
+import { MyProfile } from "../pages/MyProfile/MyProfile";
+import { Orders } from "../pages/Orders/Orders";
+import { Favorite } from "../pages/Favorite/Favorite";
+import { Cupons } from "../pages/Cupons/Cupons";
+import { Address } from "../pages/Address/Address";
+import { ProfileCompany } from "../pages/ProfileCompany/ProfileCompany";
+import { Bag } from "../pages/Bag/Bag";
+import { TypeDelivery } from "../pages/TypeDelivery/TypeDelivery";
+import { EditAdress } from "../pages/Address/EditAdress";
+import { Payment } from "../pages/payment/Payment";
 
 const Rotas = () => {
   return (
@@ -21,11 +21,13 @@ const Rotas = () => {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/notification" element={<Notification />} />
-          <Route path="/myprofile" element={<MyProfile />} />
-          <Route path="/favorite" element={<Favorite />} />
-          <Route path="/cupons" element={<Cupons />} />
-          <Route path="/adress" element={<Address />} />
+          <Route path="/myprofile">
+            <Route path="notification" element={<Notification />} />
+            <Route index element={<MyProfile />} />
+            <Route path="cupons" element={<Cupons />} />
+            <Route path="favorite" element={<Favorite />} />
+            <Route path="adress" element={<Address />} />
+          </Route>
           <Route path="/editAdress/:mode" element={<EditAdress />} />
           <Route path="/bag" element={<Bag />} />
           <Route path="/payment" element={<Payment />} />
@@ -36,7 +38,7 @@ const Rotas = () => {
         </Routes>
       </AuthProvider>
     </Router>
-  )
-}
+  );
+};
 
-export default Rotas
+export default Rotas;
