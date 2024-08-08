@@ -3,10 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div``;
 
 export const Wrapper = styled.div`
-  /* padding-bottom: 40px; */
-  /* height: 100vh; */
-
-  height: calc(100dvh - 160px);
+  height: 100%;
+  max-height: 100dvh;
   overflow-y: scroll;
 `;
 
@@ -27,7 +25,8 @@ export const NotFoundItensText = styled.p`
 `;
 
 export const WrapperItens = styled.div`
-  /* margin-top: 185px; */
+  min-height: calc(100dvh - 223px);
+  overflow-y: auto;
 `;
 
 export const Item = styled.div`
