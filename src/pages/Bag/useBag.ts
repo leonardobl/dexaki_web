@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { IDataDeliveryUser } from "../../model/Product";
+import { IDataDeliveryUser, IProduct } from "../../model/Product";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { IDataUserProps, formSchemaUser } from "./schema";
@@ -50,51 +50,51 @@ export const useBag = () => {
     navigate("/adress");
   }
 
-  // function addQuantity(product: IProductsCart) {
-  //   const update: IProductsCart = {
-  //     ...product,
-  //     quantity: product.quantity + 1,
-  //   };
+  function addQuantity(product: IProduct) {
+    const update: IProduct = {
+      ...product,
+      quantity: product.quantity + 1,
+    };
 
-  //   const updatedProducts = dataDelivery.products.map((i: IProductsCart) =>
-  //     i.id === update.id ? update : i
-  //   );
+    const updatedProducts = dataDelivery.products.map((i: IProduct) =>
+      i.id === update.id ? update : i
+    );
 
-  //   const result = {
-  //     ...dataDelivery,
-  //     products: updatedProducts,
-  //   };
+    const result = {
+      ...dataDelivery,
+      products: updatedProducts,
+    };
 
-  //   setDataDelivery(result);
-  // }
+    setDataDelivery(result);
+  }
 
-  // function lessQuantity(product: IProductsCart) {
-  //   if (product.quantity <= 1) {
-  //     const updateProduct = dataDelivery.products.filter(
-  //       (i) => i.id !== product.id
-  //     );
-  //     setDataDelivery({
-  //       ...dataDelivery,
-  //       products: updateProduct,
-  //     });
-  //   } else {
-  //     const update: IProductsCart = {
-  //       ...product,
-  //       quantity: product.quantity - 1,
-  //     };
+  function lessQuantity(product: IProduct) {
+    if (product.quantity <= 1) {
+      const updateProduct = dataDelivery.products.filter(
+        (i) => i.id !== product.id
+      );
+      setDataDelivery({
+        ...dataDelivery,
+        products: updateProduct,
+      });
+    } else {
+      const update: IProduct = {
+        ...product,
+        quantity: product.quantity - 1,
+      };
 
-  //     const updatedProducts = dataDelivery.products.map((i: IProductsCart) =>
-  //       i.id === update.id ? update : i
-  //     );
+      const updatedProducts = dataDelivery.products.map((i: IProduct) =>
+        i.id === update.id ? update : i
+      );
 
-  //     const result = {
-  //       ...dataDelivery,
-  //       products: updatedProducts,
-  //     };
+      const result = {
+        ...dataDelivery,
+        products: updatedProducts,
+      };
 
-  //     setDataDelivery(result);
-  //   }
-  // }
+      setDataDelivery(result);
+    }
+  }
 
   function CleanAll() {
     setDataDelivery({
@@ -123,5 +123,7 @@ export const useBag = () => {
     FormProvider,
     onSendSubmit,
     errors,
+    addQuantity,
+    lessQuantity,
   };
 };

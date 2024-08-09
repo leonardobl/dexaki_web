@@ -5,9 +5,9 @@ import { IDataAdressProps, formSchema } from "./schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IDataDeliveryUser } from "../../model/Product";
 import { IDataUserProps, formSchemaUser } from "../Bag/schema";
-import { useAppContext } from "../../context/AppContext";
 import { API } from "../../Api";
 import moment from "moment";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export const useAdress = () => {
   const [showModalAdress, setShowModalAdress] = useState(false);
@@ -15,7 +15,9 @@ export const useAdress = () => {
   const [showModalUser, setShowModalUser] = useState(false);
 
   const navigate = useNavigate();
-  const { dataDelivery, setDataDelivery } = useAppContext();
+  const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({
+    storageKey: "@delivery",
+  });
   const { mode } = useParams();
 
   const initialValueAdress = {

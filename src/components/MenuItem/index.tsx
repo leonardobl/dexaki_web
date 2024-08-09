@@ -19,9 +19,8 @@ export const MenuItem = ({ product, ...rest }: IMenuItemPros) => {
         </S.Cashback>
         <S.WrapperImage>
           <img
-            src={`${import.meta.env.VITE_API_URL}/uploads/${
-              product?.imagePath
-            }`}
+            src={`${import.meta.env.VITE_API_URL}/uploads/${product?.imagePath
+              }`}
             alt="imagem produto"
           />
         </S.WrapperImage>
@@ -29,7 +28,7 @@ export const MenuItem = ({ product, ...rest }: IMenuItemPros) => {
           <h4>{product?.name}</h4>
           <span>{product?.description}</span>
           <S.Price>
-            <span>R$ 50,00</span>
+            <span>{maskMoney(product?.price + 5)}</span>
             <p>{maskMoney(product?.price)}</p>
           </S.Price>
         </S.WrapperText>

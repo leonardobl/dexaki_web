@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-`;
+export const Wrapper = styled.div``;
 
 export const ContainerModal = styled.div`
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   z-index: 1000;
   top: 0;
@@ -45,7 +44,6 @@ export const Modal = styled.div`
   /* transform: translate3d(0, -25%, 0); */
 `;
 
-
 export const OverleayModal = styled.div`
   position: absolute;
   top: 0;
@@ -57,14 +55,12 @@ export const OverleayModal = styled.div`
   z-index: 1;
 `;
 
-export const ModalBody = styled.div`
-
-`;
+export const ModalBody = styled.div``;
 
 export const Line = styled.div`
   max-width: 134px;
   width: 100%;
   height: 6px;
   border-radius: 3px;
-  background-color: #ADADAD;
+  background-color: #adadad;
 `;

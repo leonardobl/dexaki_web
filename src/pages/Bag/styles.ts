@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: #fafafa;
-  height: 100vh; 
+  /* height: 100vh; */
 
   header {
     position: fixed;
@@ -40,13 +40,12 @@ export const Wrapper = styled.div`
 `;
 
 export const Body = styled.div`
-  overflow-y: scroll;
-  /* height: calc(100vh - 70px); */
-  
+  /* overflow-y: scroll; */
+  height: calc(100vh - 70px);
+
   padding: 0px 16px 80px 16px;
   margin-top: 60px;
 
- 
   h3 {
     font-size: 14px;
     color: black;
@@ -185,7 +184,7 @@ export const ContentFooter = styled.div`
   position: fixed;
   bottom: 0px;
   left: 0px;
-  right: 0px; 
+  right: 0px;
   padding: 12px 24px;
 
   > div {
@@ -235,7 +234,6 @@ export const NoItems = styled.div`
     color: #999;
   }
 `;
-
 
 export const ModalDescription = styled.div`
   margin-bottom: 16px;

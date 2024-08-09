@@ -1,13 +1,15 @@
 import { Button } from "../../components/Button/Button";
 import * as S from "./styles";
 import { FaCartPlus } from "react-icons/fa";
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowLeft, MdProductionQuantityLimits } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
 import { useBag } from "./useBag";
 import { maskMoney, maskPhone } from "../../Util/masks.ts";
 import { ModalBottom } from "../../components/ModalBottom";
 import { InputRHF } from "../../components/FormRHF/InputRHF";
 import { GiStorkDelivery } from "react-icons/gi";
+import { IProduct } from "../../model/Product.ts";
+import { BagItem } from "../../components/BagItem/index.tsx";
 
 export const Bag = () => {
   const {
@@ -22,6 +24,8 @@ export const Bag = () => {
     onSendSubmit,
     BtnContinuar,
     errors,
+    addQuantity,
+    lessQuantity
   } = useBag();
 
   return (
@@ -40,8 +44,8 @@ export const Bag = () => {
       <S.Body>
         {dataDelivery.products?.length > 0 && <h3>Itens adicionados</h3>}
 
-        {/* {dataDelivery.products?.length > 0 ? (
-          dataDelivery?.map((i: IProductsCart) => (
+        {dataDelivery.products?.length > 0 ? (
+          dataDelivery?.products.map((i: IProduct) => (
             <BagItem
               key={i.id}
               product={i}
@@ -54,7 +58,7 @@ export const Bag = () => {
             <p>Não há nenhum item na sua sacola</p>
             <MdProductionQuantityLimits size={17} color="#999" />
           </S.NoItems>
-        )} */}
+        )}
 
         <S.AddItem onClick={() => navigate("/")}>
           <p>Adicionar mais pedidos</p>

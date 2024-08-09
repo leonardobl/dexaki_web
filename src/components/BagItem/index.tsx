@@ -2,14 +2,14 @@ import * as S from "./styles";
 import { ComponentProps } from "react";
 
 import { FaTrash } from "react-icons/fa";
-import { IProductsCart } from "../../model/Product";
+import { IProduct } from "../../model/Product";
 import { maskMoney } from "../../Util/masks.ts";
 
 
 interface IBagItemProps extends ComponentProps<"div"> {
-  product: IProductsCart;
-  addQuantity: (product: IProductsCart) => void;
-  lessQuantity: (product: IProductsCart) => void
+  product: IProduct;
+  addQuantity: (product: IProduct) => void;
+  lessQuantity: (product: IProduct) => void
 }
 
 export const BagItem = ({ product, addQuantity, lessQuantity, ...rest }: IBagItemProps) => {
@@ -18,13 +18,13 @@ export const BagItem = ({ product, addQuantity, lessQuantity, ...rest }: IBagIte
     <S.Container {...rest}>
       <div className="content-left">
         <div>
-          <img className="img" src={product?.img} alt="imagem do produto" />
+          <img className="img" src={`${import.meta.env.VITE_API_URL}/uploads/${product?.imagePath}`} alt="imagem do produto" />
         </div>
+
         <div className="description">
           <p>{product?.name}</p>
           <span>{product?.description}</span>
           <strong>{maskMoney(product?.price)}</strong>
-
           <div className="content-itens">
             <div>
               <p>1</p>
@@ -38,7 +38,6 @@ export const BagItem = ({ product, addQuantity, lessQuantity, ...rest }: IBagIte
           </div>
         </div>
       </div>
-
 
       <S.ContentButton {...rest}>
         {product.quantity > 1 ? (<button onClick={() => lessQuantity(product)}>

@@ -3,82 +3,80 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAppContext } from "../../context/AppContext";
 import { Product } from "../../services/Product";
 import { toast } from "react-toastify";
-import { IProductDTO, ISelectedProducts } from "../../types/product";
+import { IProductDTO } from "../../types/product";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { IDataDeliveryUser, IProduct } from "../../model/Product";
+
+const userDelivery: IDataDeliveryUser = {
+  name: "",
+  email: "",
+  phone: "",
+  adress: undefined,
+  typeOfpayment: undefined,
+  delivery: undefined,
+  products: [],
+};
 
 export const useProduct = () => {
-  const [dataDelivery, setDataDelivery] = useLocalStorage<ISelectedProducts[]>({
+  const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({
     storageKey: "@delivery",
-    initialValue: [],
+    initialValue: userDelivery,
   });
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [quantity, setQuantity] = useState<number>(0);
   const { id } = useParams();
   const [product, setProduct] = useState<IProductDTO>({} as IProductDTO);
+
   const { setIsLoad } = useAppContext();
   const [comment, setComment] = useState("");
 
   function addToCart() {
     setShowModal(true);
+    const alreadyExistProduct = dataDelivery.products.some(
+      (p) => p.id === product._id
+    );
 
-    if (
-      Array.isArray(dataDelivery) &&
-      dataDelivery?.some((i) => i._id === id)
-    ) {
-      const dataUpdated = dataDelivery.map((p) => {
-        return p._id === id ? { ...p, quantity } : p;
+    if (alreadyExistProduct) {
+      const updateProducts = dataDelivery.products.map((p: IProduct) =>
+        p.id === product._id ? { ...p, quantity: p.quantity + quantity } : p
+      );
+
+      setDataDelivery({
+        ...dataDelivery,
+        products: updateProducts,
       });
-
-      setDataDelivery(dataUpdated);
-
-      return;
+    } else {
+      setDataDelivery({
+        ...dataDelivery,
+        products: [
+          ...dataDelivery.products,
+          {
+            id: product._id,
+            category: product.category._id,
+            description: product.description,
+            imagePath: product.imagePath,
+            name: product.name,
+            price: product.price,
+            quantity: quantity,
+            discountCoupon: 0,
+          },
+        ],
+      });
     }
-
-    setDataDelivery([
-      ...dataDelivery,
-      { _id: product._id, name: product.name, quantity },
-    ]);
   }
-
   function addQuantity() {
-    setQuantity((prev) => {
-      if (
-        Array.isArray(dataDelivery) &&
-        dataDelivery?.some((i) => i._id === id)
-      ) {
-        const updatedValues = dataDelivery.map((i) =>
-          i._id === id ? { ...i, quantity: prev + 1 } : i
-        );
-        setDataDelivery(updatedValues);
-      }
-
-      return prev + 1;
-    });
+    setQuantity(quantity + 1);
   }
 
   function lessQuantity() {
-    setQuantity((prev) => {
-      if (prev > 0) {
-        if (
-          Array.isArray(dataDelivery) &&
-          dataDelivery?.some((i) => i._id === id)
-        ) {
-          const updatedValues = dataDelivery.map((i) =>
-            i._id === id ? { ...i, quantity: prev - 1 } : i
-          );
-          setDataDelivery(updatedValues);
-        }
+    if (quantity == 1) {
+      return;
+    }
 
-        if (prev - 1 === 0 && dataDelivery?.some((i) => i._id === id)) {
-          const updatedValues = dataDelivery.filter((i) => i._id !== id);
-          setDataDelivery(updatedValues);
-        }
-
-        return prev - 1;
-      }
-
-      return 0;
+    setQuantity((prevState) => {
+      if (prevState == 0) return 0;
+      return prevState - 1;
     });
   }
 
@@ -86,18 +84,18 @@ export const useProduct = () => {
     navigate("/");
   }
 
-  useEffect(() => {
-    if (
-      comment &&
-      Array.isArray(dataDelivery) &&
-      dataDelivery?.some((i) => i._id === id)
-    ) {
-      const updatedValues = dataDelivery?.map((i) =>
-        i._id === id ? { ...i, comment } : i
-      );
-      setDataDelivery(updatedValues);
-    }
-  }, [comment]);
+  // useEffect(() => {
+  //   if (
+  //     comment &&
+  //     Array.isArray(dataDelivery) &&
+  //     dataDelivery?.some((i) => i._id === id)
+  //   ) {
+  //     const updatedValues = dataDelivery?.map((i) =>
+  //       i._id === id ? { ...i, comment } : i
+  //     );
+  //     setDataDelivery(updatedValues);
+  //   }
+  // }, [comment]);
 
   useEffect(() => {
     if (!id) return;
@@ -120,6 +118,7 @@ export const useProduct = () => {
       setQuantity(product!.quantity);
       setComment(product?.comment || "");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return {
