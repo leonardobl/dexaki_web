@@ -13,8 +13,8 @@ import { ProfileCompany } from "../pages/ProfileCompany/ProfileCompany";
 import { Bag } from "../pages/Bag/Bag";
 import { TypeDelivery } from "../pages/TypeDelivery/TypeDelivery";
 import { EditAdress } from "../pages/Address/EditAdress";
-import { StopWatch } from "../pages/Stopwatch/StopWatch";
-import { Payment } from "../pages/Payment/Payment";
+import { StopWatch } from "../pages/Stopwatch/StopWatch.tsx";
+import { Payment } from "../pages/Payment/Payment.tsx";
 
 const Rotas = () => {
   return (
