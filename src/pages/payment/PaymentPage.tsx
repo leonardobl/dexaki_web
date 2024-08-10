@@ -12,7 +12,7 @@ import { IoMdCard } from "react-icons/io";
 import { MdAttachMoney } from "react-icons/md";
 import { IoTicket } from "react-icons/io5";
 
-export const Payment = () => {
+export const PaymentPage = () => {
   const {
     navigate,
     dataDelivery,

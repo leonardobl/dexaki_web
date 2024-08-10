@@ -14,7 +14,7 @@ import { Bag } from "../pages/Bag/Bag";
 import { TypeDelivery } from "../pages/TypeDelivery/TypeDelivery";
 import { EditAdress } from "../pages/Address/EditAdress";
 import { StopWatch } from "../pages/Stopwatch/StopWatch";
-import { Payment } from "../pages/Payment";
+import { PaymentPage } from "../pages/Payment/PaymentPage";
 
 const Rotas = () => {
   return (
@@ -31,7 +31,7 @@ const Rotas = () => {
           <Route path="/adress" element={<Address />} />
           <Route path="/editAdress/:mode" element={<EditAdress />} />
           <Route path="/bag" element={<Bag />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment" element={<PaymentPage />} />
           <Route path="/stopwatch" element={< StopWatch />} />
           <Route path="/typeDelivery" element={<TypeDelivery />} />
           <Route path="/profileCompany" element={<ProfileCompany />} />
