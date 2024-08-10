@@ -1,12 +1,13 @@
 import * as S from "./styles";
 import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
-import { usePayment } from "./usePayment";
+
 import { InputCopy } from "../../components/Form/InputCopy/InputCopy";
 import { Button } from "../../components/Button/Button";
 import { FaWhatsapp } from "react-icons/fa";
+import { useStopWatch } from "./useStopWatch";
 
 export const StopWatch = () => {
-  const { navigate, dataDelivery } = usePayment();
+  const { navigate, dataDelivery } = useStopWatch();
 
   return (
     <S.Wrapper>

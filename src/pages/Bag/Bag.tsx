@@ -31,7 +31,7 @@ export const Bag = () => {
   return (
     <S.Wrapper>
       <header>
-        <div onClick={() => navigate(-1)}>
+        <div onClick={() => navigate('/')}>
           <MdOutlineKeyboardArrowLeft size={22} />
           <h3>Sacola</h3>
         </div>
