@@ -66,6 +66,7 @@ export const useAdress = () => {
     const result: IDataDeliveryUser = {
       ...dataDelivery,
       delivery: undefined,
+      typeOfpayment: undefined,
       adress: {
         rua: data.rua,
         numero: Number(data.numero),

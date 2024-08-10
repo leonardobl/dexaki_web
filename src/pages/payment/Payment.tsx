@@ -1,16 +1,16 @@
-import { MdAttachMoney } from "react-icons/md";
 import { Radio } from "../../components/Form/Radio";
 import * as S from "./styles";
 import { usePayment } from "./usePayment";
-import { IoMdCard } from "react-icons/io";
-import { FaLocationDot, FaPix } from "react-icons/fa6";
 import { Template } from "../../template/Template";
 import { ModalBottom } from "../../components/ModalBottom";
-import { AiOutlineUser } from "react-icons/ai";
-import { IoTicket } from "react-icons/io5";
 import { Button } from "../../components/Button/Button";
 import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
 
+import { FaLocationDot, FaPix } from "react-icons/fa6";
+import { AiOutlineUser } from "react-icons/ai";
+import { IoMdCard } from "react-icons/io";
+import { MdAttachMoney } from "react-icons/md";
+import { IoTicket } from "react-icons/io5";
 
 export const Payment = () => {
   const {
@@ -65,8 +65,6 @@ export const Payment = () => {
             name="typePay"
             checked={dataDelivery.typeOfpayment === "card"}
           />
-
-
         </S.ContentPay>
 
         <S.ContentBtn>
@@ -124,7 +122,7 @@ export const Payment = () => {
 
             <p>
               Forma de pagamento selecionado:{" "}
-              {parseTypeOfPayment(dataDelivery.typeOfpayment!)}
+              {parseTypeOfPayment(dataDelivery.typeOfpayment ?? "money")}
             </p>
           </S.TypePay>
           <Button onClick={() => fazerPedido()}>Fazer Pedido</Button>

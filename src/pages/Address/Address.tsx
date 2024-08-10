@@ -39,7 +39,7 @@ export const Address = () => {
   return (
     <Template>
       <S.Wrapper>
-        <S.Header onClick={() => navigate("/myprofile")}>
+        <S.Header onClick={() => navigate("/bag")}>
           <IconArrowLeft />
           <h1>Endereço</h1>
         </S.Header>
