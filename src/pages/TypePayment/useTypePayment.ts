@@ -5,7 +5,7 @@ import { useState } from "react";
 import moment from "moment";
 import { API } from "../../Api";
 
-export const usePayment = () => {
+export const useTypePayment = () => {
   const [showModalConfirm, setShowModalConfirm] = useState(false);
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({
     storageKey: "@delivery",
