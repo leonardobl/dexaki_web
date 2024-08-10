@@ -13,8 +13,8 @@ import { ProfileCompany } from "../pages/ProfileCompany/ProfileCompany";
 import { Bag } from "../pages/Bag/Bag";
 import { TypeDelivery } from "../pages/TypeDelivery/TypeDelivery";
 import { EditAdress } from "../pages/Address/EditAdress";
-import { StopWatch } from "../pages/Stopwatch/StopWatch.tsx";
-import { Payment } from "../pages/Payment/Payment.tsx";
+import { StopWatch } from "../pages/Stopwatch/StopWatch";
+import { Payment } from "../pages/Payment/Payment";
 
 const Rotas = () => {
   return (
@@ -22,12 +22,11 @@ const Rotas = () => {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="notification" element={<Notification />} />
           <Route path="/myprofile">
-            <Route path="notification" element={<Notification />} />
             <Route index element={<MyProfile />} />
             <Route path="cupons" element={<Cupons />} />
             <Route path="favorite" element={<Favorite />} />
-            <Route path="adress" element={<Address />} />
           </Route>
           <Route path="/adress" element={<Address />} />
           <Route path="/editAdress/:mode" element={<EditAdress />} />
