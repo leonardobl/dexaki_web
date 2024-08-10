@@ -14,7 +14,7 @@ import { Bag } from "../pages/Bag/Bag";
 import { TypeDelivery } from "../pages/TypeDelivery/TypeDelivery";
 import { EditAdress } from "../pages/Address/EditAdress";
 import { StopWatch } from "../pages/Stopwatch/StopWatch";
-import { Payment } from "../pages/Payment/Payment";
+import { Payment } from "../pages/Payment";
 
 const Rotas = () => {
   return (
