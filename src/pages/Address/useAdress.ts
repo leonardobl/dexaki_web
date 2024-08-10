@@ -5,13 +5,11 @@ import { IDataAdressProps, formSchema } from "./schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IDataDeliveryUser } from "../../model/Product";
 import { IDataUserProps, formSchemaUser } from "../Bag/schema";
-import { API } from "../../Api";
-import moment from "moment";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export const useAdress = () => {
   const [showModalAdress, setShowModalAdress] = useState(false);
-  const [showModalConfirm, setShowModalConfirm] = useState(false);
+
   const [showModalUser, setShowModalUser] = useState(false);
 
   const navigate = useNavigate();
@@ -90,8 +88,8 @@ export const useAdress = () => {
   }
 
   function finalizar() {
-    if (dataDelivery.adress || dataDelivery.delivery) {
-      setShowModalConfirm(true);
+    if (dataDelivery.adress) {
+      navigate("/payment");
     }
   }
 
@@ -130,41 +128,6 @@ export const useAdress = () => {
     }
   }
 
-  async function fazerPedido() {
-    if (dataDelivery.typeOfpayment === "pix") {
-      const expirationDate = moment().add(5, "minutes");
-      const formattedExpirationDate = expirationDate.format(
-        "YYYY-MM-DDTHH:mm:ssZ"
-      );
-
-      const body = {
-        // transaction_amount:
-        description: "teste App dexaki",
-        paymentMethodId: "pix",
-        email: "danrleypow@gmail.com",
-        identificationType: "04544207304",
-        number: dataDelivery.phone,
-        date_of_expiration: formattedExpirationDate,
-      };
-
-      try {
-        const result = await API.post("create-pix", body);
-        if (result) {
-          const udapte = {
-            ...dataDelivery,
-            qr_code: result.data.point_of_interaction.transaction_data.qr_code,
-          };
-          setDataDelivery(udapte);
-          navigate("/payment");
-        }
-      } catch (error) {
-        console.error("Erro ao criar o PIX", error);
-      }
-    } else {
-      console.log("outra opção de cartão");
-    }
-  }
-
   return {
     onSendSubmitSaveAdress,
     dataDelivery,
@@ -182,11 +145,8 @@ export const useAdress = () => {
     onSendSubmitEditUser,
     formAdress,
     mode,
-    showModalConfirm,
-    setShowModalConfirm,
     finalizar,
     deleteAdress,
-    fazerPedido,
     onChangeTypeOfPayment,
     onChangeDeliveryType,
     parseTypeOfPayment,

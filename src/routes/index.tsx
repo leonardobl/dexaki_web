@@ -14,6 +14,7 @@ import { Bag } from "../pages/Bag/Bag";
 import { TypeDelivery } from "../pages/TypeDelivery/TypeDelivery";
 import { EditAdress } from "../pages/Address/EditAdress";
 import { Payment } from "../pages/payment/Payment";
+import { StopWatch } from "../pages/Stopwatch/StopWatch";
 
 const Rotas = () => {
   return (
@@ -28,9 +29,11 @@ const Rotas = () => {
             <Route path="favorite" element={<Favorite />} />
             <Route path="adress" element={<Address />} />
           </Route>
+          <Route path="/adress" element={<Address />} />
           <Route path="/editAdress/:mode" element={<EditAdress />} />
           <Route path="/bag" element={<Bag />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/stopwatch" element={< StopWatch />} />
           <Route path="/typeDelivery" element={<TypeDelivery />} />
           <Route path="/profileCompany" element={<ProfileCompany />} />
           <Route path="/orders" element={<Orders />} />

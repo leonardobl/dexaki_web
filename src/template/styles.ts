@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: 100dvh;
+  height: 100vh;
 `;
 
 export const Container = styled.div`
-  height: calc(100dvh - 52px);
+  height: calc(100vh - 102px);
 `;
 
 export const ContentLogo = styled.div`

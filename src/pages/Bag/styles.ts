@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: #fafafa;
-  /* height: 100vh; */
+  height: 100vh;
 
   header {
     position: fixed;

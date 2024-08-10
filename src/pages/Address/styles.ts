@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  
-  background-color: #FAFAFA;
-  
+  background-color: #fafafa;
 `;
 
 export const HeaderAdress = styled.div`
@@ -25,8 +23,7 @@ export const Header = styled.div`
 
 export const Body = styled.div`
   padding: 0 16px;
-`
-
+`;
 
 export const CardMain = styled.div`
   display: flex;
@@ -37,7 +34,6 @@ export const CardMain = styled.div`
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 24px;
-
 
   > div {
     p {
@@ -52,7 +48,7 @@ export const CardMain = styled.div`
       font-weight: 300;
     }
   }
-`
+`;
 
 export const Card = styled.div`
   background-color: #fff;
@@ -69,8 +65,6 @@ export const Card = styled.div`
       color: #999;
     }
   }
-
- 
 
   > div {
     display: flex;
@@ -111,7 +105,6 @@ export const Card = styled.div`
     gap: 10px;
 
     p {
-     
       font-size: 10px;
       color: #999;
     }
@@ -142,7 +135,6 @@ export const DescriptionAdress = styled.div`
       strong {
         font-size: 14px;
         color: #333;
-
       }
       p {
         color: #999;
@@ -150,7 +142,6 @@ export const DescriptionAdress = styled.div`
       }
     }
   }
-  
 
   .content-btn {
     margin: 24px 0;
@@ -179,7 +170,6 @@ export const DescriptionAdressEdit = styled.div`
       strong {
         font-size: 14px;
         color: #333;
-
       }
       p {
         color: #999;
@@ -249,7 +239,7 @@ export const NotAdress = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 20px 0;
-  border: 1px solid ${props => props.theme.primary['800']};
+  border: 1px solid ${(props) => props.theme.primary["800"]};
   padding: 10px;
   border-radius: 6px;
 
@@ -260,7 +250,6 @@ export const NotAdress = styled.div`
   }
 `;
 
-
 export const ContentRadio = styled.div`
   margin-top: 20px;
   display: flex;
@@ -268,84 +257,6 @@ export const ContentRadio = styled.div`
   gap: 8px;
 `;
 
-
-export const ContentPay = styled.div`
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  h3 {
-    font-size: 15px;
-    color: #333;
-    font-weight: 600;
-  }
-`;
-
-export const ModalConfirm = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-
-  h3 {
-    text-align: center;
-    color: #333;
-    font-size: 16px;
-    font-weight: 600;
-  }
-`;
-
-export const UserData = styled.div`
-  display: flex;
-  gap: 6px;
-  div {
-    strong {
-      font-size: 14px;
-      color: #333;
-    }
-    p {
-      font-size: 12px;
-      color: #333;
-    }
-  }
-`;
-
-export const AdressUser = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-  > div {
-    strong {
-      font-size: 12px;
-      color: #333;
-    }
-
-    p {
-      font-size: 12px;
-      color: #333;
-    }
-  }
-`;
-
-export const Ticket = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  
-  p {
-    font-size: 12px;
-    color: #333;
-  }
-`;
-
-export const TypePay = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-  p {
-    font-size: 12px;
-    color: #333;
-  }
+export const ContentBtn = styled.div`
+  margin-top: 24px;
 `;

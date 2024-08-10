@@ -15,11 +15,6 @@ import { maskPhone } from "../../Util/masks";
 import { GiStorkDelivery } from "react-icons/gi";
 import { FaLocationDot } from "react-icons/fa6";
 import { Radio } from "../../components/Form/Radio";
-import { FaPix } from "react-icons/fa6";
-import { IoMdCard } from "react-icons/io";
-import { MdAttachMoney } from "react-icons/md";
-import { AiOutlineUser } from "react-icons/ai";
-import { IoTicket } from "react-icons/io5";
 
 export const Address = () => {
   const {
@@ -35,14 +30,10 @@ export const Address = () => {
     editUser,
     dataDelivery,
     formAdress,
-    showModalConfirm,
-    setShowModalConfirm,
     finalizar,
     deleteAdress,
     onChangeDeliveryType,
-    fazerPedido,
-    onChangeTypeOfPayment,
-    parseTypeOfPayment,
+
   } = useAdress();
 
   return (
@@ -133,51 +124,15 @@ export const Address = () => {
             )}
           </S.ContentCardAdress>
 
-          <S.ContentPay>
-            <h3>Selecione uma forma de pagamento: </h3>
-            <Radio
-              icon={<FaPix size={18} />}
-              title="Pix"
-              label="Pagamento seguro via Pix (Recomendado)"
-              id="pix"
-              value={"pix"}
-              onChange={(e) => onChangeTypeOfPayment(e.target.value)}
-              name="typePay"
-              checked={dataDelivery.typeOfpayment === "pix"}
-            />
-            <Radio
-              icon={<MdAttachMoney size={20} />}
-              title="Dinheiro"
-              label="Fazer pagamento no momento da entrega"
-              id="money"
-              value={"money"}
-              onChange={(e) => onChangeTypeOfPayment(e.target.value)}
-              name="typePay"
-              checked={dataDelivery.typeOfpayment === "money"}
-            />
-            <Radio
-              icon={<IoMdCard size={20} />}
-              title="Cartão"
-              label="Fazer pagamento no momento da entrega."
-              description="visa, mastercard, elo, hipercard, AmericanExpress"
-              id="card"
-              value={"card"}
-              onChange={(e) => onChangeTypeOfPayment(e.target.value)}
-              name="typePay"
-              checked={dataDelivery.typeOfpayment === "card"}
-            />
-
+          <S.ContentBtn>
             <Button
-              data-variant-outline
+              // data-variant-outline
               onClick={() => finalizar()}
-              disabled={
-                (!dataDelivery.adress && !dataDelivery.delivery) ||
-                !dataDelivery.typeOfpayment
-              }
+              disabled={!dataDelivery.adress}
             >
-              Finalizar
+              Finalizar Pedido
             </Button>
-          </S.ContentPay>
+          </S.ContentBtn>
         </S.Body>
 
         <ModalBottom
@@ -240,60 +195,6 @@ export const Address = () => {
             </Button>
           </FormProvider>
         </S.ContentModalInput>
-      </ModalBottom>
-
-      <ModalBottom
-        isOpen={showModalConfirm}
-        onClose={() => setShowModalConfirm(false)}
-      >
-        <S.ModalConfirm>
-          <h3>Revise o seu pedido</h3>
-          <S.UserData>
-            <AiOutlineUser size={22} />
-            <div>
-              <strong>{dataDelivery.name}</strong>
-              <p>{dataDelivery.phone}</p>
-            </div>
-          </S.UserData>
-          <S.AdressUser>
-            <FaLocationDot size={22} />
-            {dataDelivery.adress ? (
-              <div>
-                <strong>Número: {dataDelivery.adress?.numero}</strong>
-                <p>{dataDelivery.adress?.rua}</p>
-                <p>{dataDelivery.adress?.complemento}</p>
-              </div>
-            ) : (
-              <div>
-                <p>
-                  {dataDelivery.delivery === "consumir_no_local"
-                    ? "Consumir no Local"
-                    : "Retirar no Estabelecimento"}
-                </p>
-              </div>
-            )}
-          </S.AdressUser>
-          <S.Ticket>
-            <IoTicket size={22} />
-            <p>Nenhum cupom aplicado</p>
-          </S.Ticket>
-          <S.TypePay>
-            {dataDelivery.typeOfpayment === "pix" && <FaPix size={22} />}
-            {dataDelivery.typeOfpayment === "money" && (
-              <MdAttachMoney size={22} />
-            )}
-            {dataDelivery.typeOfpayment === "card" && <IoMdCard size={22} />}
-
-            <p>
-              Forma de pagamento selecionado:{" "}
-              {parseTypeOfPayment(dataDelivery.typeOfpayment!)}
-            </p>
-          </S.TypePay>
-          <Button onClick={() => fazerPedido()}>Fazer Pedido</Button>
-          <Button data-variant-outline onClick={() => navigate("/bag")}>
-            Alterar Pedido
-          </Button>
-        </S.ModalConfirm>
       </ModalBottom>
     </Template>
   );
