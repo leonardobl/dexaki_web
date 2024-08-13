@@ -9,4 +9,5 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   flex: 1;
+  overflow-y: auto;
 `;

@@ -6,17 +6,10 @@ export const WrapperNav = styled.div`
   border-top: 1px solid #ccc;
   background-color: #fff;
   width: max-content;
-  position: relative;
   bottom: 0px;
-  z-index: 99;
-  /* padding: 8px 24px 6px 24px; */
-  /* z-index: 2; */
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* gap: 26px; */
   width: 100%;
   backdrop-filter: blur(15px);
 

@@ -32,11 +32,6 @@ export const Nav = () => {
           <span>Início</span>
         </NavLink>
 
-        {/* <NavLink to={'/'}>
-          <IconDestaque color={isActive('promocoes')} />
-        <span>Promoções</span>
-      </NavLink> */}
-
         <NavLink to={"/orders"}>
           <IconPedidos />
           <span>Pedidos</span>
