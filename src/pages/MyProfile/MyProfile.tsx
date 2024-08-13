@@ -8,7 +8,7 @@ import { CiCircleQuestion } from "react-icons/ci";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Template } from "../../template/Template";
+import { NewLayout } from "../NewLayout";
 
 export const MyProfile = () => {
   const [isAutenticated, setIsAutenticated] = useState(false);
@@ -19,7 +19,7 @@ export const MyProfile = () => {
   }, []);
 
   return (
-    <Template>
+    <NewLayout>
       <S.Wrapper>
         {isAutenticated ? (
           <div>
@@ -126,6 +126,6 @@ export const MyProfile = () => {
           </S.ContentLogin>
         )}
       </S.Wrapper>
-    </Template>
+    </NewLayout>
   );
 };

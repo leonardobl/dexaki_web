@@ -1,7 +1,7 @@
-import { Template } from "../../template/Template";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import * as S from "./styles";
 import { useOrders } from "./useOrders";
+import { NewLayout } from "../NewLayout";
 
 export const Orders = () => {
   const { navigate, dataDelivery } = useOrders();
@@ -20,7 +20,7 @@ export const Orders = () => {
   }
 
   return (
-    <Template>
+    <NewLayout>
       <S.Wrapper>
         <header onClick={() => navigate(-1)}>
           <MdOutlineKeyboardArrowLeft size={22} />
@@ -81,6 +81,6 @@ export const Orders = () => {
         <p>Você não possui Pedidos</p>
       </S.NoOrders> */}
       </S.Wrapper>
-    </Template>
+    </NewLayout>
   );
 };
