@@ -17,6 +17,23 @@ export const DataProducts: IProductDTO[] = [
     },
     __v: 0,
   },
+
+  {
+    _id: "5a9c7b1d-4e3f-48c6-9d2a-8f1b2e7d3c6188",
+    name: "Vegan Veggie 88",
+    description: "Daiya vegan mozzarella, paired with fresh veggies 88",
+    imagePath:
+      "https://s5.static.brasilescola.uol.com.br/be/2023/03/pizza-italiana-tradicional-com-tomates-e-manjericao-em-alusao-a-historia-da-pizza.jpg",
+    price: 23.0,
+    ingredients: [],
+    category: {
+      _id: "66b6421195ff9a909192902",
+      name: "pizza",
+      icon: "🍕",
+      __v: 0,
+    },
+    __v: 0,
+  },
   {
     _id: "3b2e1c9d-7a6f-49d8-8f4c-2d5b3a9e1d47",
     name: "Veggie Zupreme",
@@ -52,6 +69,23 @@ export const DataProducts: IProductDTO[] = [
   {
     _id: "9d1b2e8c-5f4a-47c6-8b3d-6a7f1e2d4b98",
     name: "Napoletana",
+    description: "Fresh tomatoes and mozzarella cheese.",
+    imagePath:
+      "https://content.jdmagicbox.com/comp/delhi/t6/011pxx11.xx11.200819160345.c5t6/catalogue/pizza-time-najafgarh-delhi-pizza-outlets-1fqclerswy.jpg",
+    price: 14.99,
+    ingredients: [],
+    category: {
+      _id: "66b6421195ff9a909192902",
+      name: "pizza",
+      icon: "🍕",
+      __v: 0,
+    },
+    __v: 0,
+  },
+
+  {
+    _id: "9d1b2e8c-5f4a-47c6-8b3d-6a7f1e2d4b98156",
+    name: "Napoletana 156",
     description: "Fresh tomatoes and mozzarella cheese.",
     imagePath:
       "https://content.jdmagicbox.com/comp/delhi/t6/011pxx11.xx11.200819160345.c5t6/catalogue/pizza-time-najafgarh-delhi-pizza-outlets-1fqclerswy.jpg",
@@ -131,6 +165,22 @@ export const DataProducts: IProductDTO[] = [
     __v: 0,
   },
   {
+    _id: "2b3f7e1d-c27a-40b2-9e2c-5f6a7e9d4b1370",
+    name: "Tribute Burger 70",
+    description: "A mouth-watering honest beef burger",
+    imagePath:
+      "https://www.cnnbrasil.com.br/viagemegastronomia/wp-content/uploads/sites/5/2022/05/origem-do-hambuguer-cnn4.jpg?w=1200&h=900&crop=1",
+    price: 16.2,
+    ingredients: [],
+    category: {
+      _id: "66b6421195ff9a9091929001",
+      name: "burger",
+      icon: "🍔",
+      __v: 0,
+    },
+    __v: 0,
+  },
+  {
     _id: "3d7e5b2f-a18c-45d6-9c4a-2b8e7f1c6e21",
     name: "Pulled Mooshie",
     description: "Spicy vegan burger with jackfruit",
@@ -181,6 +231,23 @@ export const DataProducts: IProductDTO[] = [
     __v: 0,
   },
   {
+    _id: "4e6a9f1d-b12c-42a7-8f5e-3d9c1b7e8d6410",
+    name: "Crunchy Nacho Burger 10",
+    description:
+      "The best combination of crunchiness and softness, all in one single burger",
+    imagePath:
+      "https://guiadacozinha.com.br/wp-content/uploads/2019/11/hamburguer-mexicano.jpg",
+    price: 21.0,
+    ingredients: [],
+    category: {
+      _id: "66b6421195ff9a9091929001",
+      name: "burger",
+      icon: "🍔",
+      __v: 0,
+    },
+    __v: 0,
+  },
+  {
     _id: "7b4d3e2a-8c5f-41b6-9d1a-6e3b4f7a1c58",
     name: "Barbie Burger",
     description:
@@ -188,6 +255,23 @@ export const DataProducts: IProductDTO[] = [
     imagePath:
       "https://churrasco.coz.br/wp-content/uploads/2021/01/hamburguer-na-churrasqueira.jpg",
     price: 13.2,
+    ingredients: [],
+    category: {
+      _id: "66b6421195ff9a9091929001",
+      name: "burger",
+      icon: "🍔",
+      __v: 0,
+    },
+    __v: 0,
+  },
+  {
+    _id: "7b4d3e2a-8c5f-41b6-9d1a-6e3b4f7a1c5851",
+    name: "Barbie Burger 51",
+    description:
+      "From a pink explosion was born Barbie Burger, a special edition in partnership with Mattel",
+    imagePath:
+      "https://churrasco.coz.br/wp-content/uploads/2021/01/hamburguer-na-churrasqueira.jpg",
+    price: 13.29,
     ingredients: [],
     category: {
       _id: "66b6421195ff9a9091929001",
