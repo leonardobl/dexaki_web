@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { IDataDeliveryUser } from "../../model/Product";
 
@@ -19,15 +19,15 @@ export const useNav = () => {
     initialValue: userDelivery,
   });
   const navigate = useNavigate();
-  const [total] = useState(0);
+  const [total, setTotal] = useState(0);
 
-  // useEffect(() => {
-  //   const temp = dataDelivery.products
-  //     ?.map((i) => i.price * i.quantity)
-  //     .reduce((acc, price) => acc + price, 0);
+  useEffect(() => {
+    const temp = dataDelivery.products
+      ?.map((i) => i.price * i.quantity)
+      .reduce((acc, price) => acc + price, 0);
 
-  //   setTotal(temp);
-  // }, [dataDelivery]);
+    setTotal(temp);
+  }, [dataDelivery]);
 
   return { navigate, total, dataDelivery };
 };

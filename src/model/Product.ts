@@ -1,7 +1,14 @@
 // import { IProductDTO } from "../types/product";
 
+export interface IAdress {
+  numero: number;
+  rua: string;
+  complemento: string;
+  currentAdress: boolean;
+}
+
 export interface IProduct {
-  id: string;
+  _id: string;
   name: string;
   price: number;
   description: string;
@@ -10,13 +17,6 @@ export interface IProduct {
   comment?: string;
   quantity: number;
   discountCoupon?: number;
-}
-
-export interface IAdress {
-  numero: number;
-  rua: string;
-  complemento: string;
-  currentAdress: boolean;
 }
 
 export interface IDataDeliveryUser {

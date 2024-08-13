@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useAppContext } from "../../context/AppContext";
-import { Product } from "../../services/Product";
-import { toast } from "react-toastify";
+// import { useAppContext } from "../../context/AppContext";
+// import { Product } from "../../services/Product";
+// import { toast } from "react-toastify";
 import { IProductDTO } from "../../types/product";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { IDataDeliveryUser, IProduct } from "../../model/Product";
+import { DataProducts } from "../../Mocks/productsMock";
 
 const userDelivery: IDataDeliveryUser = {
   name: "",
@@ -28,18 +29,18 @@ export const useProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<IProductDTO>({} as IProductDTO);
 
-  const { setIsLoad } = useAppContext();
+  // const { setIsLoad } = useAppContext();
   const [comment, setComment] = useState("");
 
   function addToCart() {
     setShowModal(true);
     const alreadyExistProduct = dataDelivery.products.some(
-      (p) => p.id === product._id
+      (p) => p._id === product._id
     );
 
     if (alreadyExistProduct) {
       const updateProducts = dataDelivery.products.map((p: IProduct) =>
-        p.id === product._id ? { ...p, quantity: p.quantity + quantity } : p
+        p._id === product._id ? { ...p, quantity: p.quantity + quantity } : p
       );
 
       setDataDelivery({
@@ -52,7 +53,7 @@ export const useProduct = () => {
         products: [
           ...dataDelivery.products,
           {
-            id: product._id,
+            _id: product._id,
             category: product.category._id,
             description: product.description,
             imagePath: product.imagePath,
@@ -97,29 +98,36 @@ export const useProduct = () => {
   //   }
   // }, [comment]);
 
+  // useEffect(() => {
+  //   if (!id) return;
+
+  //   setIsLoad(true);
+  //   Product.getById(id)
+  //     .then(({ data }) => {
+  //       setProduct(data);
+  //     })
+  //     .catch((error) => toast.error(error))
+  //     .finally(() => {
+  //       setIsLoad(false);
+  //     });
+
+  //   if (
+  //     Array.isArray(dataDelivery) &&
+  //     dataDelivery?.some((i) => i._id === id)
+  //   ) {
+  //     const product = dataDelivery?.find((i) => i._id === id);
+  //     setQuantity(product!.quantity);
+  //     setComment(product?.comment || "");
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [id]);
+
   useEffect(() => {
     if (!id) return;
 
-    setIsLoad(true);
-    Product.getById(id)
-      .then(({ data }) => {
-        setProduct(data);
-      })
-      .catch((error) => toast.error(error))
-      .finally(() => {
-        setIsLoad(false);
-      });
-
-    if (
-      Array.isArray(dataDelivery) &&
-      dataDelivery?.some((i) => i._id === id)
-    ) {
-      const product = dataDelivery?.find((i) => i._id === id);
-      setQuantity(product!.quantity);
-      setComment(product?.comment || "");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+    const selectProduct = DataProducts.find((item) => item._id === id);
+    setProduct(selectProduct!);
+  }, []);
 
   return {
     addToCart,

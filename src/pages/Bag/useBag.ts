@@ -57,7 +57,7 @@ export const useBag = () => {
     };
 
     const updatedProducts = dataDelivery.products.map((i: IProduct) =>
-      i.id === update.id ? update : i
+      i._id === update._id ? update : i
     );
 
     const result = {
@@ -71,7 +71,7 @@ export const useBag = () => {
   function lessQuantity(product: IProduct) {
     if (product.quantity <= 1) {
       const updateProduct = dataDelivery.products.filter(
-        (i) => i.id !== product.id
+        (i) => i._id !== product._id
       );
       setDataDelivery({
         ...dataDelivery,
@@ -84,7 +84,7 @@ export const useBag = () => {
       };
 
       const updatedProducts = dataDelivery.products.map((i: IProduct) =>
-        i.id === update.id ? update : i
+        i._id === update._id ? update : i
       );
 
       const result = {

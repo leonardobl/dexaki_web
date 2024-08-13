@@ -1,6 +1,3 @@
-import { ICategoryDTO } from "./category";
-import { IIngredient } from "./ingredient";
-
 export interface IPageProduct {
   products: IProductDTO[];
   pagination: IPagination;
@@ -12,8 +9,8 @@ export interface IProductDTO {
   description: string;
   imagePath: string;
   price: number;
-  ingredients: IIngredient[];
-  category: ICategoryDTO;
+  ingredients: string[];
+  category: ICategory;
   __v: number;
 }
 
