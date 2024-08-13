@@ -18,7 +18,12 @@ export const BagItem = ({ product, addQuantity, lessQuantity, ...rest }: IBagIte
     <S.Container {...rest}>
       <div className="content-left">
         <div>
-          <img className="img" src={`${import.meta.env.VITE_API_URL}/uploads/${product?.imagePath}`} alt="imagem do produto" />
+          <img
+            className="img"
+            // src={`${import.meta.env.VITE_API_URL}/uploads/${product?.imagePath}`} 
+            src={`${product?.imagePath}`}
+            alt="imagem do produto"
+          />
         </div>
 
         <div className="description">
