@@ -5,7 +5,6 @@ import { FaTrash } from "react-icons/fa";
 import { IProduct } from "../../model/Product";
 import { maskMoney } from "../../Util/masks.ts";
 
-
 interface IBagItemProps extends ComponentProps<"div"> {
   product: IProduct;
   addQuantity: (product: IProduct) => void;
