@@ -2,7 +2,6 @@ import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineMoreHoriz } from "react-icons/md";
 import * as S from "./styles";
-import { Template } from "../../template/Template";
 import { BsClockHistory } from "react-icons/bs";
 import { Button } from "../../components/Button/Button";
 import { MdOutlineAddLocationAlt } from "react-icons/md";
@@ -15,6 +14,7 @@ import { maskPhone } from "../../Util/masks";
 import { GiStorkDelivery } from "react-icons/gi";
 import { FaLocationDot } from "react-icons/fa6";
 import { Radio } from "../../components/Form/Radio";
+import { NewLayout } from "../NewLayout";
 
 export const Address = () => {
   const {
@@ -36,7 +36,7 @@ export const Address = () => {
   } = useAdress();
 
   return (
-    <Template>
+    <NewLayout>
       <S.Wrapper>
         <S.Header onClick={() => navigate("/bag")}>
           <IconArrowLeft />
@@ -195,6 +195,6 @@ export const Address = () => {
           </FormProvider>
         </S.ContentModalInput>
       </ModalBottom>
-    </Template>
+    </NewLayout>
   );
 };
