@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: #fafafa;
-  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
 
   header {
     position: fixed;
@@ -41,8 +43,8 @@ export const Wrapper = styled.div`
 
 export const Body = styled.div`
   /* overflow-y: scroll; */
-  height: calc(100vh - 70px);
-
+  flex: 1;
+  overflow-y: auto;
   padding: 0px 16px 80px 16px;
   margin-top: 60px;
 
