@@ -21,8 +21,6 @@ export const Product = () => {
     setComment,
   } = useProduct();
 
-
-
   return (
     <S.WrapperProduct>
       <div className="header-product-image">

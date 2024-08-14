@@ -11,14 +11,13 @@ export const WrapperProduct = styled.div`
       width: 100%;
       height: 210px;
       z-index: 1;
-    
     }
 
     > button {
       position: absolute;
       top: 16px;
       left: 16px;
-      background-color: #fff ;
+      background-color: #fff;
       border-radius: 50%;
       padding: 10px;
       display: flex;
@@ -28,7 +27,8 @@ export const WrapperProduct = styled.div`
       cursor: pointer;
       z-index: 20;
 
-      svg, img {
+      svg,
+      img {
         padding: 0;
         margin: 0;
       }
@@ -72,7 +72,7 @@ export const WrapperProduct = styled.div`
     textarea {
       width: 100%;
       border-radius: 6px;
-      
+
       min-height: 100px;
       border-color: #ccc;
       padding: 10px;
@@ -92,7 +92,6 @@ export const WrapperProduct = styled.div`
     align-items: center;
 
     .price {
-     
       min-width: 50px;
       p {
         font-size: 13px;
@@ -121,7 +120,7 @@ export const WrapperProduct = styled.div`
         font-size: 30px;
         padding: 6px;
         height: fit-content;
-        color: #FF6B00;
+        color: #ff6b00;
       }
 
       span {
@@ -132,7 +131,7 @@ export const WrapperProduct = styled.div`
     .button-add {
       width: 100%;
       height: fit-content;
-      background-color: #FF6B00;
+      background-color: #ff6b00;
       color: #fff;
       font-size: 14px;
       font-weight: 600;
@@ -143,14 +142,13 @@ export const WrapperProduct = styled.div`
       cursor: pointer;
     }
   }
-`
+`;
 
 export const ContentButton = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
 `;
-
 
 export const WrapperModal = styled.div`
   display: flex;
