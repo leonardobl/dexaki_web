@@ -47,7 +47,7 @@ export const useBag = () => {
     };
 
     setDataDelivery(result);
-    navigate("/adress");
+    navigate("/myprofile/adress");
   }
 
   function addQuantity(product: IProduct) {
@@ -105,7 +105,7 @@ export const useBag = () => {
 
   function BtnContinuar() {
     if (dataDelivery.name && dataDelivery.phone) {
-      navigate("/adress");
+      navigate("/myprofile/adress");
     } else {
       setShowModal(true);
     }

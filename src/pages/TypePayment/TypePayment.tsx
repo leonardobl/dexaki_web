@@ -21,12 +21,12 @@ export const TypePayment = () => {
     parseTypeOfPayment,
     onChangeTypeOfPayment,
     fazerPedido,
-    finalizar
+    finalizar,
   } = useTypePayment();
 
   return (
     <Template>
-      <S.Header onClick={() => navigate("/adress")}>
+      <S.Header onClick={() => navigate("/myprofile/adress")}>
         <IconArrowLeft />
         <h1>Método de Pagamento</h1>
       </S.Header>

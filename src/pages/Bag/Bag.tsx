@@ -1,7 +1,10 @@
 import { Button } from "../../components/Button/Button";
 import * as S from "./styles";
 import { FaCartPlus } from "react-icons/fa";
-import { MdOutlineKeyboardArrowLeft, MdProductionQuantityLimits } from "react-icons/md";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdProductionQuantityLimits,
+} from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
 import { useBag } from "./useBag";
 import { maskMoney, maskPhone } from "../../Util/masks.ts";
@@ -25,13 +28,13 @@ export const Bag = () => {
     BtnContinuar,
     errors,
     addQuantity,
-    lessQuantity
+    lessQuantity,
   } = useBag();
 
   return (
     <S.Wrapper>
       <header>
-        <div onClick={() => navigate('/')}>
+        <div onClick={() => navigate("/")}>
           <MdOutlineKeyboardArrowLeft size={22} />
           <h3>Sacola</h3>
         </div>
@@ -42,10 +45,10 @@ export const Bag = () => {
         </h4>
       </header>
       <S.Body>
-        {dataDelivery.products?.length > 0 && <h3>Itens adicionados</h3>}
+        {dataDelivery?.products?.length > 0 && <h3>Itens adicionados</h3>}
 
-        {dataDelivery.products?.length > 0 ? (
-          dataDelivery?.products.map((i: IProduct) => (
+        {dataDelivery?.products?.length > 0 ? (
+          dataDelivery?.products?.map((i: IProduct) => (
             <BagItem
               key={i._id}
               product={i}
@@ -97,12 +100,12 @@ export const Bag = () => {
           <span>Total com a entrega</span>
           <h3>
             {/* {maskMoney(total + frete)}/{" "} */}
-            <small> {dataDelivery.products?.length} item</small>
+            <small> {dataDelivery?.products?.length} item</small>
           </h3>
         </div>
 
         <Button
-          disabled={!(dataDelivery.products?.length > 0)}
+          disabled={!(dataDelivery?.products?.length > 0)}
           onClick={() => BtnContinuar()}
         >
           Continuar
@@ -132,7 +135,7 @@ export const Bag = () => {
               error={errors?.name?.message}
             />
 
-            <Button onClick={() => methods.handleSubmit(onSendSubmit)()}>
+            <Button onClick={() => methods?.handleSubmit(onSendSubmit)()}>
               Avançar
             </Button>
           </FormProvider>
