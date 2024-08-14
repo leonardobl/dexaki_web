@@ -14,7 +14,7 @@ export const useAdress = () => {
 
   const navigate = useNavigate();
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({
-    storageKey: "delivery",
+    storageKey: "@delivery",
   });
   const { mode } = useParams();
 
