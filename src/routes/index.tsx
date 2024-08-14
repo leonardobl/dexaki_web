@@ -16,24 +16,23 @@ import { EditAdress } from "../pages/Address/EditAdress";
 import { StopWatch } from "../pages/Stopwatch/StopWatch";
 import { TypePayment } from "../pages/TypePayment/TypePayment";
 
-
 const Rotas = () => {
   return (
     <Router>
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="notification" element={<Notification />} />
-          <Route path="/myprofile">
+          <Route index element={<Home />} />
+          <Route path="myprofile">
             <Route index element={<MyProfile />} />
+            <Route path="notification" element={<Notification />} />
             <Route path="cupons" element={<Cupons />} />
             <Route path="favorite" element={<Favorite />} />
+            <Route path="adress" element={<Address />} />
           </Route>
-          <Route path="/adress" element={<Address />} />
           <Route path="/editAdress/:mode" element={<EditAdress />} />
           <Route path="/bag" element={<Bag />} />
           <Route path="/payment" element={<TypePayment />} />
-          <Route path="/stopwatch" element={< StopWatch />} />
+          <Route path="/stopwatch" element={<StopWatch />} />
           <Route path="/typeDelivery" element={<TypeDelivery />} />
           <Route path="/profileCompany" element={<ProfileCompany />} />
           <Route path="/orders" element={<Orders />} />

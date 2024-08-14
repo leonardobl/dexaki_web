@@ -3,13 +3,14 @@ import { CiHeart } from "react-icons/ci";
 
 import * as S from "./styles";
 import { useNavigate } from "react-router-dom";
-import { Template } from "../../template/Template";
+
+import { NewLayout } from "../NewLayout";
 
 export const Favorite = () => {
   const navigate = useNavigate();
 
   return (
-    <Template>
+    <NewLayout>
       <S.Wrapper>
         <S.Header onClick={() => navigate("/myprofile")}>
           <IconArrowLeft />
@@ -24,6 +25,6 @@ export const Favorite = () => {
           </S.anyFavorite>
         </S.Body>
       </S.Wrapper>
-    </Template>
+    </NewLayout>
   );
 };

@@ -33,7 +33,6 @@ export const Address = () => {
     finalizar,
     deleteAdress,
     onChangeDeliveryType,
-
   } = useAdress();
 
   return (
@@ -48,8 +47,8 @@ export const Address = () => {
           <S.UserDescription>
             <div>
               <span>Este pedido será entregue a:</span>
-              <strong>{dataDelivery.name}</strong>
-              <small>{dataDelivery.phone}</small>
+              <strong>{dataDelivery?.name}</strong>
+              <small>{dataDelivery?.phone}</small>
             </div>
             <div className="content-btn">
               <Button data-variant-outline onClick={() => editUser()}>
@@ -59,7 +58,7 @@ export const Address = () => {
           </S.UserDescription>
 
           <S.ContentCardAdress>
-            {dataDelivery.adress ? (
+            {dataDelivery?.adress ? (
               <S.Card>
                 <div className="headerCard">
                   <p>Entrega no Endereço:</p>
@@ -71,9 +70,9 @@ export const Address = () => {
                   <div className="content-description">
                     <FaLocationDot size={20} />
                     <div className="description">
-                      <p>Número: {dataDelivery.adress.numero}</p>
-                      <span>{dataDelivery.adress.rua}</span>
-                      <span>{dataDelivery.adress.complemento}</span>
+                      <p>Número: {dataDelivery?.adress?.numero}</p>
+                      <span>{dataDelivery?.adress?.rua}</span>
+                      <span>{dataDelivery?.adress?.complemento}</span>
                     </div>
                   </div>
                 </div>
@@ -106,7 +105,7 @@ export const Address = () => {
                     value={"consumir_no_local"}
                     onChange={(e) => onChangeDeliveryType(e.target.value)}
                     name="group"
-                    checked={dataDelivery.delivery === "consumir_no_local"}
+                    checked={dataDelivery?.delivery === "consumir_no_local"}
                   />
                   <Radio
                     title="Retirar No Estabelecimento"
@@ -116,7 +115,7 @@ export const Address = () => {
                     onChange={(e) => onChangeDeliveryType(e.target.value)}
                     name="group"
                     checked={
-                      dataDelivery.delivery === "retirar_no_estabelecimento"
+                      dataDelivery?.delivery === "retirar_no_estabelecimento"
                     }
                   />
                 </S.ContentRadio>
@@ -128,7 +127,7 @@ export const Address = () => {
             <Button
               // data-variant-outline
               onClick={() => finalizar()}
-              disabled={!dataDelivery.adress}
+              disabled={!dataDelivery?.adress}
             >
               Finalizar Pedido
             </Button>

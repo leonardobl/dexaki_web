@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 0px 24px;
-  height: 100vh;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 `;
 
 export const Header = styled.div`
@@ -17,7 +16,6 @@ export const Header = styled.div`
     font-weight: 600;
   }
 `;
-
 
 export const Body = styled.div`
   header {
@@ -37,14 +35,13 @@ export const Body = styled.div`
     justify-content: center;
     margin-bottom: 24px;
   }
-`
-
+`;
 
 export const ContentCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-`
+`;
 
 export const Card = styled.div`
   display: flex;
@@ -60,21 +57,21 @@ export const Card = styled.div`
 
     .text {
       p {
-      color: #333;
-      font-size: 14px;
+        color: #333;
+        font-size: 14px;
       }
 
       small {
         color: #666;
         font-size: 12px;
       }
-    } 
+    }
   }
 
   a {
     text-decoration: none;
-    color: ${props => props.theme.primary['800']};
+    color: ${(props) => props.theme.primary["800"]};
     font-size: 12px;
     font-weight: 500;
   }
-`
+`;

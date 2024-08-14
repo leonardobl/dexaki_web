@@ -3,12 +3,12 @@ import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
 import * as S from "./styles";
 import { FaGifts } from "react-icons/fa";
 import { IoTicketOutline } from "react-icons/io5";
-import { Template } from "../../template/Template";
+import { NewLayout } from "../NewLayout";
 
 export const Cupons = () => {
   const navigate = useNavigate();
   return (
-    <Template>
+    <NewLayout>
       <S.Wrapper>
         <S.Header onClick={() => navigate("/myprofile")}>
           <IconArrowLeft />
@@ -49,6 +49,6 @@ export const Cupons = () => {
           </S.ContentCard>
         </S.Body>
       </S.Wrapper>
-    </Template>
+    </NewLayout>
   );
 };

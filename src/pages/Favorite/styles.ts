@@ -2,10 +2,8 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 0px 24px;
-  height: 100vh;
-  background-color: #FAFAFA;
-`
-
+  background-color: #fafafa;
+`;
 
 export const Header = styled.div`
   display: flex;
@@ -19,9 +17,7 @@ export const Header = styled.div`
   }
 `;
 
-
-export const Body = styled.div``
-
+export const Body = styled.div``;
 
 export const anyFavorite = styled.div`
   height: 80vh;
@@ -30,7 +26,6 @@ export const anyFavorite = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-
 
   h3 {
     font-weight: 600;
@@ -44,5 +39,4 @@ export const anyFavorite = styled.div`
     display: flex;
     align-items: center;
   }
-
-`
+`;

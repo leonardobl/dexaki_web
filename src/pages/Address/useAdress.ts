@@ -14,19 +14,19 @@ export const useAdress = () => {
 
   const navigate = useNavigate();
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({
-    storageKey: "@delivery",
+    storageKey: "delivery",
   });
   const { mode } = useParams();
 
   const initialValueAdress = {
-    numero: dataDelivery.adress?.numero.toString() ?? "",
-    rua: dataDelivery.adress?.rua ?? "",
-    complemento: dataDelivery.adress?.complemento ?? "",
+    numero: dataDelivery?.adress?.numero?.toString() ?? "",
+    rua: dataDelivery?.adress?.rua ?? "",
+    complemento: dataDelivery?.adress?.complemento ?? "",
   };
 
   const initialValueUser = {
-    phone: dataDelivery.phone,
-    name: dataDelivery.name,
+    phone: dataDelivery?.phone,
+    name: dataDelivery?.name,
   };
 
   const methodsAdress = useForm<IDataAdressProps>({
@@ -76,7 +76,7 @@ export const useAdress = () => {
     };
 
     setDataDelivery(result);
-    navigate("/adress");
+    navigate(-1);
   }
 
   function deleteAdress() {

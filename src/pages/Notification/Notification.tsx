@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
 // import { IconNotification } from '../../assets/icons/IconNotification'
 
@@ -7,25 +6,13 @@ import { FaRegClock } from "react-icons/fa";
 import { GiStorkDelivery } from "react-icons/gi";
 
 import * as S from "./styles";
-import { Template } from "../../template/Template";
+import { NewLayout } from "../NewLayout";
+import { useNotification } from "./useNotification";
 
 export const Notification = () => {
-  const navigate = useNavigate();
-
-  // 'WAITING', 'IN_PRODUCTION', 'DONE'
-  // function parsStatus(status: string) {
-  //   switch (status) {
-  //     case 'WAITING':
-  //       return '#D73035';
-  //     case 'IN_PRODUCTION':
-  //       return '#FFA500';
-  //     case 'DONE':
-  //       return '#30D787'
-  //   }
-  // }
-
+  const { navigate } = useNotification();
   return (
-    <Template>
+    <NewLayout>
       <S.Wrapper>
         <S.Header onClick={() => navigate(-1)}>
           <IconArrowLeft />
@@ -90,6 +77,6 @@ export const Notification = () => {
           </S.NotificationItem>
         </S.Body>
       </S.Wrapper>
-    </Template>
+    </NewLayout>
   );
 };
