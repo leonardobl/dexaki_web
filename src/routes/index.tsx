@@ -12,7 +12,7 @@ import { Address } from "../pages/Address/Address";
 import { ProfileCompany } from "../pages/ProfileCompany/ProfileCompany";
 import { Bag } from "../pages/Bag/Bag";
 import { TypeDelivery } from "../pages/TypeDelivery/TypeDelivery";
-import { EditAdress } from "../pages/Address/EditAdress";
+import { NewAdress } from "../pages/NewAddress/NewAdress";
 import { StopWatch } from "../pages/Stopwatch/StopWatch";
 import { TypePayment } from "../pages/TypePayment/TypePayment";
 
@@ -28,8 +28,9 @@ const Rotas = () => {
             <Route path="cupons" element={<Cupons />} />
             <Route path="favorite" element={<Favorite />} />
             <Route path="adress" element={<Address />} />
+            <Route path="adress/:mode" element={<NewAdress />} />
           </Route>
-          <Route path="/editAdress/:mode" element={<EditAdress />} />
+          {/* <Route path="/editAdress/:mode" element={<NewAdress />} /> */}
           <Route path="/bag" element={<Bag />} />
           <Route path="/payment" element={<TypePayment />} />
           <Route path="/stopwatch" element={<StopWatch />} />

@@ -99,7 +99,7 @@ export const useAdress = () => {
   }
 
   function formAdress(mode: string) {
-    navigate(`/editAdress/${mode}`);
+    navigate(`/myprofile/adress/${mode}`);
   }
 
   function onChangeTypeOfPayment(value: string) {

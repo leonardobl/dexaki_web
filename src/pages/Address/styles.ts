@@ -152,9 +152,50 @@ export const DescriptionAdress = styled.div`
 `;
 
 export const ContentFormAdress = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-areas: "cep cep cep cep" "rua rua rua numero" "bairro bairro complemento complemento" "estado estado cidade cidade" "referencia referencia referencia referencia" "btn1 btn1 btn1 btn1" "btn2 btn2 btn2 btn2";
+
+  > :nth-child(1) {
+    grid-area: cep;
+  }
+
+  > :nth-child(2) {
+    grid-area: rua;
+  }
+
+  > :nth-child(3) {
+    grid-area: numero;
+  }
+
+  > :nth-child(4) {
+    grid-area: bairro;
+  }
+
+  > :nth-child(5) {
+    grid-area: complemento;
+  }
+
+  > :nth-child(6) {
+    grid-area: estado;
+  }
+
+  > :nth-child(7) {
+    grid-area: cidade;
+  }
+
+  > :nth-child(8) {
+    grid-area: referencia;
+  }
+
+  > :nth-child(9) {
+    grid-area: btn1;
+  }
+  > :nth-child(10) {
+    grid-area: btn2;
+  }
 `;
 
 export const DescriptionAdressEdit = styled.div`
