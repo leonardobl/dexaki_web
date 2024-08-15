@@ -15,6 +15,7 @@ export const NewAdress = () => {
     methodsAdress,
     onSendSubmitSaveAdress,
     adressErros,
+    estadosOptions,
   } = useNewAdress();
   return (
     <S.Wrapper>
@@ -79,7 +80,7 @@ export const NewAdress = () => {
             </div>
 
             <div>
-              <SimpleSelect placeholder={"Estado*"} />
+              <SimpleSelect placeholder={"Estado*"} options={estadosOptions} />
             </div>
 
             <div>

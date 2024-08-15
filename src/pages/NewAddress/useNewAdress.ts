@@ -5,6 +5,10 @@ import { IDataUserProps } from "../Bag/schema";
 import { IDataAdressProps, formSchema } from "../Address/schema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useCallback, useEffect, useState } from "react";
+import { ISelectOption } from "../../types/selectOptions";
+import { Ibge } from "../../Services/Ibge";
+import { IUFS } from "../../types/ibge";
 
 export const useNewAdress = () => {
   const { mode } = useParams();
@@ -12,6 +16,13 @@ export const useNewAdress = () => {
   const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({
     storageKey: "@delivery",
   });
+  // const [cidadesOptions, setCidadesOptions] = useState<ISelectOption[]>(
+  //   [] as ISelectOption[]
+  // );
+
+  const [estadosOptions, setEstadosOptions] = useState<ISelectOption<IUFS>[]>(
+    [] as ISelectOption<IUFS>[]
+  );
 
   const initialValueAdress = {
     numero: dataDelivery?.adress?.numero?.toString() ?? "",
@@ -57,6 +68,21 @@ export const useNewAdress = () => {
     navigate(-1);
   }
 
+  const getCidades = useCallback(() => {
+    Ibge.UFs().then(({ data }) => {
+      const options = data.map((i) => ({
+        value: i.sigla,
+        label: i.sigla,
+        element: i,
+      }));
+      setEstadosOptions(options);
+    });
+  }, []);
+
+  useEffect(() => {
+    getCidades();
+  }, [getCidades]);
+
   return {
     mode,
     navigate,
@@ -65,5 +91,6 @@ export const useNewAdress = () => {
     onSendSubmitSaveAdress,
     methodsAdress,
     adressErros,
+    estadosOptions,
   };
 };

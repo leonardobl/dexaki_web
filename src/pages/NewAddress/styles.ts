@@ -45,9 +45,9 @@ export const DescriptionAdressEdit = styled.div`
 export const ContentFormAdress = styled.div`
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 
-  grid-template-areas: "cep cep cep cep" "rua rua rua numero" "bairro bairro complemento complemento" "estado estado cidade cidade" "referencia referencia referencia referencia" "btn1 btn1 btn1 btn1" "btn2 btn2 btn2 btn2";
+  grid-template-areas: "cep cep cep cep cep" "rua rua rua numero numero" "bairro bairro complemento complemento complemento" "estado estado cidade cidade cidade" "referencia referencia referencia referencia referencia" "btn1 btn1 btn1 btn1 btn1" "btn2 btn2 btn2 btn2 btn2";
 
   > :nth-child(1) {
     grid-area: cep;
