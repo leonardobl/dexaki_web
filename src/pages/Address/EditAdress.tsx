@@ -4,6 +4,7 @@ import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
 import { InputRHF } from "../../components/FormRHF/InputRHF";
 import { Button } from "../../components/Button/Button";
 import { IoLocationOutline } from "react-icons/io5";
+import { SimpleSelect } from "../../components/Selects/SimpleSelect";
 
 export const EditAdress = () => {
   const {
@@ -37,28 +38,44 @@ export const EditAdress = () => {
         )}
         <FormProvider {...methodsAdress}>
           <S.ContentFormAdress>
-            <InputRHF
-              name="numero"
-              placeholder="Número"
-              error={adressErros.numero?.message}
-            />
-            <InputRHF
-              name="rua"
-              placeholder="Rua, Quadra, Casa"
-              error={adressErros.rua?.message}
-            />
-            <InputRHF
-              name="complemento"
-              placeholder="Ponto de Referência(opcional)"
-              error={adressErros.complemento?.message}
-            />
-            <Button
-              onClick={() =>
-                methodsAdress.handleSubmit(onSendSubmitSaveAdress)()
-              }
-            >
-              Salvar Endereço
-            </Button>
+            <div>
+              <InputRHF
+                name="numero"
+                placeholder="Cep"
+                error={adressErros.numero?.message}
+              />
+            </div>
+            <div>
+              <InputRHF
+                name="numero"
+                placeholder="Número"
+                error={adressErros.numero?.message}
+              />
+            </div>
+            <div>
+              <InputRHF
+                name="rua"
+                placeholder="Rua, Quadra, Casa"
+                error={adressErros.rua?.message}
+              />
+            </div>
+            <div>
+              <InputRHF
+                name="complemento"
+                placeholder="Ponto de Referência(opcional)"
+                error={adressErros.complemento?.message}
+              />
+            </div>
+
+            <div>
+              <Button
+                onClick={() =>
+                  methodsAdress.handleSubmit(onSendSubmitSaveAdress)()
+                }
+              >
+                Salvar Endereço
+              </Button>
+            </div>
           </S.ContentFormAdress>
         </FormProvider>
       </S.Body>
