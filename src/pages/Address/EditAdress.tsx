@@ -4,7 +4,6 @@ import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
 import { InputRHF } from "../../components/FormRHF/InputRHF";
 import { Button } from "../../components/Button/Button";
 import { IoLocationOutline } from "react-icons/io5";
-import { SimpleSelect } from "../../components/Selects/SimpleSelect";
 
 export const EditAdress = () => {
   const {
@@ -20,7 +19,7 @@ export const EditAdress = () => {
   return (
     <S.Wrapper>
       <S.Header onClick={() => navigate("/myprofile/adress")}>
-        <IconArrowLeft />
+        <IconArrowLeft />d
         {mode === "edit" ? <h1>Editar Endereço</h1> : <h1>Novo Endereço</h1>}
       </S.Header>
       <S.Body>
