@@ -139,7 +139,11 @@ export const NewAdress = () => {
               <Button>Confirmar</Button>
             </div>
             <div>
-              <Button type="button" onClick={() => navigate(-1)}>
+              <Button
+                data-variant-outline
+                type="button"
+                onClick={() => navigate(-1)}
+              >
                 Voltar
               </Button>
             </div>
