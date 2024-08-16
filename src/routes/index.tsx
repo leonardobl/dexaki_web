@@ -32,8 +32,10 @@ const Rotas = () => {
           </Route>
           {/* <Route path="/editAdress/:mode" element={<NewAdress />} /> */}
           <Route path="/bag" element={<Bag />} />
-          <Route path="/payment" element={<TypePayment />} />
-          <Route path="/stopwatch" element={<StopWatch />} />
+          <Route path="/payment">
+            <Route index element={<TypePayment />} />
+            <Route path="pix" element={<StopWatch />} />
+          </Route>
           <Route path="/typeDelivery" element={<TypeDelivery />} />
           <Route path="/profileCompany" element={<ProfileCompany />} />
           <Route path="/orders" element={<Orders />} />

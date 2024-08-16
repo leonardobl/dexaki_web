@@ -99,3 +99,8 @@ export const IconSearch = styled.img`
   transform: translateY(-50%);
   left: 20px;
 `;
+
+export const Error = styled.span`
+  font-size: 12px;
+  color: red;
+`;

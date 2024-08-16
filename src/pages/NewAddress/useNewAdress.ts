@@ -44,7 +44,7 @@ export const useNewAdress = () => {
     getValues,
     formState: { errors },
   } = useForm<IDataAdressProps>({
-    mode: "all",
+    mode: "onSubmit",
     shouldFocusError: false,
     defaultValues: initialValueAdress,
     resolver: zodResolver(formSchema),
@@ -61,6 +61,10 @@ export const useNewAdress = () => {
   }
 
   function onSendSubmitSaveAdress(data: IDataAdressProps) {
+    alert("Chegou");
+    console.log(data);
+
+    return;
     const result: IDataDeliveryUser = {
       ...dataDelivery,
       delivery: undefined,

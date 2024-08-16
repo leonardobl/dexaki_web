@@ -104,6 +104,7 @@ export const NewAdress = () => {
                       estadosOptions.find((e) => e.value === value) || null
                     }
                     onChange={(e) => onChange(e?.value)}
+                    error={errors?.estado?.message}
                   />
                 )}
               />
@@ -121,6 +122,7 @@ export const NewAdress = () => {
                       cidadesOptions.find((i) => i.value === value) || null
                     }
                     onChange={(e) => onChange(e?.value)}
+                    error={errors?.cidade?.message}
                   />
                 )}
               />

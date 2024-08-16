@@ -6,6 +6,7 @@ import Select, {
   Props,
   components,
 } from "react-select";
+
 import { IoCloseOutline } from "react-icons/io5";
 interface CustomSelectProps<
   Option,
@@ -14,6 +15,7 @@ interface CustomSelectProps<
 > extends Props<Option, IsMulti, Group> {
   label?: string;
   required?: boolean;
+  error?: string;
 }
 
 export const SimpleSelect = function ReactSelect<
@@ -69,12 +71,7 @@ export const SimpleSelect = function ReactSelect<
         className="react-select-container"
         classNamePrefix="react-select"
       />
-      {props?.label && (
-        <S.Label htmlFor={props.inputId}>
-          {props.label}
-          {props.required && <S.Required>*</S.Required>}
-        </S.Label>
-      )}
+      {props?.error && <S.Error>{props?.error}</S.Error>}
     </S.Container>
   );
 };

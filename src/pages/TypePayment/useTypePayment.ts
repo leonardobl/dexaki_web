@@ -57,7 +57,7 @@ export const useTypePayment = () => {
             qr_code: result.data.point_of_interaction.transaction_data.qr_code,
           };
           setDataDelivery(udapte);
-          navigate("/stopwatch");
+          navigate("/pix");
         }
       } catch (error) {
         console.error("Erro ao criar o PIX", error);

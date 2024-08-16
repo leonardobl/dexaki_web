@@ -6,7 +6,7 @@ export const formSchema = z.object({
   rua: z.string().min(3, "Campo é obrigatório"),
   bairro: z.string().min(3, "Campo é obrigatório"),
   complemento: z.string().optional(),
-  estado: z.string().min(3, "Campo é obrigatório"),
+  estado: z.string().min(2, "Campo é obrigatório"),
   cidade: z.string().min(3, "Campo é obrigatório"),
   referencia: z.string().optional(),
 });
