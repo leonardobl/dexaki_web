@@ -40,7 +40,7 @@ export const useTypePayment = () => {
       );
 
       const body = {
-        // transaction_amount:
+        transaction_amount: 5.5,
         description: "teste App dexaki",
         paymentMethodId: "pix",
         email: "danrleypow@gmail.com",

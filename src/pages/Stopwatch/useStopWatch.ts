@@ -8,11 +8,11 @@ export const useStopWatch = () => {
   const [dataDelivery] = useLocalStorage<IDataDeliveryUser>({
     storageKey: "@delivery",
   });
-  const [timeLeft, setTimeLeft] = useState(300); // 300 segundos = 5 minutos
+  const [timeLeft, setTimeLeft] = useState(300);
 
   useEffect(() => {
     const handleBeforeUnload = () => {
-      setTimeLeft(300); // Reseta o contador ao sair da página
+      setTimeLeft(300);
       clearInterval(interval);
     };
 

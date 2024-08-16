@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  height: 100%;
+  max-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+`;
 
 export const Header = styled.div`
   display: flex;
@@ -16,6 +21,9 @@ export const Header = styled.div`
 
 export const Body = styled.div`
   padding: 24px;
+  flex: 1;
+
+  overflow: auto;
 
   .time {
     width: 100%;
@@ -27,7 +35,6 @@ export const Body = styled.div`
     h3 {
       font-size: 18px;
       color: #333;
-      
     }
 
     p {
@@ -41,11 +48,10 @@ export const Body = styled.div`
       font-weight: 700;
       font-size: 52px;
     }
-
   }
 
   .content-code {
-    margin-top: 200px;
+    /* margin-top: 200px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,5 +63,4 @@ export const Body = styled.div`
       margin-bottom: 10px;
     }
   }
-
 `;

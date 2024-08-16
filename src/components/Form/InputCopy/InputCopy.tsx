@@ -1,5 +1,5 @@
-import { toast } from 'react-toastify';
-import * as S from './styles'
+import { toast } from "react-toastify";
+import * as S from "./styles";
 import { RiFileCopyLine } from "react-icons/ri";
 
 interface ICopyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -8,13 +8,18 @@ interface ICopyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const InputCopy: React.FC<ICopyInputProps> = ({ value, onChange, placeholder, ...rest }) => {
+export const InputCopy: React.FC<ICopyInputProps> = ({
+  value,
+  onChange,
+  placeholder,
+  ...rest
+}) => {
   function copyClick() {
-    toast.success('Código copiado com sucesso!', {
-      position: 'top-center',
-      theme: 'colored',
+    toast.success("Código copiado com sucesso!", {
+      position: "top-center",
+      theme: "colored",
       autoClose: 3000,
-    })
+    });
   }
 
   return (
@@ -30,5 +35,5 @@ export const InputCopy: React.FC<ICopyInputProps> = ({ value, onChange, placehol
         <RiFileCopyLine size={22} />
       </button>
     </S.Wrapper>
-  )
-}
+  );
+};

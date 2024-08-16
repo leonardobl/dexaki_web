@@ -24,12 +24,14 @@ export const StopWatch = () => {
             {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
           </h1>
         </div>
-
+        <div>
+          <img src="" alt="" />
+        </div>
         <div className="content-code">
           <p>
             Copie o código PIX abaixo e cole para pagar em qualquer aplicativo
           </p>
-          <InputCopy value={dataDelivery.qr_code!} />
+          <InputCopy readOnly value={dataDelivery.qr_code!} />
           <Button>Copiar Código</Button>
           <Button data-variant-outline>
             Continuar no Whatsapp
