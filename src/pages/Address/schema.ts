@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const formSchema = z.object({
-  numero: z.string().min(3, "Campo Obrigatório"),
+  numero: z.string().min(1, "Campo Obrigatório"),
   cep: z.string().min(9, "CEP invalido"),
   rua: z.string().min(3, "Campo é obrigatório"),
   bairro: z.string().min(3, "Campo é obrigatório"),
