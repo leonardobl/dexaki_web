@@ -70,7 +70,7 @@ export const useAdress = () => {
       adress: {
         rua: data.rua,
         numero: Number(data.numero),
-        complemento: data.complemento,
+        complemento: data?.complemento || "",
         currentAdress: true,
       },
     };

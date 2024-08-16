@@ -1,21 +1,25 @@
 import * as S from "./styles";
 import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
-import { InputRHF } from "../../components/FormRHF/InputRHF";
 import { Button } from "../../components/Button/Button";
 import { IoLocationOutline } from "react-icons/io5";
 import { SimpleSelect } from "../../components/Selects/SimpleSelect";
 import { useNewAdress } from "./useNewAdress";
-import { FormProvider } from "react-hook-form";
+import { InputV2 } from "../../components/Form/InputV2";
 
 export const NewAdress = () => {
   const {
     mode,
     navigate,
     dataDelivery,
-    methodsAdress,
     onSendSubmitSaveAdress,
-    adressErros,
     estadosOptions,
+    control,
+    errors,
+    handleSubmit,
+    register,
+    Controller,
+    handleBlurCep,
+    cidadesOptions,
   } = useNewAdress();
   return (
     <S.Wrapper>
@@ -36,79 +40,111 @@ export const NewAdress = () => {
             </div>
           </S.DescriptionAdressEdit>
         )}
-        <FormProvider {...methodsAdress}>
+        <form onSubmit={handleSubmit(onSendSubmitSaveAdress)}>
           <S.ContentFormAdress>
             <div>
-              <InputRHF
+              <InputV2
+                {...register("cep")}
+                required
                 name="cep"
+                onBlur={handleBlurCep}
+                maxLength={9}
                 placeholder="Cep*"
-                error={adressErros?.numero?.message}
+                error={errors?.cep?.message}
               />
             </div>
 
             <div>
-              <InputRHF
+              <InputV2
+                {...register("rua")}
+                required
                 name="rua"
                 placeholder="Rua*"
-                error={adressErros?.rua?.message}
+                error={errors?.rua?.message}
               />
             </div>
             <div>
-              <InputRHF
+              <InputV2
+                {...register("numero")}
+                required
                 name="numero"
-                required
                 placeholder="Número*"
-                error={adressErros?.numero?.message}
+                error={errors?.numero?.message}
               />
             </div>
 
             <div>
-              <InputRHF
-                name="barro"
+              <InputV2
+                {...register("bairro")}
                 required
+                name="bairro"
                 placeholder="Bairro*"
-                error={adressErros?.complemento?.message}
+                error={errors?.bairro?.message}
               />
             </div>
 
             <div>
-              <InputRHF
+              <InputV2
+                {...register("complemento")}
                 name="complemento"
                 placeholder="Complemento"
-                error={adressErros?.complemento?.message}
+                error={errors?.complemento?.message}
               />
             </div>
 
             <div>
-              <SimpleSelect placeholder={"Estado*"} options={estadosOptions} />
+              <Controller
+                control={control}
+                name="estado"
+                render={({ field: { onChange, value } }) => (
+                  <SimpleSelect
+                    placeholder={"Estado*"}
+                    options={estadosOptions}
+                    value={
+                      estadosOptions.find((e) => e.value === value) || null
+                    }
+                    onChange={(e) => onChange(e?.value)}
+                  />
+                )}
+              />
             </div>
 
             <div>
-              <SimpleSelect placeholder={"Cidade*"} />
+              <Controller
+                control={control}
+                name="cidade"
+                render={({ field: { onChange, value } }) => (
+                  <SimpleSelect
+                    options={cidadesOptions}
+                    placeholder={"Cidade*"}
+                    value={
+                      cidadesOptions.find((i) => i.value === value) || null
+                    }
+                    onChange={(e) => onChange(e?.value)}
+                  />
+                )}
+              />
             </div>
 
             <div>
-              <InputRHF
+              <InputV2
+                {...register("referencia")}
                 name="referencia"
-                placeholder="Ponto de Referência(opcional)"
-                error={adressErros?.complemento?.message}
+                placeholder="Ponto de Referência (opcional)"
+                error={errors?.referencia?.message}
               />
             </div>
 
             <div>
-              <Button
-                onClick={() =>
-                  methodsAdress.handleSubmit(onSendSubmitSaveAdress)()
-                }
-              >
-                Confirmar
+              <Button>Confirmar</Button>
+            </div>
+            <div>
+              <Button type="button" onClick={() => navigate}>
+                Voltar
               </Button>
             </div>
-            <div>
-              <Button onClick={() => navigate}>Voltar</Button>
-            </div>
           </S.ContentFormAdress>
-        </FormProvider>
+        </form>
       </S.Body>
     </S.Wrapper>
   );

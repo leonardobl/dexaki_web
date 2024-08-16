@@ -20,6 +20,5 @@ export const WrapperInput = styled.div`
   span {
     font-size: 12px;
     color: red;
-    
   }
 `;
