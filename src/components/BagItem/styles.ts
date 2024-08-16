@@ -67,20 +67,28 @@ export const Container = styled.div`
   }
 `;
 
+export const DescriptionText = styled.span`
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
 
 export const ContentButton = styled.div`
   border: 1px solid #ddd;
-  padding: 8px 16px;
+  /* padding: 8px 16px; */
   border-radius: 4px;
-  height: fit-content;
+  width: 100px;
+  height: 40px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-around;
+  /* gap: 16px; */
 
-
-  > button {
+  /* > button {
     all: unset;
-    
-  }
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+  } */
 `;
-

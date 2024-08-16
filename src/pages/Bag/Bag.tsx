@@ -50,7 +50,7 @@ export const Bag = () => {
         {dataDelivery?.products?.length > 0 ? (
           dataDelivery?.products?.map((i: IProduct) => (
             <BagItem
-              key={i._id}
+              key={i?._id}
               product={i}
               addQuantity={() => addQuantity(i)}
               lessQuantity={() => lessQuantity(i)}
