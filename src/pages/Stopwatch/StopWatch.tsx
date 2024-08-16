@@ -7,7 +7,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useStopWatch } from "./useStopWatch";
 
 export const StopWatch = () => {
-  const { navigate, dataDelivery } = useStopWatch();
+  const { navigate, dataDelivery, minutes, seconds } = useStopWatch();
 
   return (
     <S.Wrapper>
@@ -20,7 +20,9 @@ export const StopWatch = () => {
         <div className="time">
           <h3>Aguardando Pagamento</h3>
           <p>Pague em até:</p>
-          <h1>4:46</h1>
+          <h1>
+            {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+          </h1>
         </div>
 
         <div className="content-code">
