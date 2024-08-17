@@ -67,6 +67,18 @@ export const useTypePayment = () => {
     }
   }
 
+  async function getStatusPix() {
+    const body = {
+      paymentId: "85256198615", //the id_payment
+    };
+    try {
+      const result = await API.post("status-pix", body);
+      return result;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   function finalizar() {
     setShowModalConfirm(true);
   }
@@ -80,6 +92,7 @@ export const useTypePayment = () => {
     showModalConfirm,
     setShowModalConfirm,
     fazerPedido,
+    getStatusPix,
     finalizar,
   };
 };

@@ -7,12 +7,13 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useCallback, useEffect, useState } from "react";
 import { ISelectOption } from "../../types/selectOptions";
-import { Ibge } from "../../Services/Ibge";
+
 import { IEstado, IUFS } from "../../types/ibge";
 import { maskCep } from "../../Util/masks";
-import { ViaCep } from "../../Services/ViaCep";
 import { useAppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
+import { Ibge } from "../../services/Ibge";
+import { ViaCep } from "../../services/ViaCep";
 
 export const useNewAdress = () => {
   const { setIsLoad } = useAppContext();
