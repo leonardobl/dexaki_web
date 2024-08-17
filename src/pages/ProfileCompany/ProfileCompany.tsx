@@ -5,12 +5,12 @@ import { FaRegCreditCard } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { RiBuilding3Line } from "react-icons/ri";
 import { FaRegClock } from "react-icons/fa";
-import { Template } from "../../template/Template";
+import { NewLayout } from "../NewLayout";
 
 export const ProfileCompany = () => {
   const navigate = useNavigate();
   return (
-    <Template>
+    <NewLayout>
       <S.Wrapper>
         <S.Header onClick={() => navigate("/")}>
           <IconArrowLeft />
@@ -60,6 +60,6 @@ export const ProfileCompany = () => {
           </div>
         </S.CardContent>
       </S.Wrapper>
-    </Template>
+    </NewLayout>
   );
 };

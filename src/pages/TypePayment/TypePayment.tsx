@@ -1,6 +1,5 @@
 import { Radio } from "../../components/Form/Radio";
 import * as S from "./styles";
-import { Template } from "../../template/Template";
 import { ModalBottom } from "../../components/ModalBottom";
 import { Button } from "../../components/Button/Button";
 import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
@@ -11,6 +10,7 @@ import { IoMdCard } from "react-icons/io";
 import { MdAttachMoney } from "react-icons/md";
 import { IoTicket } from "react-icons/io5";
 import { useTypePayment } from "./useTypePayment";
+import { NewLayout } from "../NewLayout";
 
 export const TypePayment = () => {
   const {
@@ -25,7 +25,7 @@ export const TypePayment = () => {
   } = useTypePayment();
 
   return (
-    <Template>
+    <NewLayout>
       <S.Header onClick={() => navigate("/myprofile/adress")}>
         <IconArrowLeft />
         <h1>Método de Pagamento</h1>
@@ -131,6 +131,6 @@ export const TypePayment = () => {
           </Button>
         </S.ModalConfirm>
       </ModalBottom>
-    </Template>
+    </NewLayout>
   );
 };
