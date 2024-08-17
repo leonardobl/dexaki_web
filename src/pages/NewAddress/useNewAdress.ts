@@ -61,10 +61,6 @@ export const useNewAdress = () => {
   }
 
   function onSendSubmitSaveAdress(data: IDataAdressProps) {
-    alert("Chegou");
-    console.log(data);
-
-    return;
     const result: IDataDeliveryUser = {
       ...dataDelivery,
       delivery: undefined,
