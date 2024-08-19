@@ -31,7 +31,7 @@ export const InputCopy: React.FC<ICopyInputProps> = ({
         onChange={onChange}
         {...rest}
       />
-      <button onClick={copyClick}>
+      <button onClick={copyClick} disabled={rest?.disabled}>
         <RiFileCopyLine size={22} />
       </button>
     </S.Wrapper>

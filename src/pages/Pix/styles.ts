@@ -64,3 +64,26 @@ export const Body = styled.div`
     }
   }
 `;
+
+export const Qrcode = styled.img`
+  display: block;
+  max-width: 200px;
+  width: 100%;
+  margin: 24px auto;
+`;
+
+export const WrapperInfo = styled.div`
+  > svg {
+    display: block;
+    margin: 24px auto 16px;
+    font-size: 160px;
+    filter: brightness(0) saturate(100%) invert(39%) sepia(84%) saturate(2042%)
+      hue-rotate(6deg) brightness(108%) contrast(106%);
+  }
+
+  > p {
+    color: #ff6b00;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+`;

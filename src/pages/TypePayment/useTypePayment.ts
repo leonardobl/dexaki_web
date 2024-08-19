@@ -2,8 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { IDataDeliveryUser } from "../../model/Product";
 import { useState } from "react";
-import moment from "moment";
-import { API } from "../../Api";
 
 export const useTypePayment = () => {
   const [showModalConfirm, setShowModalConfirm] = useState(false);
@@ -32,52 +30,56 @@ export const useTypePayment = () => {
     setDataDelivery(result);
   }
 
-  async function fazerPedido() {
-    if (dataDelivery.typeOfpayment === "pix") {
-      const expirationDate = moment().add(5, "minutes");
-      const formattedExpirationDate = expirationDate.format(
-        "YYYY-MM-DDTHH:mm:ssZ"
-      );
-
-      const body = {
-        transaction_amount: 5.5,
-        description: "teste App dexaki",
-        paymentMethodId: "pix",
-        email: "danrleypow@gmail.com",
-        identificationType: "04544207304",
-        number: dataDelivery.phone,
-        date_of_expiration: formattedExpirationDate,
-      };
-
-      try {
-        const result = await API.post("create-pix", body);
-        if (result) {
-          const udapte = {
-            ...dataDelivery,
-            qr_code: result.data.point_of_interaction.transaction_data.qr_code,
-          };
-          setDataDelivery(udapte);
-          navigate("/pix");
-        }
-      } catch (error) {
-        console.error("Erro ao criar o PIX", error);
-      }
-    } else {
-      console.log("outra opção de cartão");
-    }
+  function fazerPedido() {
+    navigate(`/payment/${dataDelivery?.typeOfpayment}`);
   }
 
-  async function getStatusPix() {
-    const body = {
-      paymentId: "85256198615", //the id_payment
-    };
-    try {
-      const result = await API.post("status-pix", body);
-      return result;
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // async function fazerPedido() {
+  //   if (dataDelivery.typeOfpayment === "pix") {
+  //     const expirationDate = moment().add(5, "minutes");
+  //     const formattedExpirationDate = expirationDate.format(
+  //       "YYYY-MM-DDTHH:mm:ssZ"
+  //     );
+
+  //     const body = {
+  //       transaction_amount: 5.5,
+  //       description: "teste App dexaki",
+  //       paymentMethodId: "pix",
+  //       email: "danrleypow@gmail.com",
+  //       identificationType: "04544207304",
+  //       number: dataDelivery.phone,
+  //       date_of_expiration: formattedExpirationDate,
+  //     };
+
+  //     try {
+  //       const result = await API.post("create-pix", body);
+  //       if (result) {
+  //         const udapte = {
+  //           ...dataDelivery,
+  //           qr_code: result.data.point_of_interaction.transaction_data.qr_code,
+  //         };
+  //         setDataDelivery(udapte);
+  //         navigate("/payment/pix");
+  //       }
+  //     } catch (error) {
+  //       console.error("Erro ao criar o PIX", error);
+  //     }
+  //   } else {
+  //     console.log("outra opção de cartão");
+  //   }
+  // }
+
+  // async function getStatusPix() {
+  //   const body = {
+  //     paymentId: "85256198615", //the id_payment
+  //   };
+  //   try {
+  //     const result = await API.post("status-pix", body);
+  //     return result;
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   function finalizar() {
     setShowModalConfirm(true);
@@ -91,8 +93,7 @@ export const useTypePayment = () => {
     onChangeTypeOfPayment,
     showModalConfirm,
     setShowModalConfirm,
-    fazerPedido,
-    getStatusPix,
     finalizar,
+    fazerPedido,
   };
 };

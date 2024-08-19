@@ -13,7 +13,7 @@ import { ProfileCompany } from "../pages/ProfileCompany/ProfileCompany";
 import { Bag } from "../pages/Bag/Bag";
 import { TypeDelivery } from "../pages/TypeDelivery/TypeDelivery";
 import { NewAdress } from "../pages/NewAddress/NewAdress";
-import { StopWatch } from "../pages/Stopwatch/StopWatch";
+import { Pix } from "../pages/Pix/Pix";
 import { TypePayment } from "../pages/TypePayment/TypePayment";
 
 const Rotas = () => {
@@ -34,7 +34,7 @@ const Rotas = () => {
           <Route path="/bag" element={<Bag />} />
           <Route path="/payment">
             <Route index element={<TypePayment />} />
-            <Route path="pix" element={<StopWatch />} />
+            <Route path="pix" element={<Pix />} />
           </Route>
           <Route path="/typeDelivery" element={<TypeDelivery />} />
           <Route path="/profileCompany" element={<ProfileCompany />} />

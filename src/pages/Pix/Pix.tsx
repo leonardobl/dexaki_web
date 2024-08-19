@@ -4,16 +4,17 @@ import { IconArrowLeft } from "../../assets/icons/IconArrowLeft";
 import { InputCopy } from "../../components/Form/InputCopy/InputCopy";
 import { Button } from "../../components/Button/Button";
 import { FaWhatsapp } from "react-icons/fa";
-import { useStopWatch } from "./useStopWatch";
+import { usePix } from "./usePix";
+import { TbInfoTriangleFilled } from "react-icons/tb";
 
-export const StopWatch = () => {
-  const { navigate, dataDelivery, minutes, seconds } = useStopWatch();
+export const Pix = () => {
+  const { minutes, seconds, navigate, payment } = usePix();
 
   return (
     <S.Wrapper>
       <S.Header onClick={() => navigate("/payment")}>
         <IconArrowLeft />
-        <h1>Tempo para pagamento</h1>
+        <h1>Pagamento via pix</h1>
       </S.Header>
 
       <S.Body>
@@ -25,13 +26,27 @@ export const StopWatch = () => {
           </h1>
         </div>
         <div>
-          <img src="" alt="" />
+          {minutes === 0 && seconds === 0 ? (
+            <S.WrapperInfo>
+              <TbInfoTriangleFilled />
+              <p>O qrcode expirou!</p>
+            </S.WrapperInfo>
+          ) : (
+            <S.Qrcode
+              src={`data:image/png;base64,${payment?.point_of_interaction?.transaction_data.qr_code_base64}`}
+              alt="qrcode"
+            />
+          )}
         </div>
         <div className="content-code">
           <p>
             Copie o código PIX abaixo e cole para pagar em qualquer aplicativo
           </p>
-          <InputCopy readOnly value={dataDelivery.qr_code!} />
+          <InputCopy
+            readOnly
+            disabled={minutes === 0 && seconds === 0}
+            value={payment?.point_of_interaction?.transaction_data?.qr_code}
+          />
           <Button>Copiar Código</Button>
           <Button data-variant-outline>
             Continuar no Whatsapp
