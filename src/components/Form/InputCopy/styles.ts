@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div``;
+
+export const Label = styled.label`
+  display: block;
+  margin-bottom: 10px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -16,7 +20,7 @@ export const Wrapper = styled.div`
     width: 100%;
     outline: none;
   }
-  
+
   button {
     display: flex;
     justify-content: center;

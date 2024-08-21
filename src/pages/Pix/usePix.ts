@@ -6,10 +6,10 @@ import moment from "moment";
 import { Pix } from "../../Services/Pix";
 import { useAppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
-import { IPixDTO } from "../../types/pix";
+import { IPixDTO, IPixStatusDTO } from "../../types/pix";
 
 export const usePix = () => {
-  const [dataDelivery, setDataDelivery] = useLocalStorage<IDataDeliveryUser>({
+  const [dataDelivery] = useLocalStorage<IDataDeliveryUser>({
     storageKey: "@delivery",
   });
 
@@ -19,10 +19,13 @@ export const usePix = () => {
   const navigate = useNavigate();
   const { setIsLoad } = useAppContext();
   const [payment, setPayment] = useState<IPixDTO>({} as IPixDTO);
+  const [statusPix, setStatusPix] = useState<IPixStatusDTO>(
+    {} as IPixStatusDTO
+  );
 
   useEffect(() => {
     let interval = 0;
-    let getPix = 0;
+    let getStatusPix = 0;
 
     if (payment?.id) {
       const paymentId = payment.id;
@@ -31,9 +34,9 @@ export const usePix = () => {
         setTimeLeft((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
       }, 1000);
 
-      getPix = setInterval(() => {
+      getStatusPix = setInterval(() => {
         Pix.status({ paymentId })
-          .then(({ data }) => console.log(data))
+          .then(({ data }) => setStatusPix(data))
           .catch((error) => {
             toast.error(error);
           });
@@ -42,7 +45,7 @@ export const usePix = () => {
 
     return () => {
       clearInterval(interval);
-      clearInterval(getPix);
+      clearInterval(getStatusPix);
     };
   }, [payment]);
 
@@ -66,15 +69,10 @@ export const usePix = () => {
     Pix.create(PAYLOAD)
       .then(({ data }) => {
         setPayment(data);
-
-        const udapte = {
-          ...dataDelivery,
-          qr_code: data.point_of_interaction.transaction_data.qr_code,
-        };
-        setDataDelivery(udapte);
       })
       .catch((error) => {
         toast.error(error);
+
         setTimeout(() => {
           navigate(-1);
         }, 1500);
@@ -93,5 +91,6 @@ export const usePix = () => {
     minutes,
     seconds,
     payment,
+    statusPix,
   };
 };

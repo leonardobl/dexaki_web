@@ -22,7 +22,8 @@ export const Header = styled.div`
 export const Body = styled.div`
   padding: 24px;
   flex: 1;
-
+  display: flex;
+  flex-direction: column;
   overflow: auto;
 
   .time {
@@ -73,17 +74,21 @@ export const Qrcode = styled.img`
 `;
 
 export const WrapperInfo = styled.div`
-  > svg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
     display: block;
-    margin: 24px auto 16px;
     font-size: 160px;
     filter: brightness(0) saturate(100%) invert(39%) sepia(84%) saturate(2042%)
       hue-rotate(6deg) brightness(108%) contrast(106%);
   }
 
-  > p {
-    color: #ff6b00;
+  p {
     margin-bottom: 16px;
+    color: #ff6b00;
     text-align: center;
   }
 `;
