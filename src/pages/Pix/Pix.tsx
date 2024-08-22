@@ -5,10 +5,11 @@ import { InputCopy } from "../../components/Form/InputCopy/InputCopy";
 import { Button } from "../../components/Button/Button";
 import { FaWhatsapp } from "react-icons/fa";
 import { usePix } from "./usePix";
-import { TbInfoTriangleFilled } from "react-icons/tb";
+import { TbCircleCheckFilled, TbInfoTriangleFilled } from "react-icons/tb";
+import { StatusPaymentPix } from "../../enums/statusPaymentPix";
 
 export const Pix = () => {
-  const { minutes, seconds, navigate, payment } = usePix();
+  const { minutes, seconds, navigate, payment, showTime, statusPix } = usePix();
 
   return (
     <S.Wrapper>
@@ -18,7 +19,7 @@ export const Pix = () => {
       </S.Header>
 
       <S.Body>
-        {seconds ? (
+        {showTime && statusPix?.status !== StatusPaymentPix.approved ? (
           <div className="time">
             <h3>Aguardando Pagamento</h3>
             <p>Pague em até:</p>
@@ -42,13 +43,19 @@ export const Pix = () => {
                   value={payment?.qr_code}
                 />
               </div>
-
+            </div>
+          </div>
+        ) : statusPix?.status === StatusPaymentPix.approved ? (
+          <S.WrapperInfoSucess>
+            <div>
+              <TbCircleCheckFilled />
+              <p>Pagamento Efetuado com sucesso!</p>
               <Button data-variant-outline>
                 Continuar no Whatsapp
                 <FaWhatsapp size={20} />
               </Button>
             </div>
-          </div>
+          </S.WrapperInfoSucess>
         ) : (
           <S.WrapperInfo>
             <div>

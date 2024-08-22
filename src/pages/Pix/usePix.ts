@@ -12,7 +12,7 @@ export const usePix = () => {
   const [dataDelivery] = useLocalStorage<IDataDeliveryUser>({
     storageKey: "@delivery",
   });
-
+  const [showTime, setShowTime] = useState(true);
   const [timeLeft, setTimeLeft] = useState(300);
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
@@ -86,11 +86,20 @@ export const usePix = () => {
     getPix();
   }, [getPix]);
 
+  useEffect(() => {
+    if (minutes > 0 || (minutes === 0 && seconds > 0)) {
+      setShowTime(true);
+    } else {
+      setShowTime(false);
+    }
+  }, [minutes, seconds]);
+
   return {
     navigate,
     minutes,
     seconds,
     payment,
     statusPix,
+    showTime,
   };
 };
