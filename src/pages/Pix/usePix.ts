@@ -64,6 +64,10 @@ export const usePix = () => {
       identificationType: "04544207304",
       number: dataDelivery.phone,
       date_of_expiration: formattedExpirationDate,
+      products: dataDelivery?.products?.map((p) => ({
+        _Id: p._id,
+        quantity: p.quantity,
+      })),
     };
 
     Pix.create(PAYLOAD)
