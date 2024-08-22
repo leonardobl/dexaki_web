@@ -65,7 +65,7 @@ export const usePix = () => {
       number: dataDelivery.phone,
       date_of_expiration: formattedExpirationDate,
       products: dataDelivery?.products?.map((p) => ({
-        _Id: p._id,
+        _id: p._id,
         quantity: p.quantity,
       })),
     };
