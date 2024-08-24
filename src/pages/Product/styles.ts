@@ -94,6 +94,7 @@ export const WrapperProduct = styled.div`
       border-color: #ccc;
       padding: 10px;
       font-weight: 300;
+      font-size: 12px;
     }
 
     .number-caracter {
