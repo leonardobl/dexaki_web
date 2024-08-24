@@ -12,8 +12,8 @@ import { IEstado, IUFS } from "../../types/ibge";
 import { maskCep } from "../../Util/masks";
 import { useAppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
-import { Ibge } from "../../Services/Ibge";
-import { ViaCep } from "../../Services/ViaCep";
+import { Ibge } from "../../services/Ibge";
+import { ViaCep } from "../../services/ViaCep";
 
 export const useNewAdress = () => {
   const { setIsLoad } = useAppContext();

@@ -3,10 +3,11 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { IDataDeliveryUser } from "../../model/Product";
 import { useCallback, useEffect, useState } from "react";
 import moment from "moment";
-import { Pix } from "../../Services/Pix";
+
 import { useAppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
 import { IPixDTO, IPixStatusDTO } from "../../types/pix";
+import { Pix } from "../../services/Pix";
 
 export const usePix = () => {
   const [dataDelivery] = useLocalStorage<IDataDeliveryUser>({

@@ -5,6 +5,8 @@ import { useProduct } from "./useProduct";
 import { maskMoney } from "../../Util/masks.ts";
 import { FaCartPlus } from "react-icons/fa";
 import { ModalBottom } from "../../components/ModalBottom/index.tsx";
+import { BiMessageDetail } from "react-icons/bi";
+import { BsCartPlusFill } from "react-icons/bs";
 
 export const Product = () => {
   const {
@@ -37,19 +39,35 @@ export const Product = () => {
 
       <div className="description-product">
         <h4>{product?.name}</h4>
-        <span className="price">{maskMoney(product?.price)}</span>
         <p className="description">{product?.description}</p>
+
+        <S.Promo>
+          <p>Item promocional</p>
+        </S.Promo>
+
+        <p className="content-price">
+          <span>{maskMoney(product?.price + 10)}</span>
+          <span className="price">{maskMoney(product?.price)}</span>
+        </p>
+
       </div>
 
       <div className="content-textarea">
-        <p>Observações</p>
+        <p>
+          Observações
+          <BiMessageDetail size={18} />
+        </p>
         <textarea
+          maxLength={140}
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           name=""
           id=""
           placeholder="Ex: Tiraa cebola, ovo, etc.."
         ></textarea>
+        <div className="number-caracter">
+          <p>0/140</p>
+        </div>
       </div>
 
       <div className="footer-price">
@@ -61,7 +79,11 @@ export const Product = () => {
           </button>
         </div>
         <Button onClick={() => addToCart()} disabled={quantity === 0}>
-          Adicionar {maskMoney(product?.price * quantity)}
+          <p>
+            <BsCartPlusFill size={18} />
+            Adicionar
+          </p>
+          {maskMoney(product?.price * quantity)}
         </Button>
       </div>
 
