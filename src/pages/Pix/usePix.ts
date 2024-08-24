@@ -7,7 +7,7 @@ import moment from "moment";
 import { useAppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
 import { IPixDTO, IPixStatusDTO } from "../../types/pix";
-import { Pix } from "../../services/Pix";
+import { Pix } from "../../Services/Pix";
 
 export const usePix = () => {
   const [dataDelivery] = useLocalStorage<IDataDeliveryUser>({
