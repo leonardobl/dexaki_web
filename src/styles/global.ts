@@ -34,7 +34,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #FAFAFA;
+    /* background-color: #FAFAFA; */
+    background-color: #fff;
   }
 
   body, input, button , textarea {
