@@ -114,3 +114,96 @@ export const ButtonPlus = styled.button`
   justify-content: center;
   all: unset;
 `;
+
+
+export const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* padding: 0px 16px; */
+  margin-bottom: 10px;
+  /* align-items: center; */
+
+  p {
+    margin-left: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #000;
+    /* color: ${props => props.theme.primary['800']}; */
+  }
+`;
+
+export const WrapperMainItens = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  overflow-x: auto; 
+  white-space: nowrap;
+   -ms-overflow-style: none; 
+  scrollbar-width: none; 
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+`;
+
+export const ContentItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 120px;
+  width: 100%;
+  margin-left: 10px;
+ 
+
+  &:first-child {
+    margin-left: 16px; /* Sobrescreve o margin-left do primeiro item para 16px */
+  }
+
+  img , svg {
+    height: 120px;
+    width: 120px;
+    border-radius: 6px;
+  }
+`;
+
+export const DescriptionItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+ 
+  > p {
+    text-transform: uppercase;
+    margin-top: 3px;
+    margin-left: 0px;
+    font-size: 12px;
+  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Limita o texto a 2 linhas */
+    line-clamp: 2;
+    white-space: normal; 
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    span {
+      color: #333;
+      font-size: 12px;
+      text-decoration: line-through;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 0px;
+      margin-left: 0px;
+    }
+  }
+`;

@@ -46,7 +46,7 @@ export const MainMenu = ({ categorys }: IMainMenuProps) => {
               categorys?.map((i) => (
                 <S.Link
                   key={`${Math.random()}`}
-                  isActive={activeNow === i?.name}
+                  data-status={activeNow === i?.name ? "active" : "inactive"}
                   onClick={() => setActiveNow(i?.name)}
                   href={`#${i.name}`}
                 >

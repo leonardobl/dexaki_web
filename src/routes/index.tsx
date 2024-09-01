@@ -24,13 +24,13 @@ const Rotas = () => {
           <Route index element={<Home />} />
           <Route path="myprofile">
             <Route index element={<MyProfile />} />
-            <Route path="notification" element={<Notification />} />
             <Route path="cupons" element={<Cupons />} />
             <Route path="favorite" element={<Favorite />} />
             <Route path="adress" element={<Address />} />
             <Route path="adress/:mode" element={<NewAdress />} />
           </Route>
           {/* <Route path="/editAdress/:mode" element={<NewAdress />} /> */}
+          <Route path="notification" element={<Notification />} />
           <Route path="/bag" element={<Bag />} />
           <Route path="/payment">
             <Route index element={<TypePayment />} />

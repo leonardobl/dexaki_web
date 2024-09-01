@@ -14,9 +14,7 @@ export const MenuItem = ({ product, ...rest }: IMenuItemPros) => {
   return (
     <S.Container {...rest}>
       <S.WrapperContent onClick={() => navigate(`/product/${product._id}`)}>
-        <S.Cashback>
-          <p>15% Cashback</p>
-        </S.Cashback>
+
         <S.WrapperImage>
           <img
             // src={`${import.meta.env.VITE_API_URL}/uploads/${product?.imagePath
@@ -34,6 +32,9 @@ export const MenuItem = ({ product, ...rest }: IMenuItemPros) => {
             <p>{maskMoney(product?.price)}</p>
           </S.Price>
         </S.WrapperText>
+        <S.Cashback>
+          <p>15% Cashback</p>
+        </S.Cashback>
       </S.WrapperContent>
     </S.Container>
   );

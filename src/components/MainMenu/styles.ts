@@ -106,33 +106,32 @@ export const MenuTab = styled.div`
   }
 `;
 
-export const Link = styled.a<ILinkProps>`
-  color: ${(props) =>
-    props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
+export const Link = styled.a`
+  color: ${(props) => props.theme.secondary[700]};
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-  /* padding-bottom: 10px; */
-  /* border-bottom:  ${(props) =>
-    props.isActive ? `1px solid ${props.theme.primary[700]}` : ""}; */
   transition: all 0.2s ease-in-out;
+
+  &[data-status="active"] {
+    color: ${(props) => props.theme.primary[700]}
+  }
 
   li {
     p {
       margin-top: 8px;
       font-size: 12px;
-      font-weight: ${(props) => (props.isActive ? 500 : 300)};
-      color: ${(props) =>
-        props.isActive ? props.theme.primary[700] : props.theme.secondary[700]};
+      font-weight:300;
+      color: ${(props) => props.theme.secondary[700]};
     }
   }
 
-  &:hover {
+  &[data-status="active"] li p {
+    font-weight: 600;
+    color: ${(props) => props.theme.primary[700]};
   }
 `;
-interface ILinkProps {
-  isActive: boolean;
-}
+
 
 export const Notification = styled.div`
   display: flex;

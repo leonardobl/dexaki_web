@@ -107,7 +107,7 @@ export const Cashback = styled.div`
   border-radius: 6px;
   padding: 4px 8px;
   width: fit-content;
-  background-color: rgba(206,209,205, 0.5);
+  background-color: rgba(218,255,204, 0.6);
 
   p {
     font-size: 9px;
