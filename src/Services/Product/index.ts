@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { API } from "../../Api";
 import {
-  IPageProduct,
+  IPageProductDTO,
   IProductByCompanyProps,
   IProductDTO,
 } from "../../types/product";
@@ -13,7 +13,7 @@ const basePath = "/product";
 export class Product {
   static async getByCompanyName(
     props: IProductByCompanyProps
-  ): Promise<AxiosResponse<IPageProduct>> {
+  ): Promise<AxiosResponse<IPageProductDTO>> {
     let params = "";
     const { companyName, ...rest } = props;
 

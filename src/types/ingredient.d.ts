@@ -1,5 +1,5 @@
-export interface IIngredient {
+export interface IngredientDTO {
+  id: string;
   name: string;
   price: number;
-  _id: string;
 }

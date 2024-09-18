@@ -1,13 +1,13 @@
 import { ComponentProps, ReactNode } from "react";
 import * as S from "./styles";
 import { MainMenu } from "../../components/MainMenu";
-import { IParserCategory } from "../../types/product";
 import { useNewLayout } from "./useNewLayout";
 import { Nav } from "../../components/Nav/Nav";
+import { ICategoryDTO } from "../../types/category";
 
 interface INewLayoutProps extends ComponentProps<"div"> {
   children: ReactNode;
-  categorys?: IParserCategory[];
+  categorys?: ICategoryDTO[];
 }
 
 export const NewLayout = ({
@@ -16,6 +16,8 @@ export const NewLayout = ({
   ...rest
 }: INewLayoutProps) => {
   const { pathname } = useNewLayout();
+
+  console.log(categorys);
 
   return (
     <S.Container {...rest}>

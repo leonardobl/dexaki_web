@@ -1,6 +1,4 @@
-import { IProductDTO } from "../types/product";
-
-export const DataProducts: IProductDTO[] = [
+export const DataProducts = [
   {
     _id: "5a9c7b1d-4e3f-48c6-9d2a-8f1b2e7d3c61",
     name: "Vegan Veggie",

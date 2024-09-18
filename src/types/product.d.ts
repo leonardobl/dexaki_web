@@ -1,19 +1,25 @@
+import { ICategoryDTO } from "./category";
+import { IImageDTO } from "./image";
+import { IngredientDTO } from "./ingredient";
 import { IPageRequest } from "./pagination";
 
-export interface IPageProduct {
-  products: IProductDTO[];
-  pagination: IPagination;
+export interface IPageProductDTO {
+  content: IProductDTO[];
+  numberPage: number;
+  size: number;
+  totalElements: number;
+  totalPages: number;
+  next: boolean;
 }
 
 export interface IProductDTO {
-  _id: string;
-  name: string;
+  id: string;
+  categories: ICategoryDTO[];
   description: string;
-  imagePath: string;
+  image: IImageDTO;
+  ingredients: IngredientDTO[];
+  name: string;
   price: number;
-  ingredients: string[];
-  category: ICategory;
-  __v: number;
 }
 
 export interface ISelectedProducts {
@@ -24,7 +30,7 @@ export interface ISelectedProducts {
 }
 
 export interface IParserProducts {
-  category: IParserCategory;
+  category: ICategoryDTO;
   products: IProductDTO[];
 }
 export interface IParserCategory {

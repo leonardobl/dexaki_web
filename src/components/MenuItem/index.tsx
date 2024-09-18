@@ -13,14 +13,12 @@ export const MenuItem = ({ product, ...rest }: IMenuItemPros) => {
 
   return (
     <S.Container {...rest}>
-      <S.WrapperContent onClick={() => navigate(`/product/${product._id}`)}>
-
+      <S.WrapperContent onClick={() => navigate(`/product/${product.id}`)}>
         <S.WrapperImage>
           <img
-            // src={`${import.meta.env.VITE_API_URL}/uploads/${product?.imagePath
-            //   }`}
-            src={`${product?.imagePath
-              }`}
+            src={`${import.meta.env.VITE_API_URL}/uploads/${
+              product?.image.filename
+            }`}
             alt="imagem produto"
           />
         </S.WrapperImage>

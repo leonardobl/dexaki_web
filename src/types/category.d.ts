@@ -1,6 +1,5 @@
 export interface ICategoryDTO {
-  _id: string;
+  id: string;
   name: string;
   icon: string;
-  __v: number;
 }
