@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-// import { Product } from "../../services/Product";
 import { IParserProducts, IProductDTO } from "../../types/product";
 import { useAppContext } from "../../context/AppContext";
-// import { toast } from "react-toastify";
 import { DataProducts } from "../../Mocks/productsMock";
+import { Product } from "../../Services/Product";
+import { toast } from "react-toastify";
 
 export const useHome = () => {
   const [products, setProducts] = useState<IProductDTO[]>([] as IProductDTO[]);
@@ -16,16 +16,16 @@ export const useHome = () => {
     setIsLoad(true);
     setProducts(DataProducts);
     setIsLoad(false);
-    // Product.get({ limit: 200 })
-    //   .then(({ data }) => {
-    //     setProducts(data.products);
-    //   })
-    //   .catch((erro) => {
-    //     toast.error(erro);
-    //   })
-    //   .finally(() => {
-    //     setIsLoad(false);
-    //   });
+    Product.getByCompanyName({ companyName: "Dexaki" })
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((erro) => {
+        toast.error(erro);
+      })
+      .finally(() => {
+        setIsLoad(false);
+      });
   }, []);
 
   useEffect(() => {

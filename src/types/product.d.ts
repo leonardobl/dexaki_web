@@ -1,3 +1,5 @@
+import { IPageRequest } from "./pagination";
+
 export interface IPageProduct {
   products: IProductDTO[];
   pagination: IPagination;
@@ -28,4 +30,8 @@ export interface IParserProducts {
 export interface IParserCategory {
   name: string;
   icon: string;
+}
+
+export interface IProductByCompanyProps extends IPageRequest {
+  companyName: string;
 }
