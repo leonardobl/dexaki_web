@@ -1,22 +1,12 @@
 // import { IProductDTO } from "../types/product";
 
+import { IProductDTO } from "../types/product";
+
 export interface IAdress {
   numero: number;
   rua: string;
   complemento: string;
   currentAdress: boolean;
-}
-
-export interface IProduct {
-  _id: string;
-  name: string;
-  price: number;
-  description: string;
-  imagePath: string;
-  category: string;
-  comment?: string;
-  quantity: number;
-  discountCoupon?: number;
 }
 
 export interface IDataDeliveryUser {
@@ -26,6 +16,6 @@ export interface IDataDeliveryUser {
   adress?: IAdress;
   typeOfpayment: string | undefined;
   delivery: string | undefined;
-  products: IProduct[];
+  products: IProductDTO[];
   qr_code?: string;
 }

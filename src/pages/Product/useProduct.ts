@@ -1,11 +1,11 @@
+import { IProductDTO } from "./../../types/product.d";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 // import { useAppContext } from "../../context/AppContext";
 // import { Product } from "../../services/Product";
 // import { toast } from "react-toastify";
-import { IProductDTO } from "../../types/product";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
-import { IDataDeliveryUser, IProduct } from "../../model/Product";
+import { IDataDeliveryUser } from "../../model/Product";
 import { DataProducts } from "../../Mocks/productsMock";
 
 const userDelivery: IDataDeliveryUser = {
@@ -35,12 +35,12 @@ export const useProduct = () => {
   function addToCart() {
     setShowModal(true);
     const alreadyExistProduct = dataDelivery.products.some(
-      (p) => p._id === product._id
+      (p) => p.id === product.id
     );
 
     if (alreadyExistProduct) {
-      const updateProducts = dataDelivery.products.map((p: IProduct) =>
-        p._id === product._id ? { ...p, quantity: p.quantity + quantity } : p
+      const updateProducts = dataDelivery.products.map((p: IProductDTO) =>
+        p.id === product.id ? { ...p, quantity: p.quantity + quantity } : p
       );
 
       setDataDelivery({
@@ -50,19 +50,7 @@ export const useProduct = () => {
     } else {
       setDataDelivery({
         ...dataDelivery,
-        products: [
-          ...dataDelivery.products,
-          {
-            _id: product._id,
-            category: product.category._id,
-            description: product.description,
-            imagePath: product.imagePath,
-            name: product.name,
-            price: product.price,
-            quantity: quantity,
-            discountCoupon: 0,
-          },
-        ],
+        products: [...dataDelivery.products, product],
       });
     }
   }

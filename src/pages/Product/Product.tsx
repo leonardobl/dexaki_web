@@ -27,8 +27,9 @@ export const Product = () => {
     <S.WrapperProduct>
       <div className="header-product-image">
         <img
-          // src={`${import.meta.env.VITE_API_URL}/uploads/${product?.imagePath}`}
-          src={`${product?.imagePath}`}
+          src={`${import.meta.env.VITE_API_URL}/uploads/${
+            product?.image?.filename
+          }`}
           alt="imagem produto"
         />
 
@@ -49,7 +50,6 @@ export const Product = () => {
           <span>{maskMoney(product?.price + 10)}</span>
           <span className="price">{maskMoney(product?.price)}</span>
         </p>
-
       </div>
 
       <div className="content-textarea">
