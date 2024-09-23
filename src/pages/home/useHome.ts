@@ -32,20 +32,16 @@ export const useHome = () => {
   }, [getProducts]);
 
   function parserProducts(products: IProductDTO[]) {
-    const tempCategories = products.flatMap((p) =>
-      p.categories.map((c) => JSON.stringify(c))
-    );
+    const tempCategories = products.map((p) => JSON.stringify(p?.category));
 
-    const categoriesUniques = [...new Set(tempCategories.map((c) => c))].map(
-      (c) => JSON.parse(c)
+    const categoriesUniques = [...new Set(tempCategories)].map((c) =>
+      JSON.parse(c)
     );
 
     const customProducts = categoriesUniques.map((c) => {
       return {
         category: c,
-        products: products.filter((p) =>
-          p.categories.some((i) => i.name === c.name)
-        ),
+        products: products.filter((p) => p?.category?.id === c?.id),
       };
     });
 

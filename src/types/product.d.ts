@@ -14,7 +14,7 @@ export interface IPageProductDTO {
 
 export interface IProductDTO {
   id: string;
-  categories: ICategoryDTO[];
+  category: ICategoryDTO;
   description: string;
   image: IImageDTO;
   ingredients: IngredientDTO[];
